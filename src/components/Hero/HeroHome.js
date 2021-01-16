@@ -1,4 +1,5 @@
 import React from "react";
+import { socials } from "../../data/socials";
 
 function HeroHome({}) {
   return (
@@ -24,26 +25,17 @@ function HeroHome({}) {
                     clients corder a publication to be made.
                   </p>
                   <ul className="list-inline hero-social">
-                    <li className="list-inline-item">
-                      <a onClick={(e) => e.preventDefault()}>
-                        <i className="fa fa-facebook" />
-                      </a>
-                    </li>
-                    <li className="list-inline-item">
-                      <a onClick={(e) => e.preventDefault()}>
-                        <i className="fa fa-twitter" />
-                      </a>
-                    </li>
-                    <li className="list-inline-item">
-                      <a onClick={(e) => e.preventDefault()}>
-                        <i className="fa fa-github" />
-                      </a>
-                    </li>
-                    <li className="list-inline-item">
-                      <a onClick={(e) => e.preventDefault()}>
-                        <i className="fa fa-linkedin" />
-                      </a>
-                    </li>
+                    {socials.map((social, index) => (
+                      <li key={index} className="list-inline-item">
+                        <a
+                          href={social.url}
+                          title={social.title}
+                          target="_blank"
+                        >
+                          <i className={`fa ${social.icon}`} />
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
