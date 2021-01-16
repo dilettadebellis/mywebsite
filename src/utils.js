@@ -6,3 +6,14 @@ export function downloadFile(uri, name) {
   link.click();
   link.remove();
 }
+
+export function getAge(birthDayString) {
+  const today = new Date();
+  const birthDate = new Date(birthDayString);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+}

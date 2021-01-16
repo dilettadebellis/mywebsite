@@ -32,12 +32,12 @@ function Header({}) {
               <span>works</span>
             </a>
           </li>
-          <li className="list-group-item">
+          {/*<li className="list-group-item">
             <a href="#blog">
               <i className="fa fa-file-text" />
               <span>blog</span>
             </a>
-          </li>
+          </li>*/}
           <li className="list-group-item">
             <a href="#contact">
               <i className="fa fa-envelope-open" />

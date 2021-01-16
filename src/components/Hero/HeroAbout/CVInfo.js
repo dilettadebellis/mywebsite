@@ -1,6 +1,6 @@
 import React from "react";
-import { downloadFile } from "../../../utils";
-import aboutMeImage from "../../../assets/img/diletta-de-bellis-03.jpg"
+import { downloadFile, getAge } from "../../../utils";
+import aboutMeImage from "../../../assets/img/diletta-de-bellis-03.jpg";
 
 export default function () {
   const downloadCV = (e) => {
@@ -41,7 +41,10 @@ export default function () {
                 </li>
                 <li>
                   <p>
-                    Website : <a href="www.webfondente.com "><span> www.webfondente.com</span></a>
+                    Website :{" "}
+                    <a href="www.webfondente.com">
+                      <span> www.webfondente.com</span>
+                    </a>
                   </p>
                 </li>
                 <li>
@@ -60,7 +63,7 @@ export default function () {
               <ul className="list-unstyled pt-4">
                 <li>
                   <p>
-                    Age : <span> 28</span>
+                    Age : <span> {getAge("1992-11-18")}</span>
                   </p>
                 </li>
                 <li>
@@ -70,7 +73,10 @@ export default function () {
                 </li>
                 <li>
                   <p>
-                    Mail : <a href="mailto:hello@dilettadebellis.it"><span> hello@dilettadebellis.it</span></a>
+                    Mail :{" "}
+                    <a href="mailto:hello@dilettadebellis.it">
+                      <span> hello@dilettadebellis.it</span>
+                    </a>
                   </p>
                 </li>
                 <li>
