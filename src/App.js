@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import Header from "./components/Header";
 import HeroHome from "./components/Hero/HeroHome";
-import HeroAbout from "./components/Hero/HeroAbout";
+import HeroAbout from "./components/Hero/HeroAbout/Index";
 import HeroResume from "./components/Hero/HeroResume";
 import HeroPortfolio from "./components/Hero/HeroPortfolio";
 import HeroBlog from "./components/Hero/HeroBlog";
