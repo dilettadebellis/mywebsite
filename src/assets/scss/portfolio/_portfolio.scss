@@ -1,0 +1,103 @@
+/*-------------------------
+         PORTFOLIO
+-------------------------*/
+.portfolio .portfolio-filter .list-inline-item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.portfolio .portfolio-filter li a {
+  padding: 5px 15px;
+}
+
+.portfolio .portfolio-item {
+  margin-top: 30px;
+}
+
+.portfolio .portfolio-item-content {
+  position: relative;
+  border-radius: 1.25rem;
+}
+
+.portfolio .portfolio-item-content::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: .5s all ease;
+  border-radius: 1.25rem;
+}
+
+.portfolio .portfolio-item-content:hover .img-overlay-content {
+  opacity: 1;
+}
+
+.portfolio .portfolio-item-content:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.portfolio .img-overlay-content {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  opacity: 0;
+  transition: all .5s ease;
+}
+
+.portfolio .img-overlay-content h5 {
+  color: #fafafa;
+}
+
+.portfolio .portfolio-icon a {
+  background-color: white;
+  width: 35px;
+  height: 35px;
+  line-height: 37px;
+  margin: 0 8px;
+  display: inline-block;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  line-height: 37px;
+}
+
+.portfolio .portfolio-icon a i {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.portfolio .portfolio-icon a:first-child {
+  background-color: white;
+  width: 35px;
+  height: 35px;
+  line-height: 37px;
+  margin: 0 8px;
+  display: inline-block;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  border-color: transparent;
+}
+
+.portfolio .portfolio-icon a:first-child i {
+  font-size: 18px;
+  font-weight: 700;
+  position: relative;
+  left: -2px;
+}
+
+.portfolio .portfolio-icon a:first-child:focus {
+  outline: none !important;
+}
+
+.visible_item {
+  display: none;
+}
+
+.portfolio-page .visible_item {
+  display: block;
+}

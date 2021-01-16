@@ -1,0 +1,27 @@
+/*-------------------------
+         Services
+-------------------------*/
+.services .services-item {
+  padding: 30px 10px;
+  margin-top: 30px;
+}
+.services .services-item.data-background {
+  margin-top: 0;
+}
+.services .image-border{
+  margin-top: 30px;
+}
+.services .image-border .box-hover-border {
+  border-radius: 1rem;
+}
+.flat-demo .services .image-border .box-hover-border {
+  border-radius: 1.25rem;
+}
+.services .services-item:hover .services-icon {
+  transform: rotateY(360deg);
+  transition: 0.9s ease;
+}
+
+.services .services-content {
+  padding-left: 3rem;
+}

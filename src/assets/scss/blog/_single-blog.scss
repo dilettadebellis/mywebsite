@@ -1,0 +1,135 @@
+/*-------------------------
+        SINGLE BLOG
+-------------------------*/
+.modal-dialog {
+  max-width: 75%;
+}
+
+.blog-single .modal-content {
+  background-color: #f1f3f6;
+}
+.breadcrumb {
+  border-radius: 1rem;
+  padding: 15px 15px;
+}
+.breadcrumb li a {
+  color: #222;
+  font-weight: 600;
+}
+.blog-single .close {
+  color: #5f5f5f;
+  text-shadow: none;
+}
+.blog-single img {
+  width: 100%;
+  border-radius: 1rem;
+}
+.comments img {
+  width: 80px;
+  border-radius: 50%;
+}
+.comments .comment-info {
+  margin-left: 100px;
+}
+.blog-single .entry-meta li:not(:last-child){
+  margin-right: .75rem;
+}
+.blog-single .entry-meta li a {
+  font-size: 14px;
+  transition: all 0.3s ease;
+  position: relative;
+  top: 0;
+}
+.blog-single .entry-meta li a i{
+  color: #666;
+  font-size: 13px;
+  padding-right: 5px;
+}
+.blog-single .entry-meta li a:hover {
+  top: -3px;
+  padding-bottom: 3px;
+}
+.comment-author {
+  margin-left: 80px;
+  position: relative;
+  padding-top: 7px;
+}
+.comment-author span {
+  font-weight: 600;
+}
+.comment-date {
+  font-size: 13px;
+  padding-top: 10px;
+  font-weight: 400;
+}
+.comment-reply-link {
+  position: absolute;
+  top: 7px;
+  right: 0;
+  color: #444;
+  font-size: 14px;
+}
+.comment-text {
+  clear: both;
+  padding-top: 5px;
+  font-size: 15px;
+  margin-left: 80px;
+}
+.comments-devider{
+  background-color: #f1f3f6;
+  box-shadow: inset 2px 2px 4px rgba(55, 84, 170, 0.3), inset -2px -2px 0px white;
+  height: 10px;
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 15px;
+}
+.comments .commnet-image-border img {
+  width: 65px;
+  border-radius: 50%;
+  height: 65px;
+}
+.reply-comment{
+  margin-left: 3rem;
+}
+
+@media (min-width: 992px){
+  .blog-single .post-sidebar {
+    position: unset;
+    width: 25%;
+    max-width: 25%;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    z-index: 0;
+    padding: 0 15px;
+  }
+  .blog-single .post-sidebar-content {
+    position: unset;
+    box-shadow: none;
+    background-color: transparent;
+    overflow: visible;
+    padding-top: 0;
+  }
+  .blog-single .post-sidebar-toggle{
+    display: none;
+  }
+  .blog-single .search{
+    padding: 0 0 15px;
+  }
+  .blog-single .aside-contents {
+    margin: 0 0 15px;
+  }
+  .flat-demo .blog-single .post-sidebar-content {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+  .flat-demo .search .form-group, .flat-demo .aside-contents {
+    background-color: #fefefe;
+    box-shadow: 3px 3px 8px 0px rgba(145, 145, 145, 0.1) !important;
+  }
+}
+
+@media (max-width: 575px){
+  .reply-comment{
+    margin-left: 1rem;
+  }
+}

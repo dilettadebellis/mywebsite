@@ -1,0 +1,19 @@
+/*-------------------------
+      Next & Prev Page
+-------------------------*/
+
+.next-prev-page {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 1031;
+}
+
+.next-prev-page button{
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  border-radius: 0.75rem;
+}

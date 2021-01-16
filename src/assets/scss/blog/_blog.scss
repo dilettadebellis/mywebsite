@@ -1,0 +1,59 @@
+/*-------------------------
+          BLOG
+-------------------------*/
+.blog .blog-item {
+  padding: 30px;
+  margin: 60px 0 30px;
+}
+
+.blog .blog-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 45px;
+  width: auto;
+  height: 57px;
+  background-color: #f1f3f6;
+  z-index: 1;
+  right: 45px;
+}
+
+.blog .blog-content .list-inline-item:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.blog .blog-image {
+  position: relative;
+  display: inline-block;
+  border-radius: 1.25rem;
+  padding: 10px;
+  margin-top: -88px;
+  background-color: #f1f3f6;
+}
+
+.blog .blog-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 3px 3px 3px #dadada, inset -3px -3px 3px #fafafa;
+  border-radius: 1.25rem;
+  z-index: 0;
+}
+
+.blog .blog-intro {
+  box-shadow: 3px 3px 3px #dadada, -3px -3px 3px #fafafa;
+  border-radius: 1.25rem;
+  padding: 5px;
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+
+.blog .blog-intro img {
+  display: inline-block;
+  border-radius: 1rem;
+  width: 100%;
+}

@@ -1,0 +1,105 @@
+/*-------------------------
+        ColorPallet
+-------------------------*/
+.color-switcher .color-pallet {
+  background-color: white;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  top: 25px;
+  z-index: 1000;
+  position: fixed;
+  transition: all 0.3s ease;
+  right: 75px;
+  width: 189px;
+  border-radius: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.color-switcher .color-pallet.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.color-switcher .pallet-button {
+  background-color: white;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  top: 25px;
+  z-index: 1000;
+  position: fixed;
+  transition: all 0.3s ease;
+  display: block;
+  height: 40px;
+  right: 25px;
+  width: 40px;
+  border-radius: 0.75rem;
+}
+
+.color-switcher .pallet-button a {
+  width: 40px;
+  height: 40px;
+  display: block;
+  text-align: center;
+}
+
+.color-switcher .pallet-button i {
+  color: #3c3c3c;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.color-switcher ul.pattern {
+  list-style: none outside none;
+  margin: 0 0 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.color-switcher ul.pattern li {
+  float: left;
+}
+
+.color-switcher ul.pattern li a {
+  cursor: pointer;
+  display: block;
+  height: 30px;
+  width: 30px;
+  border-radius: 28px 18px 0 21px;
+  transform: rotate(-135deg);
+  margin: 15px  0 15px 25px;
+}
+
+.color-switcher ul.pattern .color1 {
+  background: #1ab394;
+}
+
+.color-switcher ul.pattern .color2 {
+  background: #fbdd62;
+}
+
+.color-switcher ul.pattern .color3 {
+  background: #ddae3f;
+}
+
+.color-switcher ul.pattern .color4 {
+  background: #0cc0de;
+}
+
+.color-switcher ul.pattern .color5 {
+  background: #1b63ad;
+}
+
+.color-switcher ul.pattern .color6 {
+  background: #d78fd6;
+}
+
+.color-switcher ul.pattern .color7 {
+  background: #ff645e;
+}
+
+.color-switcher ul.pattern .color8 {
+  background: #ff4274;
+}
+
+.color-switcher ul.pattern .color9 {
+  background: #d31d4d;
+}

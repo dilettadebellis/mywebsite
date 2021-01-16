@@ -1,0 +1,148 @@
+/*-------------------------
+         GENERAL
+-------------------------*/
+body {
+  font-family: "Muli", sans-serif;
+  font-weight: 300;
+}
+
+.full-screen {
+  height: 100vh;
+}
+
+main#main {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+#main > section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100%);
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transform: translate3d(100%, 0, 0);
+  z-index: 0;
+  opacity: 0;
+  background-color: #f1f3f6;
+  transition: transform .6s ease .6s,opacity 0s ease .6s;
+  padding-left: 80px;
+}
+
+#main > section.active {
+  transform: translate3d(0, 0, 0);
+  z-index: 2;
+  opacity: 1;
+  transition: transform .6s ease;
+}
+
+.blog-single-page #main > section.active{
+  transform: none;
+}
+
+h1, h2, h3, h4, h5, h6, .h1 {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.618;
+}
+
+h2, h2 span {
+  font-weight: 700;
+}
+
+.max-width-450 {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a, button {
+  outline: none !important;
+}
+
+.box-border {
+  background-color: #f1f3f6;
+  border-radius: 1.25rem;
+  box-shadow: 3px 3px 3px #dadada, -3px -3px 3px #fafafa;
+}
+
+.box-hover-border {
+  background-color: #f1f3f6;
+  border-radius: 1.25rem;
+  box-shadow: 3px 3px 3px #dadada, -3px -3px 3px #fafafa;
+}
+
+.box-hover-border:hover {
+  box-shadow: inset 3px 3px 3px #dadada, inset -3px -3px 3px #fafafa;
+}
+
+.button-border {
+  background-color: #f1f3f6;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 3px #dadada, -3px -3px 3px #fafafa;
+  display: inline-block;
+  padding: 1px;
+}
+
+.button-border button {
+  background-color: transparent;
+}
+
+.pill-button {
+  border-radius: 1rem;
+  border: none;
+  padding: 10px 30px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.pill-button:hover, .pill-button.active {
+  border: none;
+  box-shadow: inset 3px 3px 3px #dadada, inset -3px -3px 3px #fafafa;
+}
+
+.image-border {
+  background-color: #f1f3f6;
+  border-radius: 1.25rem;
+  box-shadow: 3px 3px 8px rgba(55, 84, 170, 0.1), -3px -3px 8px white;
+  padding: 5px;
+}
+
+.image-border img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.title h2 {
+  font-size: 3rem;
+}
+
+.title p {
+  font-size: 18px;
+}
+
+.display-table {
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+.display-content {
+  vertical-align: middle;
+  display: table-cell;
+  padding: 5rem 0;
+}
+
+.center-item {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}

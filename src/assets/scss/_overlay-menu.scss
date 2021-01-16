@@ -1,0 +1,93 @@
+/*-------------------------
+       OVERLAY MENU
+-------------------------*/
+.menu-toggler {
+  display: none;
+}
+
+.menu {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-41%);
+  width: 100%;
+}
+
+.menu .list-group-item {
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem;
+}
+
+.menu li a {
+  width: 60px;
+  height: 60px;
+  display: block;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 3px #cdcdcd, -3px -3px 3px #fafafa;
+}
+
+.menu li a:hover, .menu li a.active {
+  box-shadow: inset 3px 3px 3px #cdcdcd, inset -3px -3px 3px #fafafa;
+}
+
+.menu li a i {
+  display: block;
+  font-size: 1.25rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.menu li a:hover i, .menu li a.active i {
+  transform: translateY(-100%);
+}
+
+.menu span {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.menu a:hover span, .menu a.active span {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(50%);
+}
+
+header {
+  width: 80px;
+  border-radius: 0 1.25rem 1.25rem 0;
+  position: fixed;
+  z-index: 1030;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #f1f3f6;
+  box-shadow: 3px 3px 8px rgba(55, 84, 170, 0.1), -3px -3px 8px white;
+}
+
+header .navbar-brand {
+  display: block;
+  margin-right: 0;
+  text-align: center;
+}
+
+header .navbar-brand span {
+  display: block;
+  text-align: center;
+  width: 100%;
+  font-weight: 700;
+  font-size: 12px;
+  margin-top: -1rem;
+}
+
+header .navbar-brand b {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 3rem;
+}

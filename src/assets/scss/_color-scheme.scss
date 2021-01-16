@@ -1,0 +1,98 @@
+/*-------------------------
+       COLOR SCHEME
+-------------------------*/
+.color-scheme li {
+  width: 40%;
+  margin: 0 !important;
+}
+
+.color-scheme li a {
+  display: block;
+  padding: 8px 0;
+  background-color: #f1f1f1;
+  border-radius: 0.75rem;
+  color: #222;
+  transition: all 0.5s ease;
+  font-size: 14px;
+}
+
+.color-scheme li a.light-scheme:hover, .color-scheme li a.light-scheme.active{
+  background-color: #0fcae8;
+  color: #fff;
+}
+
+.color-scheme li a.dark-scheme:hover, .color-scheme li a.dark-scheme.active{
+  background-color: #2c2d30;
+  color: #fff;
+}
+
+.theme-skin-title{
+  background-color: #f1f3f6;
+  margin: 0;
+  padding: 15px 0 0;
+  border-radius: 16px 16px 0 0;
+}
+
+.theme-skin {
+  background-color: #f1f3f6;
+  margin: 0;
+  padding: 8px 0 16px;
+}
+
+.theme-skin li {
+  width: 40%;
+  margin: 0 !important;
+}
+
+.theme-skin li:last-child {
+  background-color: #f1f3f6;
+  border-radius: 0.75rem;
+  box-shadow: 3px 3px 3px #dadada, -3px -3px 3px #fafafa;
+  padding: 1px;
+}
+
+.theme-skin li:last-child a:hover, .theme-skin li:last-child a.active {
+  border: none;
+  box-shadow: inset 3px 3px 3px #dadada, inset -3px -3px 3px #fafafa;
+}
+
+.theme-skin li a {
+  display: block;
+  padding: 8px 0;
+  border-radius: 0.75rem;
+  color: #222;
+  transition: all 0.5s ease;
+  font-size: 14px;
+}
+
+.theme-skin li a.flat-skin {
+  background-color: #fff;
+  margin-right: 3px;
+}
+
+.scroll-button {
+  display: none;
+  background-color: white;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  bottom: 15px;
+  z-index: 1000;
+  position: fixed;
+  transition: all 0.3s ease;
+  height: 100px;
+  right: 15px;
+  width: 40px;
+  border-radius: 0.75rem;
+}
+
+.scroll-button a {
+  width: 40px;
+  height: 50px;
+  line-height: 55px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.scroll-button a i {
+  font-size: 24px;
+}

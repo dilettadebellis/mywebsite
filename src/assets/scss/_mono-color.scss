@@ -1,0 +1,138 @@
+/*-------------------------
+     Mono Color Light
+-------------------------*/
+.mono header .navbar-brand span, .mono header .navbar-brand b, .mono .menu li a, .mono .pill-button,
+.mono .language-skill ul li i {
+  color: #3c3c3c;
+}
+
+.mono .base-color {
+  color: #5f5f5f !important;
+}
+
+.mono .bg-base-color,
+.mono .testimonial .owl-dot.active span {
+  background-color: #3c3c3c !important;
+}
+
+.mono .hero-social li a:hover, .mono .blog-link a:hover {
+  color: #1a1a1a !important;
+}
+
+.mono .timeline-icon {
+  border: 1px solid #3c3c3c;
+  background-color: #3c3c3c;
+}
+
+.mono .timeline-item::before {
+  border: 1px solid #3c3c3c;
+}
+
+.mono .timeline-year, .mono .portfolio .portfolio-icon a:first-child, .mono .portfolio .portfolio-icon a {
+  color: #5f5f5f;
+}
+
+.mono .skill-box .fill-skillbar {
+  background-color: #3c3c3c;
+}
+
+.mono .portfolio .portfolio-item-content::before {
+  background-color: rgba(60, 60, 60, 0.9);
+}
+
+.mono .loader {
+  border-top: 4px solid #3c3c3c !important;
+}
+
+.mono .menu-toggler span {
+  background-color: #3c3c3c;
+}
+
+.mono .floating {
+  background: #2c2d30;
+}
+
+.mono .circle-2 {
+  background: #3c3c3c;
+}
+
+.mono .circle {
+  background: #e1e1e1;
+}
+
+/*-------------------------
+      Mono Color Dark
+-------------------------*/
+.mono.arshia-dark .text-white {
+  color: #3c3c3c !important;
+}
+
+.mono.arshia-dark header .navbar-brand span, .mono.arshia-dark header .navbar-brand b, .mono.arshia-dark .menu li a, .mono.arshia-dark .pill-button,
+.mono.arshia-dark .language-skill ul li i {
+  color: #fafafa;
+}
+
+.mono.arshia-dark .base-color {
+  color: #dedede !important;
+}
+
+.mono.arshia-dark .bg-base-color {
+  background-color: #f8f8f8 !important;
+}
+
+.mono.arshia-dark .hero-social li a:hover, .mono.arshia-dark .blog-link a:hover {
+  color: #a1a1a1 !important;
+}
+
+.mono.arshia-dark .timeline-icon {
+  border: 1px solid #dedede;
+  background-color: #dedede;
+}
+
+.mono.arshia-dark .timeline-item::before {
+  border: 1px solid #dedede;
+}
+
+.mono.arshia-dark .timeline-year, .mono.arshia-dark .portfolio .portfolio-icon a:first-child, .mono.arshia-dark .portfolio .portfolio-icon a {
+  color: #dedede;
+}
+
+.mono.arshia-dark .skill-box .fill-skillbar, .mono.arshia-dark .testimonial .owl-dot.active span {
+  background-color: #dedede;
+}
+
+.mono.arshia-dark .testimonial .owl-carousel .owl-dot span {
+  background-color: #3c3c3c;
+}
+
+.mono.arshia-dark .testimonial .owl-carousel .owl-dot.active span {
+  background-color: #dedede !important;
+}
+
+.mono.arshia-dark .portfolio .portfolio-item-content::before {
+  background-color: rgba(250, 250, 250, 0.8);
+}
+
+.mono.arshia-dark .portfolio .img-overlay-content h5 {
+  color: #3c3c3c;
+}
+
+.mono.arshia-dark .portfolio .portfolio-icon a:first-child, .mono.arshia-dark .portfolio .portfolio-icon a {
+  background-color: #3c3c3c;
+}
+
+.mono.arshia-dark .menu-toggler span {
+  background-color: #fafafa;
+}
+
+.mono.arshia-dark .floating {
+  background: #f8f8f8;
+}
+
+.mono.arshia-dark .circle-2 {
+  background: #dedede;
+}
+
+.mono.arshia-dark .circle {
+  background: #e1e1e1;
+}

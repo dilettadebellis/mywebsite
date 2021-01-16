@@ -1,0 +1,215 @@
+/*-------------------------
+           Hero
+-------------------------*/
+.hero-01 {
+  background: url("https://placehold.co/1920x1280");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-01 .hero-content {
+  color: #3c3c3c;
+}
+
+.hero-02 {
+  background: url("https://placehold.co/1920x1280");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-03 {
+  background: url("https://placehold.co/1920x1280");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-03:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.hero-03 .hero-content {
+  color: #fafafa;
+}
+
+.hero-05 .video-overlay {
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: auto;
+  overflow: hidden;
+}
+
+.hero-05::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+
+.hero-item {
+  position: relative;
+  z-index: 5;
+}
+
+.hero-social .list-inline-item:not(:last-child) {
+  margin-right: 1.5rem;
+}
+
+.hero-social li a {
+  font-size: 1.25rem;
+  color: #3c3c3c;
+}
+
+.hero-03 .hero-social li a {
+  color: #fafafa;
+}
+
+.hero-image {
+  position: fixed;
+  bottom: 0;
+  max-width: 580px;
+}
+
+.hero-image img {
+  width: 100%;
+}
+
+canvas.particles-js-canvas-el {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.particles-js-canvas-el {
+  position: absolute;
+  top: 0;
+}
+
+/*-------------------------
+          HERO-06
+-------------------------*/
+.hero-06 li img {
+  width: 15px;
+}
+
+.hero-06 .image-border img {
+  width: 80%;
+  padding: 4px;
+  background-color: transparent;
+  border: 1px solid #f0f0f0;
+  max-width: 100%;
+  height: auto;
+}
+
+.hero-06 .hero-images img {
+  z-index: 10;
+  position: relative;
+  box-shadow: 3px 3px 3px #dadada, -3px -3px 3px #fafafa;
+}
+
+.hero-06 .hero-images .square img {
+  box-shadow: none;
+}
+
+.hero-06 .circle {
+  border-radius: 50%;
+  opacity: 0.9;
+  position: absolute;
+  overflow: hidden;
+  width: 85px;
+  height: 85px;
+  background: #fbdd62;
+  top: 150px;
+  right: 34px;
+  animation: circling 18s linear infinite;
+  z-index: 11;
+}
+
+@keyframes circling {
+  0% {
+    transform: rotate(0deg) translate(-80px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(-80px) rotate(-360deg);
+  }
+}
+
+.hero-06 .circle-2 {
+  border-radius: 50%;
+  opacity: 0.9;
+  position: absolute;
+  overflow: hidden;
+  width: 55px;
+  height: 55px;
+  background: #ff645e;
+  top: 250px;
+  bottom: 250px;
+  left: 80px;
+  right: 0;
+  margin: auto;
+  animation: circlereverse 22s linear infinite;
+  z-index: 11;
+}
+
+@keyframes circlereverse {
+  0% {
+    transform: rotate(0deg) translate(-275px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translate(-275px) rotate(360deg);
+  }
+}
+
+.hero-06 .floating {
+  border-radius: 50%;
+  opacity: 0.9;
+  position: absolute;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  background: #1ab394;
+  top: 10px;
+  right: 40px;
+  z-index: 1;
+  animation: floating 5s linear infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0px);
+  }
+  50% {
+    transform: translate(-50px);
+  }
+  100% {
+    transform: translate(0px);
+  }
+}
+
+.hero-06 .square {
+  position: absolute;
+  bottom: 25px;
+  z-index: 0;
+  left: -10px;
+  animation: rotate 25s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
