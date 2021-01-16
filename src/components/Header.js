@@ -5,8 +5,7 @@ function Header({}) {
     <header>
       <div className="header-navbar h-100">
         <a className="navbar-brand" href="#">
-          <b>A</b>
-          <span>Arshia</span>
+          <span className="navbar-logo-image" />
         </a>
         <ul className="list-group menu text-center" id="menu">
           <li className="list-group-item">

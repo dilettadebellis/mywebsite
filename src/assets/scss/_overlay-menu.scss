@@ -74,15 +74,21 @@ header .navbar-brand {
   display: block;
   margin-right: 0;
   text-align: center;
-}
+  margin-top: 30px;
 
-header .navbar-brand span {
-  display: block;
-  text-align: center;
-  width: 100%;
-  font-weight: 700;
-  font-size: 12px;
-  margin-top: -1rem;
+  span {
+    display: block;
+    text-align: center;
+    width: 100%;
+
+    &.navbar-logo-image {
+      background: url("../img/logo.png") center no-repeat;
+      background-size: contain;
+      height: 60px;
+      width: 60px;
+      margin: 0 auto;
+    }
+  }
 }
 
 header .navbar-brand b {
