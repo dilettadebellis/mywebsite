@@ -1,5 +1,6 @@
 import React from "react";
 import { downloadFile } from "../../../utils";
+import aboutMeImage from "../../../assets/img/diletta-de-bellis-03.jpg"
 
 export default function () {
   const downloadCV = (e) => {
@@ -22,35 +23,35 @@ export default function () {
       </div>
       <div className="col-lg-6">
         <div className="image-border">
-          <img src="https://placehold.co/690x460" alt="/" />
+          <img src={aboutMeImage} alt="/" />
         </div>
       </div>
       <div className="col-lg-6 mt-4 mt-lg-0">
         <div className="personal-item ">
           <h3 className="text-dark mt-4 mt-lg-0">
-            <span className="base-color">UI/UX</span> Designer & Web Developer
+            <span className="base-color">Web Marketing</span> Consultant
           </h3>
           <div className="row">
             <div className="col-6 personal-info">
               <ul className="list-unstyled pt-4">
                 <li>
                   <p>
-                    Birthday : <span> 1 April 1990</span>
+                    Birthday : <span> 18 November 1992</span>
                   </p>
                 </li>
                 <li>
                   <p>
-                    Website : <span> www.retrina.com</span>
+                    Website : <a href="www.webfondente.com "><span> www.webfondente.com</span></a>
                   </p>
                 </li>
                 <li>
                   <p>
-                    Phone : <span> +123 456 7890</span>
+                    Phone : <span> 333 928 2218</span>
                   </p>
                 </li>
                 <li>
                   <p>
-                    City : <span> New York, USA</span>
+                    City : <span> Ancona, Italy</span>
                   </p>
                 </li>
               </ul>
@@ -59,7 +60,7 @@ export default function () {
               <ul className="list-unstyled pt-4">
                 <li>
                   <p>
-                    Age : <span> 30</span>
+                    Age : <span> 28</span>
                   </p>
                 </li>
                 <li>
@@ -69,7 +70,7 @@ export default function () {
                 </li>
                 <li>
                   <p>
-                    Mail : <span> sample@retrina.com</span>
+                    Mail : <a href="mailto:hello@dilettadebellis.it"><span> hello@dilettadebellis.it</span></a>
                   </p>
                 </li>
                 <li>

@@ -5,17 +5,12 @@ export const socials = [
     title: "facebook",
   },
   {
-    url: "",
-    icon: "fa-twitter",
-    title: "twitter",
+    url: "https://www.instagram.com/dilettadebellis",
+    icon: "fa-instagram",
+    title: "instagram",
   },
   {
-    url: "",
-    icon: "fa-github",
-    title: "github",
-  },
-  {
-    url: "",
+    url: "https://www.linkedin.com/in/dilettadebellis/",
     icon: "fa-linkedin",
     title: "linkedin",
   },

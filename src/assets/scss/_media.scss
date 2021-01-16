@@ -115,8 +115,16 @@
 -------------------------------*/
 
 @media (prefers-color-scheme: dark) {
+  header .navbar-brand span.navbar-logo-image {
+    background: url("../img/logo-pink.png") center no-repeat;
+    background-size: contain;
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+  }
+
   .hero-01 {
-    background: url("../img/diletta-de-bellis-02.jpg");
+    background: url("../img/diletta-de-bellis-02-dark.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }

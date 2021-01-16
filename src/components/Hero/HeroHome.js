@@ -11,13 +11,13 @@ function HeroHome({}) {
               <div className="col-lg-12">
                 <div className="hero-content">
                   <h1 className="mb-3">
-                    I'M <span className="base-color"> Olivia Doe</span>
+                    I'm <span className="base-color"> Diletta De Bellis</span>
                   </h1>
                   <h4 className="text-capitalize mb-0">
                     <span className="base-color">A </span>{" "}
                     <span
                       className="element"
-                      data-elements="UI Designer.,Web Designer.,Web Developer."
+                      data-elements="Web Marketing Specialist.,Social Media Strategist.,Digital Communication Consultant."
                     />
                   </h4>
                   <p className="max-width-450 mx-0 my-4">
