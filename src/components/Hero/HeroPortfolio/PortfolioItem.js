@@ -15,7 +15,8 @@ export default function ({ name, coverImage, filters, modalId }) {
             <div className="img-overlay-content">
               <div className="portfolio-icon">
                 <a
-                  href="javascript:void();"
+                  href=""
+                  onClick={(e) => e.preventDefault()}
                   type="button"
                   data-toggle="modal"
                   data-target={`#${modalId}`}

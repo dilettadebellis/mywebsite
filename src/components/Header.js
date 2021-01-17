@@ -1,15 +1,25 @@
 import React from "react";
 
 function Header({}) {
+  const handleMenuLogoClick = (e) => {
+    e.preventDefault();
+    window.history.replaceState(window.history.state, null, "/");
+  };
+
   return (
     <header>
       <div className="header-navbar h-100">
-        <a className="navbar-brand" href="#">
+        <a
+          id="menu-logo"
+          className="navbar-brand"
+          href="#"
+          onClick={handleMenuLogoClick}
+        >
           <span className="navbar-logo-image" />
         </a>
         <ul className="list-group menu text-center" id="menu">
           <li className="list-group-item">
-            <a className="active" href="#hero">
+            <a className="active" href="#hero" onClick={handleMenuLogoClick}>
               <i className="fa fa-home" />
               <span>home</span>
             </a>

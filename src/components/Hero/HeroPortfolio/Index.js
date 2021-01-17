@@ -42,6 +42,7 @@ export default function () {
             <div className="portfolio-items row">
               {works.map((work, index) => (
                 <PortfolioItem
+                  key={index}
                   name={work.name}
                   coverImage={work.coverImage}
                   filters={work.filters}

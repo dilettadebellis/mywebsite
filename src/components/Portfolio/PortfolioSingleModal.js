@@ -93,6 +93,7 @@ function PortfolioSingleModal({
                     <div className="text-md-left mt-5">
                       {longDescription.map((part, index) => (
                         <p
+                          key={index}
                           className={`my-3 ${
                             index === longDescription.length - 1 ? "mb-0" : ""
                           }`}
