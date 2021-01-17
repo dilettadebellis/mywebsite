@@ -1,38 +1,38 @@
 export const services = [
   {
+    name: "Website",
+    description:
+      "In a professional context it often happens that private clients corder a publication to be made.",
+    icon: "lni-display-alt",
+  },
+  {
+    name: "Ecommerce",
+    description:
+      "In a professional context it often happens that private clients corder a publication to be made.",
+    icon: "lni-cart",
+  },
+  {
+    name: "Social Media",
+    description:
+      "In a professional context it often happens that private clients corder a publication to be made.",
+    icon: "lni-heart",
+  },
+  {
     name: "Graphic Design",
     description:
       "In a professional context it often happens that private clients corder a publication to be made.",
     icon: "lni-brush-alt",
   },
   {
-    name: "Bootstrap support",
+    name: "Ads & Analytics",
     description:
       "In a professional context it often happens that private clients corder a publication to be made.",
-    icon: "lni-check-mark-circle",
+    icon: "lni-bar-chart",
   },
   {
-    name: "Portfolio of works",
+    name: "Training & Consultancy",
     description:
       "In a professional context it often happens that private clients corder a publication to be made.",
-    icon: "lni-heart",
-  },
-  {
-    name: "Responsive Theme",
-    description:
-      "In a professional context it often happens that private clients corder a publication to be made.",
-    icon: "lni-mobile",
-  },
-  {
-    name: "Go Beyond Limits",
-    description:
-      "In a professional context it often happens that private clients corder a publication to be made.",
-    icon: "lni-world",
-  },
-  {
-    name: "Tuccia in love",
-    description:
-      "In a professional context it often happens that private clients corder a publication to be made.",
-    icon: "lni-cup",
+    icon: "lni-mic",
   },
 ];

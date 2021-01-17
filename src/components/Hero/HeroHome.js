@@ -1,7 +1,7 @@
 import React from "react";
 import { socials } from "../../data/socials";
 
-function HeroHome({}) {
+function HeroHome({ }) {
   return (
     <section id="hero" className="hero-01 active">
       <div className="display-table">
@@ -21,8 +21,7 @@ function HeroHome({}) {
                     />
                   </h4>
                   <p className="max-width-450 mx-0 my-4">
-                    In a professional context it often happens that private
-                    clients corder a publication to be made.
+                    Hello! I am an enthusiastic and passionate Web&Social Media fanatic, specialized in the areas of branding, web development, content creation, advertising and social media. 
                   </p>
                   <ul className="list-inline hero-social">
                     {socials.map((social, index) => (

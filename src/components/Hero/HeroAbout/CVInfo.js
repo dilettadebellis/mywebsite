@@ -16,8 +16,7 @@ export default function () {
             About <span className="base-color">Me</span>
           </h2>
           <p className="text-muted max-width-450 mb-5">
-            In a professional context it often happens that private clients
-            corder a publication to be made.
+            Clear and precise communicator, persuasive when needed, highly organised in and out of work: that's me.
           </p>
         </div>
       </div>

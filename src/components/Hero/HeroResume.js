@@ -1,6 +1,6 @@
 import React from "react";
 import { experiences } from "../../data/experiences";
-import { educations } from "../../data/educations";
+import { education } from "../../data/education";
 import { workSkills, languageSkills } from "../../data/skills";
 import LangSkillItem from "../LangSkillItem";
 
@@ -17,8 +17,7 @@ function HeroResume() {
                     My <span className="base-color">Resume</span>
                   </h2>
                   <p className="text-muted max-width-450 mb-5">
-                    In a professional context it often happens that private
-                    clients corder a publication to be made.
+                  Thanks to the skills I got through my education and my working experience, I help companies and individuals to successfully achieve their goals online.
                   </p>
                 </div>
               </div>
@@ -31,7 +30,7 @@ function HeroResume() {
                   Education
                 </h3>
                 <div className="timeline-items box-border">
-                  {educations.map((edu, index) => (
+                  {education.map((edu, index) => (
                     <div key={index} className="timeline-item">
                       <div className="timeline-icon" />
                       <div className="timeline-contents">

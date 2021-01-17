@@ -1,24 +1,28 @@
 import React from "react";
 
 export default function () {
+
+  const now = new Date();
+  const startExp = new Date('2013-01-01');
+
   return (
     <div id="count-up" className="count-up text-center box-border">
       <div className="row">
         <div className="col-6 col-lg-3 my-3 count-item ">
           <div className="count-icon">
-            <i className="lni-download base-color" />
+            <i className="lni-coffee-cup base-color" />
           </div>
           <div className="my-3">
             <span
               className="timer count-number"
               data-from="0"
-              data-to="286"
-              data-speed="5000"
+              data-to="3460"
+              data-speed="2000"
             >
               0
             </span>
           </div>
-          <p className="mb-0">Files Download</p>
+          <p className="mb-0">Cappucinos Consumed</p>
         </div>
 
         <div className="col-6 col-lg-3 my-3 count-item ">
@@ -29,30 +33,30 @@ export default function () {
             <span
               className="timer count-number"
               data-from="0"
-              data-to="6549"
-              data-speed="5000"
+              data-to="100"
+              data-speed="2000"
             >
               0
             </span>
           </div>
-          <p className="mb-0">Project Done</p>
+          <p className="mb-0">Projects Done</p>
         </div>
 
         <div className="col-6 col-lg-3 my-3 count-item ">
           <div className="count-icon">
-            <i className="lni-medall  base-color" />
+            <i className="lni-timer  base-color" />
           </div>
           <div className="my-3">
             <span
               className="timer count-number"
               data-from="0"
-              data-to="793"
-              data-speed="5000"
+              data-to={now.getFullYear() - startExp.getFullYear()}
+              data-speed="2000"
             >
               0
             </span>
           </div>
-          <p className="mb-0">Get Award</p>
+          <p className="mb-0">Years of Experience</p>
         </div>
 
         <div className="col-6 col-lg-3 my-3 count-item ">
@@ -63,13 +67,13 @@ export default function () {
             <span
               className="timer count-number"
               data-from="0"
-              data-to="286"
-              data-speed="5000"
+              data-to="18000"
+              data-speed="2000"
             >
               0
             </span>
           </div>
-          <p className="mb-0">Happy Client</p>
+          <p className="mb-0">Hours Worked</p>
         </div>
       </div>
     </div>
