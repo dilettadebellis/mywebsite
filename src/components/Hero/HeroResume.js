@@ -1,6 +1,10 @@
 import React from "react";
+import { experiences } from "../../data/experiences";
+import { educations } from "../../data/educations";
+import { workSkills, languageSkills } from "../../data/skills";
+import LangSkillItem from "../LangSkillItem";
 
-function HeroResume({}) {
+function HeroResume() {
   return (
     <section id="resume" className="resume">
       <div className="display-table">
@@ -27,60 +31,22 @@ function HeroResume({}) {
                   Education
                 </h3>
                 <div className="timeline-items box-border">
-                  <div className="timeline-item">
-                    <div className="timeline-icon" />
-                    <div className="timeline-contents">
-                      <div className="time-line-header">
-                        <h6 className="timeline-title">
-                          Master In Computer Science
-                        </h6>
-                        <p className="timeline-year">2008 - 2012</p>
-                      </div>
-                      <div className="timeline-content">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Quisque scelerisque diam non nisi semper, et
-                          elementum lorem ornare.
-                        </p>
+                  {educations.map((edu, index) => (
+                    <div key={index} className="timeline-item">
+                      <div className="timeline-icon" />
+                      <div className="timeline-contents">
+                        <div className="time-line-header">
+                          <h6 className="timeline-title">{edu.name}</h6>
+                          <p className="timeline-year">
+                            {edu.started} - {edu.completed}
+                          </p>
+                        </div>
+                        <div className="timeline-content">
+                          <p>{edu.description}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-
-                  <div className="timeline-item">
-                    <div className="timeline-icon" />
-                    <div className="timeline-contents">
-                      <div className="time-line-header">
-                        <h6 className="timeline-title">
-                          Studied at New York University
-                        </h6>
-                        <p className="timeline-year">2012 - 2014</p>
-                      </div>
-                      <div className="timeline-content">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Quisque scelerisque diam non nisi semper, et
-                          elementum lorem ornare.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="timeline-item">
-                    <div className="timeline-icon" />
-                    <div className="timeline-contents">
-                      <div className="time-line-header">
-                        <h6 className="timeline-title">UI/UX Developer </h6>
-                        <p className="timeline-year">2014 - 2015</p>
-                      </div>
-                      <div className="timeline-content">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Quisque scelerisque diam non nisi semper, et
-                          elementum lorem ornare.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
               <div className="col-lg-6 mt-5 mt-lg-0">
@@ -89,60 +55,22 @@ function HeroResume({}) {
                   Experience
                 </h3>
                 <div className="timeline-items box-border">
-                  <div className="timeline-item">
-                    <div className="timeline-icon" />
-                    <div className="timeline-contents">
-                      <div className="time-line-header">
-                        <h6 className="timeline-title">
-                          Master In Computer Science
-                        </h6>
-                        <p className="timeline-year">2008 - 2012</p>
-                      </div>
-                      <div className="timeline-content">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Quisque scelerisque diam non nisi semper, et
-                          elementum lorem ornare.
-                        </p>
+                  {experiences.map((exp, index) => (
+                    <div className="timeline-item">
+                      <div className="timeline-icon" />
+                      <div className="timeline-contents">
+                        <div className="time-line-header">
+                          <h6 className="timeline-title">{exp.name}</h6>
+                          <p className="timeline-year">
+                            {exp.started} - {exp.completed}
+                          </p>
+                        </div>
+                        <div className="timeline-content">
+                          <p>{exp.description}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-
-                  <div className="timeline-item">
-                    <div className="timeline-icon" />
-                    <div className="timeline-contents">
-                      <div className="time-line-header">
-                        <h6 className="timeline-title">
-                          Studied at New York University
-                        </h6>
-                        <p className="timeline-year">2012 - 2014</p>
-                      </div>
-                      <div className="timeline-content">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Quisque scelerisque diam non nisi semper, et
-                          elementum lorem ornare.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="timeline-item">
-                    <div className="timeline-icon" />
-                    <div className="timeline-contents">
-                      <div className="time-line-header">
-                        <h6 className="timeline-title">UI/UX Developer </h6>
-                        <p className="timeline-year">2014 - 2015</p>
-                      </div>
-                      <div className="timeline-content">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Quisque scelerisque diam non nisi semper, et
-                          elementum lorem ornare.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -155,34 +83,19 @@ function HeroResume({}) {
                   </h3>
                 </div>
                 <div id="skills" className="skill-box box-border">
-                  <div className="skillbar clearfix" data-percent="95%">
-                    <div className="skillbar-title">
-                      <span>HTML</span>
+                  {workSkills.map((skill, index) => (
+                    <div
+                      key={index}
+                      className="skillbar clearfix"
+                      data-percent={`${skill.value}%`}
+                    >
+                      <div className="skillbar-title">
+                        <span>{skill.name}</span>
+                      </div>
+                      <div className="skillbar-bar fill-skillbar" />
+                      <div className="skill-bar-percent">{skill.value}%</div>
                     </div>
-                    <div className="skillbar-bar fill-skillbar" />
-                    <div className="skill-bar-percent">95%</div>
-                  </div>
-                  <div className="skillbar clearfix " data-percent="85%">
-                    <div className="skillbar-title">
-                      <span>CSS</span>
-                    </div>
-                    <div className="skillbar-bar fill-skillbar" />
-                    <div className="skill-bar-percent">85%</div>
-                  </div>
-                  <div className="skillbar clearfix" data-percent="75%">
-                    <div className="skillbar-title">
-                      <span>PHP</span>
-                    </div>
-                    <div className="skillbar-bar fill-skillbar" />
-                    <div className="skill-bar-percent">75%</div>
-                  </div>
-                  <div className="skillbar clearfix" data-percent="80%">
-                    <div className="skillbar-title">
-                      <span>JQuery</span>
-                    </div>
-                    <div className="skillbar-bar fill-skillbar" />
-                    <div className="skill-bar-percent">80%</div>
-                  </div>
+                  ))}
                 </div>
               </div>
               <div className="col-lg-6">
@@ -192,116 +105,13 @@ function HeroResume({}) {
                   </h3>
                 </div>
                 <div className="language-bar box-border">
-                  <div className="language-skill row">
-                    <h4 className="col-6 text-left mb-0">
-                      English <span> Fluent</span>
-                    </h4>
-                    <ul className="col-6 list-inline text-right mb-0">
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star-half-empty" />
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="language-skill row">
-                    <h4 className="col-6 text-left mb-0">
-                      Arabic <span> Native</span>
-                    </h4>
-                    <ul className="col-6 list-inline text-right mb-0">
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star-half-empty" />
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="language-skill row">
-                    <h4 className="col-6 text-left mb-0">
-                      Indian <span> Basic</span>
-                    </h4>
-                    <ul className="col-6 list-inline text-right mb-0">
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star-o" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star-o" />
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="language-skill row">
-                    <h4 className="col-6 text-left mb-0">
-                      Germany <span> Basic</span>
-                    </h4>
-                    <ul className="col-6 list-inline text-right mb-0">
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star-o" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star-o" />
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="language-skill row">
-                    <h4 className="col-6 text-left mb-0">
-                      Turkey <span> Basic</span>
-                    </h4>
-                    <ul className="col-6 list-inline text-right mb-0">
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star-o" />
-                      </li>
-                      <li className="list-inline-item">
-                        <i className="fa fa-star-o" />
-                      </li>
-                    </ul>
-                  </div>
+                  {languageSkills.map((skill, index) => (
+                    <LangSkillItem
+                      name={skill.name}
+                      comment={skill.comment}
+                      value={skill.value}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
