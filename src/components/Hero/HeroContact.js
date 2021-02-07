@@ -149,8 +149,8 @@ function HeroContact({}) {
             <div className="row copy-right">
               <div className="col-12 text-center">
                 <p>
-                  Copyright © 2019. Template has been designed by{" "}
-                  <span className="base-color">Retrina</span>
+                  Copyright © {new Date().getFullYear()}{" "}
+                  <span className="base-color">Diletta De Bellis</span>
                 </p>
               </div>
             </div>
