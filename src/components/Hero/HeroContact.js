@@ -13,8 +13,7 @@ function HeroContact({}) {
                     Get <span className="base-color">in Touch</span>
                   </h2>
                   <p className="text-muted mb-5 max-width-450">
-                    In a professional context it often happens that private
-                    clients corder a publication to be made.
+                    Do you want to work together? I would be happy to!
                   </p>
                 </div>
               </div>
@@ -26,22 +25,22 @@ function HeroContact({}) {
                     <i className="lni-phone-handset size-md" />
                   </div>
                   <div className="mt-3">
-                    <h5 className="text-dark mb-0">Call Us On</h5>
-                    <small className="text-muted">+123 456 7890</small>
+                    <h5 className="text-dark mb-0">Call Me On</h5>
+                    <small className="text-muted">+39 333 92 82 218</small>
                   </div>
                 </div>
               </div>
               <div className="col-lg-4 mt-5">
                 <div className="text-center">
                   <div className="base-color">
-                    <i className="lni-map-marker size-md" />
+                    <i className="lni-skype size-md" />
                   </div>
                   <div className="mt-3">
                     <h5 className="text-dark mb-0 contact_detail-title">
-                      Visit Office
+                      Add Me On Skype
                     </h5>
                     <small className="text-muted">
-                      24 Street, New York, United State.
+                      dileta.de.bellis
                     </small>
                   </div>
                 </div>
@@ -52,8 +51,8 @@ function HeroContact({}) {
                     <i className="lni-pointer size-md" />
                   </div>
                   <div className="mt-3">
-                    <h5 className="text-dark mb-0">Email Us At</h5>
-                    <small className="text-muted">abc@gmail.com</small>
+                    <h5 className="text-dark mb-0">Email Me At</h5>
+                    <small className="text-muted">hello@dilettadebellis.it</small>
                   </div>
                 </div>
               </div>

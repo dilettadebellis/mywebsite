@@ -8,20 +8,12 @@ export const worksFilters = [
     name: "Web Design",
   },
   {
-    code: ".mobiledesign",
-    name: "Mobile Design",
+    code: ".ecommerce",
+    name: "E-commerce",
   },
   {
-    code: ".seo",
-    name: "Seo",
-  },
-  {
-    code: ".graphic",
-    name: "Graphic",
-  },
-  {
-    code: ".analytics",
-    name: "Google Analytics",
+    code: ".branding",
+    name: "Branding",
   },
 ];
 
@@ -30,25 +22,23 @@ export const defaultMainImage = "https://placehold.co/600x450";
 
 export const works = [
   {
-    coverImage: "assets/img/responsive-design(1).svg",
-    name: "My Work 1",
-    filters: ["seo"],
-    longName: ["My Work 1", "long name"],
+    coverImage: "assets/img/diletta-de-bellis-portfolio-farmacia-bianchi-ecommerce.jpg",
+    name: "Farmacia Bianchi",
+    filters: ["ecommerce"],
+    longName: ["E-commerce", "Farmacia Bianchi"],
     shortDescription:
-      "Short description 1: In a professional context it often happens that private clients corder a publication to be made.",
+      "E-commerce creation",
     client: "Diletta De Bellis",
-    completedOn: "2019-9-30",
-    skills: ["HTML5", "PHP", "CSS3"],
-    mainImage: "assets/img/responsive-design.svg",
+    completedOn: "2020-10-30",
+    skills: ["Wordpress", "WooCommerce"],
+    mainImage: "assets/img/diletta-de-bellis-portfolio-farmacia-bianchi-2.jpg",
     longDescription: [
-      "Long description 1:",
-      "These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.",
-      "These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.",
+      "Study, design and implementation of the new e-commerce for the Pharmacy Dott. Amleto Bianchi. Perfectly integrated with the management software, it guarantees a dynamic workflow. Everything, of course, has been developed with great attention to responsiveness.",
     ],
   },
   {
     coverImage: "",
-    name: "My Work 2",
+    name: "Le Corone",
     filters: ["seo", "webdesign", "analytics"],
     longName: ["My Work 2", "long name"],
     shortDescription:

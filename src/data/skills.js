@@ -1,18 +1,18 @@
 export const workSkills = [
   {
-    name: "HTML",
-    value: 95,
-  },
-  {
-    name: "CSS",
+    name: "Web Copywriting",
     value: 85,
   },
   {
-    name: "JavaScript",
-    value: 75,
+    name: "Social Media Marketing",
+    value: 95,
   },
   {
-    name: "JQuery",
+    name: "Google Ads",
+    value: 90,
+  },
+  {
+    name: "Google Analytics",
     value: 80,
   },
 ];
@@ -32,10 +32,5 @@ export const languageSkills = [
     name: "French",
     comment: "Basic",
     value: [1, 1, 1, 0, 0],
-  },
-  {
-    name: "Germany",
-    comment: "Basic",
-    value: [1, 1, 0.5, 0, 0],
   },
 ];

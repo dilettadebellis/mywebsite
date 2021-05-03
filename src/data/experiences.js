@@ -1,23 +1,30 @@
 export const experiences = [
   {
-    name: "Graphic Designer",
-    started: "2015",
-    completed: "2017",
+    name: "Digital Marketing Manager",
+    started: "2021",
+    completed: "now",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare.",
+      "3Tech srl",
   },
   {
     name: "Web Marketing Specialist",
-    started: "2017",
-    completed: "2019",
+    started: "2019",
+    completed: "2021",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare.",
+      "Anek Lines Italia srl",
   },
   {
-    name: "Seo Manager",
-    started: "2019",
-    completed: "now",
+    name: "Web & Social Media Marketing",
+    started: "2016",
+    completed: "2019",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare.",
+      "We3 srl",
+  },
+  {
+    name: "Web & Social Media Marketing",
+    started: "2016",
+    completed: "2016",
+    description:
+      "Arredamenti Camilletti srl",
   },
 ];
