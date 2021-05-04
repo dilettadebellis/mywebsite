@@ -1,8 +1,21 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
 import { mappings } from "../data";
 
+export const langMapping = {
+  en_GB: {
+    code: "en_GB",
+    short: "en",
+    name: "English",
+  },
+  it_IT: {
+    code: "it_IT",
+    short: "it",
+    name: "Italiano",
+  },
+};
+
 const initialState = {
-  lang: "en_GB",
+  lang: langMapping.en_GB.code,
 };
 
 const GlobalContext = createContext({
@@ -11,6 +24,11 @@ const GlobalContext = createContext({
 
 export const GlobalProvider = ({ children }) => {
   const [lang, setLang] = useState(initialState.lang);
+  const [texts, setTexts] = useState(mappings[lang]);
+
+  useEffect(() => {
+    setTexts(mappings[lang]);
+  }, [lang]);
 
   const getText = (code, module = null) => {
     if (module === null) {
@@ -25,6 +43,7 @@ export const GlobalProvider = ({ children }) => {
       value={{
         lang,
         setLang,
+        texts,
         getText,
       }}
     >

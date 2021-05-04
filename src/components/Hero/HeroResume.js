@@ -1,13 +1,14 @@
 import React from "react";
 import { experiences } from "../../data/experiences";
 import { education } from "../../data/education";
-import { workSkills, languageSkills } from "../../data/skills";
 import LangSkillItem from "../LangSkillItem";
 import Footer from "../Footer";
 import useGlobalState from "../../lib/globalState";
 
 function HeroResume() {
-  const { getText } = useGlobalState();
+  const { texts } = useGlobalState();
+  const globalTexts = texts.global;
+  const skillsTexts = texts.skills;
 
   return (
     <section id="resume" className="resume">
@@ -84,15 +85,15 @@ function HeroResume() {
               <div className="col-lg-6">
                 <div>
                   <h3 className="mb-0">
-                    {getText("heroResumeWork")}{" "}
+                    {globalTexts.heroResumeWork}{" "}
                     <span className="base-color">
                       {" "}
-                      {getText("heroResumeWorkSkills")}
+                      {globalTexts.heroResumeWorkSkills}
                     </span>
                   </h3>
                 </div>
                 <div id="skills" className="skill-box box-border">
-                  {getText("workSkills", "skills").map((skill, index) => (
+                  {skillsTexts.workSkills.map((skill, index) => (
                     <div
                       key={index}
                       className="skillbar clearfix"
@@ -110,15 +111,15 @@ function HeroResume() {
               <div className="col-lg-6">
                 <div>
                   <h3 className="mb-0 mt-5 mt-lg-0">
-                    {getText("heroResumeLang")}{" "}
+                    {globalTexts.heroResumeLang}{" "}
                     <span className="base-color">
                       {" "}
-                      {getText("heroResumeLangSkills")}
+                      {globalTexts.heroResumeLangSkills}
                     </span>
                   </h3>
                 </div>
                 <div className="language-bar box-border">
-                  {getText("languageSkills", "skills").map((skill, index) => (
+                  {skillsTexts.languageSkills.map((skill, index) => (
                     <LangSkillItem
                       name={skill.name}
                       comment={skill.comment}

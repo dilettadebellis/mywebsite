@@ -3,7 +3,8 @@ import { socials } from "../../data/socials";
 import useGlobalState from "../../lib/globalState";
 
 function HeroHome({}) {
-  const { getText } = useGlobalState();
+  const { texts } = useGlobalState();
+  const globalTexts = texts.global;
 
   return (
     <section id="hero" className="hero-01 active">
@@ -14,18 +15,18 @@ function HeroHome({}) {
               <div className="col-lg-12">
                 <div className="hero-content">
                   <h1 className="mb-3">
-                    {getText("heroHomeIm")}{" "}
+                    {globalTexts.heroHomeIm}{" "}
                     <span className="base-color"> Diletta De Bellis</span>
                   </h1>
                   <h4 className="text-capitalize mb-0">
-                    <span className="base-color">{getText("heroHomeA")} </span>{" "}
+                    <span className="base-color">{globalTexts.heroHomeA} </span>{" "}
                     <span
                       className="element"
-                      data-elements={getText("heroHomeDefinition")}
+                      data-elements={globalTexts.heroHomeDefinition}
                     />
                   </h4>
                   <p className="max-width-450 mx-0 my-4">
-                    {getText("heroHomeDescription")}
+                    {globalTexts.heroHomeDescription}
                   </p>
                   <ul className="list-inline hero-social">
                     {socials.map((social, index) => (

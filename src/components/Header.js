@@ -1,9 +1,21 @@
 import React from "react";
+import useGlobalState, { langMapping } from "../lib/globalState";
 
 function Header({}) {
+  const { lang, setLang } = useGlobalState();
+
   const handleMenuLogoClick = (e) => {
     e.preventDefault();
     window.history.replaceState(window.history.state, null, "/");
+  };
+
+  const handleChangeLang = (e) => {
+    e.preventDefault();
+    setLang(
+      lang === langMapping.en_GB.code
+        ? langMapping.it_IT.code
+        : langMapping.en_GB.code
+    );
   };
 
   return (
@@ -59,6 +71,18 @@ function Header({}) {
           <span>
             <i className="text-white lni-menu" />
           </span>
+        </div>
+        <div className="menu lang-toggler">
+          <li className="list-group-item text-center">
+            <a href="#!" onClick={(e) => handleChangeLang(e)}>
+              <i className="fa fa-flag" />
+              <span>
+                {lang === langMapping.en_GB.code
+                  ? langMapping.it_IT.name
+                  : langMapping.en_GB.name}
+              </span>
+            </a>
+          </li>
         </div>
       </div>
     </header>
