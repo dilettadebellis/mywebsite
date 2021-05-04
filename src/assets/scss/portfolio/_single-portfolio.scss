@@ -10,6 +10,14 @@
   text-shadow: none;
 }
 
+.portfolio-single {
+  .carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+}
+
 .portfolio-single img {
   border-radius: 1rem;
   width: 100%;

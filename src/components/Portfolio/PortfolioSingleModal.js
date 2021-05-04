@@ -8,7 +8,7 @@ function PortfolioSingleModal({
   client,
   completedOn,
   skills,
-  mainImage,
+  mainImages,
   longDescription,
   modalId,
 }) {
@@ -81,13 +81,54 @@ function PortfolioSingleModal({
                     </div>
                     <div className="mt-5">
                       <div className="portfolio-single-item image-border">
-                        <img
-                          src={
-                            mainImage.length > 0 ? mainImage : defaultMainImage
-                          }
-                          className="d-block"
-                          alt={name}
-                        />
+                        <div
+                          id="portfolio-slider"
+                          className="carousel slide"
+                          data-ride="carousel"
+                        >
+                          {mainImages.length > 1 ? (
+                            <ol className="carousel-indicators">
+                              {mainImages.map((image, index) => (
+                                <li
+                                  key={index}
+                                  data-target="#portfolio-slider"
+                                  data-slide-to={index}
+                                  className={`${index === 0 ? "active" : ""}`}
+                                />
+                              ))}
+                            </ol>
+                          ) : null}
+                          <div className="carousel-inner">
+                            {mainImages.length > 1 ? (
+                              mainImages.map((image, index) => (
+                                <div
+                                  key={index}
+                                  className={`carousel-item ${
+                                    index === 0 ? "active" : ""
+                                  }`}
+                                >
+                                  <img
+                                    src={image}
+                                    className="d-block"
+                                    alt={name}
+                                  />
+                                </div>
+                              ))
+                            ) : mainImages.length === 0 ? (
+                              <img
+                                src={defaultMainImage}
+                                className="d-block"
+                                alt={name}
+                              />
+                            ) : (
+                              <img
+                                src={mainImages[0]}
+                                className="d-block"
+                                alt={name}
+                              />
+                            )}
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div className="text-md-left mt-5">

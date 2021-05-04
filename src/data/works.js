@@ -22,16 +22,19 @@ export const defaultMainImage = "https://placehold.co/600x450";
 
 export const works = [
   {
-    coverImage: "assets/img/diletta-de-bellis-portfolio-farmacia-bianchi-ecommerce.jpg",
+    coverImage:
+      "assets/img/diletta-de-bellis-portfolio-farmacia-bianchi-ecommerce.jpg",
     name: "Farmacia Bianchi",
     filters: ["ecommerce"],
     longName: ["E-commerce", "Farmacia Bianchi"],
-    shortDescription:
-      "E-commerce creation",
+    shortDescription: "E-commerce creation",
     client: "Farmacia Dott. Amleto Bianchi",
     completedOn: "2020-10-30",
     skills: ["Wordpress", "WooCommerce"],
-    mainImage: "assets/img/diletta-de-bellis-portfolio-farmacia-bianchi-2.jpg",
+    mainImages: [
+      "assets/img/diletta-de-bellis-portfolio-farmacia-bianchi-2.jpg",
+      "assets/img/diletta-de-bellis-portfolio-farmacia-bianchi-ecommerce.jpg",
+    ],
     longDescription: [
       "Study, design and implementation of the new e-commerce for the Pharmacy Dott. Amleto Bianchi. Perfectly integrated with the management software, it guarantees a dynamic workflow. Everything, of course, has been developed with great attention to responsiveness.",
     ],
@@ -41,12 +44,11 @@ export const works = [
     name: "Le Corone",
     filters: ["seo", "webdesign", "analytics"],
     longName: ["My Work 2", "long name"],
-    shortDescription:
-      "Online and Offline Communication",
+    shortDescription: "Online and Offline Communication",
     client: "We3 srl",
     completedOn: "2021-12-30",
     skills: ["HTML5", "PHP", "CSS3"],
-    mainImage: "",
+    mainImages: [],
     longDescription: [
       "Creative solutions for both online and offline communication. Implementation of a new website to give proper space to the tradition of the company and all the collections. Realization of lookbooks, catalogues and fashion film to increase the efficiency of the digital presence.",
     ],
@@ -61,7 +63,7 @@ export const works = [
     client: "Diletta De Bellis",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
-    mainImage: "",
+    mainImages: [],
     longDescription: [
       "Website Design:",
       "Implementation of the new website for Pop Lab, a kids party planner agency. A creative website, able to convey the family-oriented vision and the innovative way of doing of the team.",
@@ -77,7 +79,7 @@ export const works = [
     client: "Associazione Virgilio 2090",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
-    mainImage: "",
+    mainImages: [],
     longDescription: [
       "Long description 4:",
       "These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.",
@@ -94,7 +96,7 @@ export const works = [
     client: "Diletta De Bellis",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
-    mainImage: "",
+    mainImages: [],
     longDescription: [
       "Long description 5:",
       "These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.",
@@ -111,7 +113,7 @@ export const works = [
     client: "Diletta De Bellis",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
-    mainImage: "",
+    mainImages: [],
     longDescription: [
       "Long description 6:",
       "These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.",
@@ -128,7 +130,7 @@ export const works = [
     client: "Diletta De Bellis",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
-    mainImage: "",
+    mainImages: [],
     longDescription: [
       "Long description 7:",
       "These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.",
@@ -145,7 +147,7 @@ export const works = [
     client: "Diletta De Bellis",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
-    mainImage: "",
+    mainImages: [],
     longDescription: [
       "Long description 8:",
       "These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.",
@@ -162,7 +164,7 @@ export const works = [
     client: "Diletta De Bellis",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
-    mainImage: "",
+    mainImages: [],
     longDescription: [
       "Long description 9:",
       "These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.",
@@ -179,7 +181,7 @@ export const works = [
     client: "Diletta De Bellis",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
-    mainImage: "",
+    mainImages: [],
     longDescription: [
       "Long description 10:",
       "These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.",
@@ -196,7 +198,7 @@ export const works = [
     client: "Diletta De Bellis",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
-    mainImage: "",
+    mainImages: [],
     longDescription: [
       "Long description 11:",
       "These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.",
