@@ -7,6 +7,26 @@ const Footer = () => {
         <p>
           Copyright © {new Date().getFullYear()}{" "}
           <span className="base-color">Diletta De Bellis</span>
+          {" | "}
+          <a
+            className="footer-link"
+            href="#!"
+            onClick={(e) => e.preventDefault()}
+            data-toggle="modal"
+            data-target={`#privacy-policy-modal`}
+          >
+            Privacy policy
+          </a>
+          {" - "}
+          <a
+            className="footer-link"
+            href="#!"
+            onClick={(e) => e.preventDefault()}
+            data-toggle="modal"
+            data-target={`#cookie-policy-modal`}
+          >
+            Cookie policy
+          </a>
         </p>
       </div>
     </div>

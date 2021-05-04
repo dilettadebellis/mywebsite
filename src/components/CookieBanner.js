@@ -47,7 +47,13 @@ export default function ({}) {
             Cookies allow us to deliver and improve our web content and to
             provide you with a personalized experience. Our website uses cookies
             for these purposes.{" "}
-            <a className="cookie-banner-link" href="#">
+            <a
+              className="cookie-banner-link"
+              href="#!"
+              onClick={(e) => e.preventDefault()}
+              data-toggle="modal"
+              data-target={`#cookie-policy-modal`}
+            >
               Learn more.
             </a>
           </p>

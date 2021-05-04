@@ -11,6 +11,8 @@ import NextPrevPage from "./components/NextPrevPage";
 import BlogSingleModal from "./components/BlogSingleModal";
 import PortfolioModals from "./components/Portfolio/PortfolioModals";
 import CookieBanner from "./components/CookieBanner";
+import CookiePolicyModal from "./components/CookiePolicyModal";
+import PrivacyPolicyModal from "./components/PrivacyPolicyModal";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
         </main>
         <NextPrevPage />
         <CookieBanner />
+        <CookiePolicyModal />
+        <PrivacyPolicyModal />
       </div>
     </CookiesProvider>
   );

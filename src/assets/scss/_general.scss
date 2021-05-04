@@ -150,4 +150,12 @@ a, button {
 .footer-wrapper {
   position: relative;
   top: 5rem;
+
+  .footer-link {
+    color: inherit;
+
+    &:hover {
+      color: $pink-color;
+    }
+  }
 }
