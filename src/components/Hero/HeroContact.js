@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../Footer";
 
 function HeroContact({}) {
   return (
@@ -39,9 +40,7 @@ function HeroContact({}) {
                     <h5 className="text-dark mb-0 contact_detail-title">
                       Add Me On Skype
                     </h5>
-                    <small className="text-muted">
-                      dileta.de.bellis
-                    </small>
+                    <small className="text-muted">dileta.de.bellis</small>
                   </div>
                 </div>
               </div>
@@ -52,7 +51,9 @@ function HeroContact({}) {
                   </div>
                   <div className="mt-3">
                     <h5 className="text-dark mb-0">Email Me At</h5>
-                    <small className="text-muted">hello@dilettadebellis.it</small>
+                    <small className="text-muted">
+                      hello@dilettadebellis.it
+                    </small>
                   </div>
                 </div>
               </div>
@@ -145,14 +146,7 @@ function HeroContact({}) {
                 </form>
               </div>
             </div>
-            <div className="row copy-right">
-              <div className="col-12 text-center">
-                <p>
-                  Copyright © {new Date().getFullYear()}{" "}
-                  <span className="base-color">Diletta De Bellis</span>
-                </p>
-              </div>
-            </div>
+            <Footer />
           </div>
         </div>
       </div>

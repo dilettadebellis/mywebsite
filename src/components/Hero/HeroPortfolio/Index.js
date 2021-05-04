@@ -1,6 +1,7 @@
 import React from "react";
 import PortfolioItem from "./PortfolioItem";
 import { works, worksFilters } from "../../../data/works";
+import Footer from "../../Footer";
 
 export default function () {
   return (
@@ -71,6 +72,7 @@ export default function () {
               </div>
             </div>
           </div>
+          <Footer />
         </div>
       </div>
     </section>

@@ -3,6 +3,7 @@ import CVInfo from "./CVInfo";
 import AboutInfo from "./AboutInfo";
 import Services from "./Services";
 import ClientSays from "./ClientSays";
+import Footer from "../../Footer";
 
 function Index({}) {
   return (
@@ -14,6 +15,7 @@ function Index({}) {
             <AboutInfo />
             <Services />
             {/*<ClientSays />*/}
+            <Footer />
           </div>
         </div>
       </div>

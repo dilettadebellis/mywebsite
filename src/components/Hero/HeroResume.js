@@ -3,6 +3,7 @@ import { experiences } from "../../data/experiences";
 import { education } from "../../data/education";
 import { workSkills, languageSkills } from "../../data/skills";
 import LangSkillItem from "../LangSkillItem";
+import Footer from "../Footer";
 
 function HeroResume() {
   return (
@@ -17,7 +18,9 @@ function HeroResume() {
                     My <span className="base-color">Resume</span>
                   </h2>
                   <p className="text-muted max-width-450 mb-5">
-                  Thanks to the skills I got through my education and my working experience, I help companies and individuals to successfully achieve their goals online.
+                    Thanks to the skills I got through my education and my
+                    working experience, I help companies and individuals to
+                    successfully achieve their goals online.
                   </p>
                 </div>
               </div>
@@ -114,6 +117,7 @@ function HeroResume() {
                 </div>
               </div>
             </div>
+            <Footer />
           </div>
         </div>
       </div>
