@@ -16,8 +16,7 @@ export default function () {
                     My <span className="base-color">Works</span>
                   </h2>
                   <p className="text-muted mb-5 max-width-450">
-                    In a professional context it often happens that private
-                    clients corder a publication to be made.
+                    You can find some of my works here. Enjoy!
                   </p>
                 </div>
               </div>
@@ -64,11 +63,11 @@ export default function () {
                     data-next="3"
                   />
                 </div>
-                <div className="button-border d-inline-block">
+                {/* <div className="button-border d-inline-block">
                   <a href="portfolio.html" className="pill-button">
                     Portfolio Page
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
