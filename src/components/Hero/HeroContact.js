@@ -1,7 +1,10 @@
 import React from "react";
 import Footer from "../Footer";
+import useGlobalState from "../../lib/globalState";
 
 function HeroContact({}) {
+  const { texts } = useGlobalState();
+  const contactTexts = texts.global.heroContact;
   return (
     <section id="contact" className="contact">
       <div className="display-table">
@@ -11,10 +14,11 @@ function HeroContact({}) {
               <div className="col-lg-12">
                 <div className="text-center title">
                   <h2 className="text-dark">
-                    Get <span className="base-color">in Touch</span>
+                    {contactTexts.titleWhite}{" "}
+                    <span className="base-color">{contactTexts.titlePink}</span>
                   </h2>
                   <p className="text-muted mb-5 max-width-450">
-                    Do you want to work together? I would be happy to!
+                    {contactTexts.subTitle}
                   </p>
                 </div>
               </div>
@@ -26,8 +30,10 @@ function HeroContact({}) {
                     <i className="lni-phone-handset size-md" />
                   </div>
                   <div className="mt-3">
-                    <h5 className="text-dark mb-0">Call Me On</h5>
-                    <small className="text-muted">+39 333 92 82 218</small>
+                    <h5 className="text-dark mb-0">{contactTexts.callMe}</h5>
+                    <small className="text-muted">
+                      {contactTexts.callMeValue}
+                    </small>
                   </div>
                 </div>
               </div>
@@ -38,7 +44,7 @@ function HeroContact({}) {
                   </div>
                   <div className="mt-3">
                     <h5 className="text-dark mb-0 contact_detail-title">
-                      Add Me On Skype
+                      {contactTexts.addMeOnSkype}
                     </h5>
                     <small className="text-muted">dileta.de.bellis</small>
                   </div>
@@ -50,7 +56,7 @@ function HeroContact({}) {
                     <i className="lni-pointer size-md" />
                   </div>
                   <div className="mt-3">
-                    <h5 className="text-dark mb-0">Email Me At</h5>
+                    <h5 className="text-dark mb-0">{contactTexts.emailMe}</h5>
                     <small className="text-muted">
                       hello@dilettadebellis.it
                     </small>
@@ -69,7 +75,7 @@ function HeroContact({}) {
                           id="name"
                           type="text"
                           className="form-control"
-                          placeholder="Your Name*"
+                          placeholder={contactTexts.name}
                           required
                         />
                       </div>
@@ -81,7 +87,7 @@ function HeroContact({}) {
                           id="email"
                           type="email"
                           className="form-control"
-                          placeholder="Your Email*"
+                          placeholder={contactTexts.email}
                           required
                         />
                       </div>
@@ -93,7 +99,7 @@ function HeroContact({}) {
                           id="subject"
                           type="text"
                           className="form-control"
-                          placeholder="Your Subject*"
+                          placeholder={contactTexts.subject}
                           required
                         />
                       </div>
@@ -105,7 +111,7 @@ function HeroContact({}) {
                           id="comments"
                           rows="4"
                           className="form-control"
-                          placeholder="Your message..."
+                          placeholder={contactTexts.message}
                         />
                       </div>
                     </div>
@@ -117,7 +123,7 @@ function HeroContact({}) {
                           id="submit-btn"
                           onClick="sendEmail()"
                         >
-                          Send Message
+                          {contactTexts.sendMessage}
                         </a>
                       </div>
                       <div

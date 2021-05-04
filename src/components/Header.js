@@ -2,7 +2,8 @@ import React from "react";
 import useGlobalState, { langMapping } from "../lib/globalState";
 
 function Header({}) {
-  const { lang, setLang } = useGlobalState();
+  const { lang, setLang, texts } = useGlobalState();
+  const navbarTexts = texts.global.navbar;
 
   const handleMenuLogoClick = (e) => {
     e.preventDefault();
@@ -33,25 +34,25 @@ function Header({}) {
           <li className="list-group-item">
             <a className="active" href="#hero" onClick={handleMenuLogoClick}>
               <i className="fa fa-home" />
-              <span>home</span>
+              <span>{navbarTexts.home}</span>
             </a>
           </li>
           <li className="list-group-item">
             <a href="#about">
               <i className="fa fa-user" />
-              <span>about</span>
+              <span>{navbarTexts.about}</span>
             </a>
           </li>
           <li className="list-group-item">
             <a href="#resume">
               <i className="fa fa-address-book" />
-              <span>resume</span>
+              <span>{navbarTexts.resume}</span>
             </a>
           </li>
           <li className="list-group-item">
             <a href="#portfolio">
               <i className="fa fa-briefcase" />
-              <span>works</span>
+              <span>{navbarTexts.works}</span>
             </a>
           </li>
           {/*<li className="list-group-item">
@@ -63,7 +64,7 @@ function Header({}) {
           <li className="list-group-item">
             <a href="#contact">
               <i className="fa fa-envelope-open" />
-              <span>contact</span>
+              <span>{navbarTexts.contact}</span>
             </a>
           </li>
         </ul>

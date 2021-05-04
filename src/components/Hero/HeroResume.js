@@ -1,14 +1,14 @@
 import React from "react";
-import { experiences } from "../../data/experiences";
-import { education } from "../../data/education";
 import LangSkillItem from "../LangSkillItem";
 import Footer from "../Footer";
 import useGlobalState from "../../lib/globalState";
 
 function HeroResume() {
   const { texts } = useGlobalState();
-  const globalTexts = texts.global;
+  const resumeTexts = texts.global.heroResume;
   const skillsTexts = texts.skills;
+  const education = texts.education.education;
+  const experiences = texts.experiences.experiences;
 
   return (
     <section id="resume" className="resume">
@@ -19,12 +19,11 @@ function HeroResume() {
               <div className="col-lg-12">
                 <div className="text-center title">
                   <h2 className="text-dark">
-                    My <span className="base-color">Resume</span>
+                    {resumeTexts.titleWhite}{" "}
+                    <span className="base-color">{resumeTexts.titlePink}</span>
                   </h2>
                   <p className="text-muted max-width-450 mb-5">
-                    Thanks to the skills I got through my education and my
-                    working experience, I help companies and individuals to
-                    successfully achieve their goals online.
+                    {resumeTexts.subTitle}
                   </p>
                 </div>
               </div>
@@ -34,7 +33,7 @@ function HeroResume() {
               <div className="col-lg-6">
                 <h3 className="text-dark">
                   <i className="lni-graduation base-color" />
-                  Education
+                  {resumeTexts.education}
                 </h3>
                 <div className="timeline-items box-border">
                   {education.map((edu, index) => (
@@ -58,7 +57,7 @@ function HeroResume() {
               <div className="col-lg-6 mt-5 mt-lg-0">
                 <h3 className="text-dark">
                   <i className="lni-pencil base-color" />
-                  Experience
+                  {resumeTexts.experience}
                 </h3>
                 <div className="timeline-items box-border">
                   {experiences.map((exp, index) => (
@@ -85,10 +84,10 @@ function HeroResume() {
               <div className="col-lg-6">
                 <div>
                   <h3 className="mb-0">
-                    {globalTexts.heroResumeWork}{" "}
+                    {resumeTexts.work}{" "}
                     <span className="base-color">
                       {" "}
-                      {globalTexts.heroResumeWorkSkills}
+                      {resumeTexts.workSkills}
                     </span>
                   </h3>
                 </div>
@@ -111,10 +110,10 @@ function HeroResume() {
               <div className="col-lg-6">
                 <div>
                   <h3 className="mb-0 mt-5 mt-lg-0">
-                    {globalTexts.heroResumeLang}{" "}
+                    {resumeTexts.lang}{" "}
                     <span className="base-color">
                       {" "}
-                      {globalTexts.heroResumeLangSkills}
+                      {resumeTexts.langSkills}
                     </span>
                   </h3>
                 </div>

@@ -1,8 +1,12 @@
 import React from "react";
 import { downloadFile, getAge } from "../../../utils";
 import aboutMeImage from "../../../assets/img/diletta-de-bellis-03.jpg";
+import useGlobalState from "../../../lib/globalState";
 
 export default function () {
+  const { texts } = useGlobalState();
+  const cvTexts = texts.global.heroAbout.cvInfo;
+
   const downloadCV = (e) => {
     e.preventDefault();
     downloadFile("downloads/cv.pdf", "diletta-de-bellis.pdf");
@@ -13,10 +17,10 @@ export default function () {
       <div className="col-lg-12">
         <div className="text-center title">
           <h2 className="text-dark">
-            About <span className="base-color">Me</span>
+            {cvTexts.about} <span className="base-color">{cvTexts.me}</span>
           </h2>
           <p className="text-muted max-width-450 mb-5">
-            Clear and precise communicator, persuasive when needed, highly organised in and out of work: that's me.
+            {cvTexts.descriptionShort}
           </p>
         </div>
       </div>
@@ -28,32 +32,33 @@ export default function () {
       <div className="col-lg-6 mt-4 mt-lg-0">
         <div className="personal-item ">
           <h3 className="text-dark mt-4 mt-lg-0">
-            <span className="base-color">Web Marketing</span> Consultant
+            <span className="base-color">{cvTexts.jobNamePink}</span>{" "}
+            {cvTexts.jobNameWhite}
           </h3>
           <div className="row">
             <div className="col-6 personal-info">
               <ul className="list-unstyled pt-4">
                 <li>
                   <p>
-                    Birthday : <span> 18 November 1992</span>
+                    {cvTexts.birthday}: <span> {cvTexts.birthdayDay}</span>
                   </p>
                 </li>
                 <li>
                   <p>
-                    Website :{" "}
+                    {cvTexts.website}:{" "}
                     <a href="www.webfondente.com">
-                      <span> www.webfondente.com</span>
+                      <span> {cvTexts.websiteValue}</span>
                     </a>
                   </p>
                 </li>
                 <li>
                   <p>
-                    Phone : <span> 333 928 2218</span>
+                    {cvTexts.phone}: <span> {cvTexts.phoneValue}</span>
                   </p>
                 </li>
                 <li>
                   <p>
-                    City : <span> Ancona, Italy</span>
+                    {cvTexts.city}: <span>{cvTexts.cityValue}</span>
                   </p>
                 </li>
               </ul>
@@ -62,17 +67,17 @@ export default function () {
               <ul className="list-unstyled pt-4">
                 <li>
                   <p>
-                    Age : <span> {getAge("1992-11-18")}</span>
+                    {cvTexts.age}: <span> {getAge("1992-11-18")}</span>
                   </p>
                 </li>
                 <li>
                   <p>
-                    Degree : <span> Master</span>
+                    {cvTexts.degree}: <span> {cvTexts.degreeValue}</span>
                   </p>
                 </li>
                 <li>
                   <p>
-                    Mail :{" "}
+                    {cvTexts.mail}:{" "}
                     <a href="mailto:hello@dilettadebellis.it">
                       <span> hello@dilettadebellis.it</span>
                     </a>
@@ -80,7 +85,7 @@ export default function () {
                 </li>
                 <li>
                   <p>
-                    Freelance : <span> Available</span>
+                    {cvTexts.freelence}: <span> {cvTexts.freelenceValue}</span>
                   </p>
                 </li>
               </ul>
@@ -89,12 +94,12 @@ export default function () {
         </div>
         <div className="button-border mt-3 mb-lg-0 mr-4">
           <a onClick={downloadCV} className="pill-button">
-            Download Cv
+            {cvTexts.downloadCV}
           </a>
         </div>
         <div className="button-border mt-3 mb-lg-0 to-contact">
           <a href="#contact" className="pill-button">
-            Hire Me
+            {cvTexts.hireMe}
           </a>
         </div>
       </div>

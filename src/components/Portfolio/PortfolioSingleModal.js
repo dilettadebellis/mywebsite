@@ -82,7 +82,7 @@ function PortfolioSingleModal({
                     <div className="mt-5">
                       <div className="portfolio-single-item image-border">
                         <div
-                          id="portfolio-slider"
+                          id={`portfolio-slider-${modalId}`}
                           className="carousel slide"
                           data-ride="carousel"
                         >
@@ -91,7 +91,7 @@ function PortfolioSingleModal({
                               {mainImages.map((image, index) => (
                                 <li
                                   key={index}
-                                  data-target="#portfolio-slider"
+                                  data-target={`#portfolio-slider-${modalId}`}
                                   data-slide-to={index}
                                   className={`${index === 0 ? "active" : ""}`}
                                 />
