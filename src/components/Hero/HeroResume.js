@@ -4,8 +4,11 @@ import { education } from "../../data/education";
 import { workSkills, languageSkills } from "../../data/skills";
 import LangSkillItem from "../LangSkillItem";
 import Footer from "../Footer";
+import useGlobalState from "../../lib/globalState";
 
 function HeroResume() {
+  const { getText } = useGlobalState();
+
   return (
     <section id="resume" className="resume">
       <div className="display-table">
@@ -81,11 +84,15 @@ function HeroResume() {
               <div className="col-lg-6">
                 <div>
                   <h3 className="mb-0">
-                    Work <span className="base-color"> Skills</span>
+                    {getText("heroResumeWork")}{" "}
+                    <span className="base-color">
+                      {" "}
+                      {getText("heroResumeWorkSkills")}
+                    </span>
                   </h3>
                 </div>
                 <div id="skills" className="skill-box box-border">
-                  {workSkills.map((skill, index) => (
+                  {getText("workSkills", "skills").map((skill, index) => (
                     <div
                       key={index}
                       className="skillbar clearfix"
@@ -103,11 +110,15 @@ function HeroResume() {
               <div className="col-lg-6">
                 <div>
                   <h3 className="mb-0 mt-5 mt-lg-0">
-                    Language <span className="base-color"> Skills</span>
+                    {getText("heroResumeLang")}{" "}
+                    <span className="base-color">
+                      {" "}
+                      {getText("heroResumeLangSkills")}
+                    </span>
                   </h3>
                 </div>
                 <div className="language-bar box-border">
-                  {languageSkills.map((skill, index) => (
+                  {getText("languageSkills", "skills").map((skill, index) => (
                     <LangSkillItem
                       name={skill.name}
                       comment={skill.comment}
