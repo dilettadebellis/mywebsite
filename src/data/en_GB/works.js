@@ -53,7 +53,7 @@ export const works = [
     skills: ["Wordpress", "Adobe"],
     mainImages: [
       "assets/img/portfolio/dilettadebellis_portfolio_le_corone_website_details.jpg",
-      "assets/img/portfolio/dilettadebellis_portfolio_le_corone_lookbook_detail.jpg",
+      "assets/img/portfolio/dilettadebellis_portfolio_le_corone_lookbook_detail copia.jpg",
     ],
     longDescription: [
       "Creative solutions for both online and offline communication. Implementation of a new website to give proper space to the tradition of the company and all the collections. Realization of lookbooks, catalogues and fashion film to increase the efficiency of the digital presence.",
@@ -78,7 +78,7 @@ export const works = [
     ],
   },
   {
-    coverImage: "",
+    coverImage: "assets/img/portfolio/diletta-de-bellis-virgilio.jpg",
     name: "Associazione Virgilio 2090",
     filters: ["webdesign", "social",],
     longName: ["My Work for", "Associazione Virgilio 2090"],
@@ -87,7 +87,9 @@ export const works = [
     client: "Associazione Virgilio 2090",
     completedOn: "2021",
     skills: ["Wordpress", "Social Media"],
-    mainImages: [],
+    mainImages: [
+      "assets/img/portfolio/associazione-virgilio-2090-diletta-de-bellis.jpg",
+    ],
     longDescription: [
       "Rotary 2090 District's project",
       "Creation of the new website for Associazione Virgilio 2090, a project of Rotary 2090 District to help young entrempreneurs transform their idea into reality.",
