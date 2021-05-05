@@ -72,9 +72,9 @@ export const global = {
     subTitle: "You can find some of my works here. Enjoy!",
     showMore: "Mostra di più",
     portfolioModal: {
-      client: "Client",
-      year: "Year",
-      services: "Services",
+      client: "Cliente",
+      year: "Anno",
+      services: "Servizi",
       url: "Web Site",
     },
   },

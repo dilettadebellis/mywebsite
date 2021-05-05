@@ -1,5 +1,4 @@
 import React from "react";
-import { defaultMainImage } from "../../data/works";
 import useGlobalState from "../../lib/globalState";
 import PortfolioSlider from "./PortfolioSlider";
 
@@ -13,6 +12,7 @@ function PortfolioSingleModal({
   mainImages,
   longDescription,
   modalId,
+  url,
 }) {
   const { texts } = useGlobalState();
   const modalTexts = texts.global.heroPortfolio.portfolioModal;
@@ -94,6 +94,16 @@ function PortfolioSingleModal({
                         />
                       </div>
                     </div>
+                    {url ? (
+                      <div className="row mt-5 additional-info">
+                        <div className="col-12 col-md-6">
+                          {modalTexts.url}:{" "}
+                          <a className="link-style" href={url}>
+                            {url}
+                          </a>
+                        </div>
+                      </div>
+                    ) : null}
                     <div className="text-md-left mt-5">
                       {longDescription.map((part, index) => (
                         <p
