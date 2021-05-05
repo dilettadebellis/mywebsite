@@ -1,7 +1,9 @@
 import React from "react";
-import { privacyPolicy } from "../data/privacy-policy";
+import useGlobalState from "../lib/globalState";
 
 const PrivacyPolicyModal = () => {
+  const { texts } = useGlobalState();
+  const privacyPolicy = texts.privacy.privacyPolicy;
   return (
     <div
       className="portfolio-single modal fade"

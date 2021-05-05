@@ -97,3 +97,9 @@ header .navbar-brand b {
   font-weight: 700;
   font-size: 3rem;
 }
+
+header .menu.lang-toggler {
+  bottom: 2rem !important;
+  top: auto !important;
+  transform: none !important;
+}

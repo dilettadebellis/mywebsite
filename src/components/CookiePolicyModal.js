@@ -1,7 +1,9 @@
 import React from "react";
-import { cookiePolicy } from "../data/cookie-policy";
+import useGlobalState from "../lib/globalState";
 
 const CookiePolicyModal = () => {
+  const { texts } = useGlobalState();
+  const cookiePolicy = texts.cookie.cookiePolicy;
   return (
     <div
       className="portfolio-single modal fade"

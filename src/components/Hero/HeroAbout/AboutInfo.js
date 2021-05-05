@@ -1,9 +1,12 @@
 import React from "react";
+import useGlobalState from "../../../lib/globalState";
 
 export default function () {
+  const { texts } = useGlobalState();
+  const aboutInfoTexts = texts.global.heroAbout.aboutInfo;
 
   const now = new Date();
-  const startExp = new Date('2013-01-01');
+  const startExp = new Date("2013-01-01");
 
   return (
     <div id="count-up" className="count-up text-center box-border">
@@ -22,7 +25,7 @@ export default function () {
               0
             </span>
           </div>
-          <p className="mb-0">Cappucinos Consumed</p>
+          <p className="mb-0">{aboutInfoTexts.cappuccinosConsumed}</p>
         </div>
 
         <div className="col-6 col-lg-3 my-3 count-item ">
@@ -39,7 +42,7 @@ export default function () {
               0
             </span>
           </div>
-          <p className="mb-0">Projects Done</p>
+          <p className="mb-0">{aboutInfoTexts.projectsDone}</p>
         </div>
 
         <div className="col-6 col-lg-3 my-3 count-item ">
@@ -56,7 +59,7 @@ export default function () {
               0
             </span>
           </div>
-          <p className="mb-0">Years of Experience</p>
+          <p className="mb-0">{aboutInfoTexts.yearsOfExperience}</p>
         </div>
 
         <div className="col-6 col-lg-3 my-3 count-item ">
@@ -73,7 +76,7 @@ export default function () {
               0
             </span>
           </div>
-          <p className="mb-0">Hours Worked</p>
+          <p className="mb-0">{aboutInfoTexts.hoursWorked}</p>
         </div>
       </div>
     </div>
