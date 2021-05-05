@@ -15,7 +15,7 @@ const Footer = () => {
             data-toggle="modal"
             data-target={`#privacy-policy-modal`}
           >
-            Privacy policy
+            Privacy Policy
           </a>
           {" - "}
           <a
@@ -25,7 +25,7 @@ const Footer = () => {
             data-toggle="modal"
             data-target={`#cookie-policy-modal`}
           >
-            Cookie policy
+            Cookie Policy
           </a>
         </p>
       </div>

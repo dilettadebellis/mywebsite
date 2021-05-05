@@ -4,7 +4,7 @@ export const global = {
     about: "chi sono",
     resume: "resume",
     works: "lavori",
-    contact: "contattami",
+    contact: "contatti",
   },
   heroHome: {
     im: "Io sono",
@@ -14,7 +14,7 @@ export const global = {
       "development, content creation, advertising and social media.",
     definition:
       "Specialista Web Marketing.,Stratega Social Media.,Consulente Comunicazione Digitale.",
-    a: "Un",
+    a: "Una",
   },
   heroAbout: {
     cvInfo: {
