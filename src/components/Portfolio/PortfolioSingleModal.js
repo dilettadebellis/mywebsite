@@ -1,6 +1,7 @@
 import React from "react";
 import { defaultMainImage } from "../../data/works";
 import useGlobalState from "../../lib/globalState";
+import PortfolioSlider from "./PortfolioSlider";
 
 function PortfolioSingleModal({
   name,
@@ -86,54 +87,11 @@ function PortfolioSingleModal({
                     </div>
                     <div className="mt-5">
                       <div className="portfolio-single-item image-border">
-                        <div
-                          id={`portfolio-slider-${modalId}`}
-                          className="carousel slide"
-                          data-ride="carousel"
-                        >
-                          {mainImages.length > 1 ? (
-                            <ol className="carousel-indicators">
-                              {mainImages.map((image, index) => (
-                                <li
-                                  key={index}
-                                  data-target={`#portfolio-slider-${modalId}`}
-                                  data-slide-to={index}
-                                  className={`${index === 0 ? "active" : ""}`}
-                                />
-                              ))}
-                            </ol>
-                          ) : null}
-                          <div className="carousel-inner">
-                            {mainImages.length > 1 ? (
-                              mainImages.map((image, index) => (
-                                <div
-                                  key={index}
-                                  className={`carousel-item ${
-                                    index === 0 ? "active" : ""
-                                  }`}
-                                >
-                                  <img
-                                    src={image}
-                                    className="d-block"
-                                    alt={name}
-                                  />
-                                </div>
-                              ))
-                            ) : mainImages.length === 0 ? (
-                              <img
-                                src={defaultMainImage}
-                                className="d-block"
-                                alt={name}
-                              />
-                            ) : (
-                              <img
-                                src={mainImages[0]}
-                                className="d-block"
-                                alt={name}
-                              />
-                            )}
-                          </div>
-                        </div>
+                        <PortfolioSlider
+                          images={mainImages}
+                          modalId={modalId}
+                          name={name}
+                        />
                       </div>
                     </div>
                     <div className="text-md-left mt-5">
