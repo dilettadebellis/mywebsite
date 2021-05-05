@@ -97,13 +97,13 @@ export const works = [
     ],
   },
   {
-    coverImage: "",
-    name: "My Work 5",
-    filters: ["graphic", "mobiledesign"],
-    longName: ["My Work 5", "long name"],
+    coverImage: "assets/img/portfolio/ama-centro-studi-project.jpg",
+    name: "AMA Centro Studi",
+    filters: ["branding", "social", "webdesign", "ecommerce"],
+    longName: ["Brand Communication for", "AMA Centro Studi"],
     shortDescription:
       "Short description 5: In a professional context it often happens that private clients corder a publication to be made.",
-    client: "Diletta De Bellis",
+    client: "Ama Centro Studi srl",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
     url: null,
@@ -115,7 +115,7 @@ export const works = [
     ],
   },
   {
-    coverImage: "",
+    coverImage: "assets/img/portfolio/sito-web-rotaract-2090-home.jpg",
     name: "My Work 6",
     filters: ["seo", "graphic", "analytics"],
     longName: ["My Work 6", "long name"],

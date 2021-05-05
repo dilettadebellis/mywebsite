@@ -95,12 +95,14 @@ function PortfolioSingleModal({
                       </div>
                     </div>
                     {url ? (
-                      <div className="row mt-5 additional-info">
-                        <div className="col-12 col-md-6">
-                          {modalTexts.url}:{" "}
-                          <a className="link-style" href={url}>
-                            {url}
-                          </a>
+                      <div className="row mt-5 additional-info justify-content-center">
+                        <div className="col-12 col-md-6 text-center website">
+                          <i className="fa fa-desktop" />
+                          <h6 className="mb-0">
+                          <a className="link-style" href={url} target="_blank">
+                              {modalTexts.url}
+                            </a>
+                          </h6>
                         </div>
                       </div>
                     ) : null}
