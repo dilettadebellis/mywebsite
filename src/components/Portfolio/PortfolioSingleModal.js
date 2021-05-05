@@ -1,5 +1,6 @@
 import React from "react";
 import { defaultMainImage } from "../../data/works";
+import useGlobalState from "../../lib/globalState";
 
 function PortfolioSingleModal({
   name,
@@ -12,6 +13,8 @@ function PortfolioSingleModal({
   longDescription,
   modalId,
 }) {
+  const { texts } = useGlobalState();
+  const modalTexts = texts.global.heroPortfolio.portfolioModal;
   return (
     <div
       className="portfolio-single modal fade"
@@ -55,7 +58,7 @@ function PortfolioSingleModal({
                       <div className="col-md-4">
                         <div className="text-center">
                           <div>
-                            <h6>Client:</h6>
+                            <h6>{modalTexts.client}:</h6>
                             <p className="mb-0">{client}</p>
                           </div>
                         </div>
@@ -63,7 +66,9 @@ function PortfolioSingleModal({
                       <div className="col-md-4 p-title-border mt-3 mt-md-0">
                         <div className="text-center">
                           <div>
-                            <h6 className="contact_detail-title">Year:</h6>
+                            <h6 className="contact_detail-title">
+                              {modalTexts.year}:
+                            </h6>
                             <p className="mb-0">
                               {new Date(completedOn).getFullYear()}
                             </p>
@@ -73,7 +78,7 @@ function PortfolioSingleModal({
                       <div className="col-md-4 mt-3 mt-md-0">
                         <div className="text-center">
                           <div>
-                            <h6>Services:</h6>
+                            <h6>{modalTexts.services}:</h6>
                             <p className="mb-0">{skills.join(" / ")}</p>
                           </div>
                         </div>

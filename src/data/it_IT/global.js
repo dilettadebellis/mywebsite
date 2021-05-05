@@ -70,6 +70,13 @@ export const global = {
     titleWhite: "I Miei",
     titlePink: "Lavori",
     subTitle: "You can find some of my works here. Enjoy!",
+    showMore: "Mostra di più",
+    portfolioModal: {
+      client: "Client",
+      year: "Year",
+      services: "Services",
+      url: "Web Site",
+    },
   },
   heroContact: {
     titleWhite: "Get",

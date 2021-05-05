@@ -61,7 +61,7 @@ export default function () {
               <div className="col-12 text-center pt-2">
                 <div className="button-border d-inline-block mr-2 mr-sm-4">
                   <button className="pill-button showMore" id="showMore">
-                    Show More
+                    {globalTextsPortfolio.showMore}
                   </button>
                   <span
                     id="showMore-initials"
