@@ -78,7 +78,7 @@ export const works = [
     ],
   },
   {
-    coverImage: "",
+    coverImage: "assets/img/portfolio/diletta-de-bellis-virgilio.jpg",
     name: "Associazione Virgilio 2090",
     filters: ["webdesign", "social",],
     longName: ["My Work for", "Associazione Virgilio 2090"],
@@ -87,7 +87,9 @@ export const works = [
     client: "Associazione Virgilio 2090",
     completedOn: "2021",
     skills: ["Wordpress", "Social Media"],
-    mainImages: [],
+    mainImages: [
+      "assets/img/portfolio/associazione-virgilio-2090-diletta-de-bellis.jpg",
+    ],
     longDescription: [
       "Rotary 2090 District's project",
       "Creation of the new website for Associazione Virgilio 2090, a project of Rotary 2090 District to help young entrempreneurs transform their idea into reality.",
