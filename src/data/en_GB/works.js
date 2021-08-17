@@ -88,6 +88,8 @@ export const works = [
     skills: ["Wordpress", "Social Media"],
     url: null,
     mainImages: [
+
+      "assets/img/portfolio/assciazione-virgilio-2090-rotary-diletta-de-bellis-portfolio.jpeg",
       "assets/img/portfolio/associazione-virgilio-2090-diletta-de-bellis.jpg",
     ],
     longDescription: [

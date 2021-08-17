@@ -13,7 +13,7 @@ export const workSkills = [
   },
   {
     name: "Google Analytics",
-    value: 80,
+    value: 90,
   },
 ];
 
