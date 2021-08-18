@@ -173,3 +173,18 @@ a, button {
     color: $pink-color-hover;
   }
 }
+
+/*a {
+  text-decoration: none;
+  color: $pink-color-hover;
+
+  &:active, &:focus, &:visited {
+    text-decoration: none;
+    color: $pink-color-hover;
+  }
+
+  &:hover {
+    color: $pink-color-hover;
+    text-decoration: underline;
+  }
+}*/

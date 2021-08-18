@@ -1,5 +1,6 @@
 import React from "react";
 import useGlobalState from "../lib/globalState";
+import MarkdownView from "react-showdown";
 
 const CookiePolicyModal = () => {
   const { texts } = useGlobalState();
@@ -53,7 +54,10 @@ const CookiePolicyModal = () => {
                             index === cookiePolicy.text.length - 1 ? "mb-0" : ""
                           }`}
                         >
-                          {part}
+                          <MarkdownView
+                            markdown={part}
+                            options={{ emoji: true }}
+                          />
                         </p>
                       ))}
                     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import useGlobalState from "../../lib/globalState";
 import PortfolioSlider from "./PortfolioSlider";
+import MarkdownView from "react-showdown";
 
 function PortfolioSingleModal({
   name,
@@ -99,7 +100,11 @@ function PortfolioSingleModal({
                         <div className="col-12 col-md-6 text-center website">
                           <i className="fa fa-desktop" />
                           <h6 className="mb-0">
-                          <a className="link-style" href={url} target="_blank">
+                            <a
+                              className="link-style"
+                              href={url}
+                              target="_blank"
+                            >
                               {modalTexts.url}
                             </a>
                           </h6>
@@ -114,7 +119,10 @@ function PortfolioSingleModal({
                             index === longDescription.length - 1 ? "mb-0" : ""
                           }`}
                         >
-                          {part}
+                          <MarkdownView
+                            markdown={part}
+                            options={{ emoji: true }}
+                          />
                         </p>
                       ))}
                     </div>

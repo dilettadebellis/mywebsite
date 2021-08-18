@@ -1,5 +1,6 @@
 import React from "react";
 import useGlobalState from "../lib/globalState";
+import MarkdownView from "react-showdown";
 
 const PrivacyPolicyModal = () => {
   const { texts } = useGlobalState();
@@ -55,7 +56,12 @@ const PrivacyPolicyModal = () => {
                               : ""
                           }`}
                         >
-                          {part}
+                          {
+                            <MarkdownView
+                              markdown={part}
+                              options={{ emoji: true }}
+                            />
+                          }
                         </p>
                       ))}
                     </div>
