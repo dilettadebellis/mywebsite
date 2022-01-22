@@ -55,12 +55,12 @@ function Header({}) {
               <span>{navbarTexts.works}</span>
             </a>
           </li>
-          {/*<li className="list-group-item">
+          <li className="list-group-item">
             <a href="#blog">
               <i className="fa fa-file-text" />
               <span>blog</span>
             </a>
-          </li>*/}
+          </li>
           <li className="list-group-item">
             <a href="#contact">
               <i className="fa fa-envelope-open" />
@@ -73,7 +73,7 @@ function Header({}) {
             <i className="text-white lni-menu" />
           </span>
         </div>
-       {/*  <div className="menu lang-toggler">
+        <div className="menu lang-toggler">
           <li className="list-group-item text-center">
             <a href="#!" onClick={(e) => handleChangeLang(e)}>
               <i className="fa fa-flag" />
@@ -84,7 +84,7 @@ function Header({}) {
               </span>
             </a>
           </li>
-        </div> */}
+        </div>
       </div>
     </header>
   );
