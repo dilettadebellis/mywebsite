@@ -65,6 +65,10 @@ export const global = {
     workSkills: "Skills",
     lang: "Language",
     langSkills: "Skills",
+    awards: "Awards &",
+    acknowledgement: "Acknowledgement",
+    coding: "Coding &",
+    softwareSkills: "Software Skills",
   },
   heroPortfolio: {
     titleWhite: "My",

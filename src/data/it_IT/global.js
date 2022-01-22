@@ -63,8 +63,13 @@ export const global = {
     experience: "Esperienza",
     work: "Abilità",
     workSkills: "Lavorative",
+
     lang: "Abilità",
     langSkills: "Linguistiche",
+    awards: "Premi &",
+    acknowledgement: "Riconoscimenti",
+    coding: "Programmazione &",
+    softwareSkills: "Software Conosciuti",
   },
   heroPortfolio: {
     titleWhite: "I Miei",

@@ -14,6 +14,8 @@ import * as servicesEnGB from "./en_GB/services";
 import * as servicesItIT from "./it_IT/services";
 import * as worksEnGB from "./en_GB/works";
 import * as worksItIT from "./it_IT/works";
+import * as awardEnGB from "./en_GB/awards";
+import * as awardItIT from "./it_IT/awards";
 
 export const mappings = {
   en_GB: {
@@ -25,6 +27,7 @@ export const mappings = {
     experiences: { ...expEnGB },
     services: { ...servicesEnGB },
     works: { ...worksEnGB },
+    awards: { ...awardEnGB },
   },
   it_IT: {
     global: globalItIT.global,
@@ -35,6 +38,7 @@ export const mappings = {
     experiences: { ...expItIT },
     services: { ...servicesItIT },
     works: { ...worksItIT },
+    awards: { ...awardItIT },
   },
 };
 

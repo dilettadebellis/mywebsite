@@ -30,7 +30,7 @@ function App() {
             <HeroAbout />
             <HeroResume />
             <HeroPortfolio />
-            {/*<HeroBlog />*/}
+            <HeroBlog />
             <HeroContact />
           </main>
           <NextPrevPage />
