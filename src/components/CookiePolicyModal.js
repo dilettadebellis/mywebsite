@@ -48,7 +48,7 @@ const CookiePolicyModal = () => {
                     </div>
                     <div className="text-md-left mt-5">
                       {cookiePolicy.text.map((part, index) => (
-                        <p
+                        <div
                           key={index}
                           className={`my-3 ${
                             index === cookiePolicy.text.length - 1 ? "mb-0" : ""
@@ -58,7 +58,7 @@ const CookiePolicyModal = () => {
                             markdown={part}
                             options={{ emoji: true }}
                           />
-                        </p>
+                        </div>
                       ))}
                     </div>
                   </div>

@@ -9,7 +9,6 @@ export default function ({}) {
   const [cookies, setCookie] = useCookies([COOKIE_ACCEPTED]);
   const { texts } = useGlobalState();
   const bannerTexts = texts.global.cookieBanner;
-  console.log(bannerTexts);
 
   const saveCookie = (isYes) => {
     if (isYes) {
