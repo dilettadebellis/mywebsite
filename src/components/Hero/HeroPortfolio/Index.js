@@ -1,9 +1,13 @@
 import React from "react";
 import PortfolioItem from "./PortfolioItem";
-import { works, worksFilters } from "../../../data/works";
 import Footer from "../../Footer";
+import useGlobalState from "../../../lib/globalState";
 
 export default function () {
+  const { texts } = useGlobalState();
+  const globalTextsPortfolio = texts.global.heroPortfolio;
+  const worksFilters = texts.works.worksFilters;
+  const works = texts.works.works;
   return (
     <section id="portfolio" className="portfolio">
       <div className="display-table">
@@ -13,10 +17,13 @@ export default function () {
               <div className="col-lg-12">
                 <div className="text-center title">
                   <h2 className="text-dark">
-                    My <span className="base-color">Works</span>
+                    {globalTextsPortfolio.titleWhite}{" "}
+                    <span className="base-color">
+                      {globalTextsPortfolio.titlePink}
+                    </span>
                   </h2>
                   <p className="text-muted mb-5 max-width-450">
-                    You can find some of my works here. Enjoy!
+                    {globalTextsPortfolio.subTitle}
                   </p>
                 </div>
               </div>
@@ -54,7 +61,7 @@ export default function () {
               <div className="col-12 text-center pt-2">
                 <div className="button-border d-inline-block mr-2 mr-sm-4">
                   <button className="pill-button showMore" id="showMore">
-                    Show More
+                    {globalTextsPortfolio.showMore}
                   </button>
                   <span
                     id="showMore-initials"

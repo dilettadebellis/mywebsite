@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
+import useGlobalState from "../lib/globalState";
 
 export const COOKIE_ACCEPTED = "as-cookies-accepted";
 
 export default function ({}) {
   const [visible, setVisible] = useState(true);
   const [cookies, setCookie] = useCookies([COOKIE_ACCEPTED]);
+  const { texts } = useGlobalState();
+  const bannerTexts = texts.global.cookieBanner;
+  console.log(bannerTexts);
 
   const saveCookie = (isYes) => {
     if (isYes) {
@@ -44,9 +48,7 @@ export default function ({}) {
       <div className="row align-items-center">
         <div className="col-12 col-md-9 ml-lg-auto">
           <p className="cookie-banner-text mb-0">
-            Cookies allow us to deliver and improve our web content and to
-            provide you with a personalized experience. Our website uses cookies
-            for these purposes.{" "}
+            {bannerTexts.textMain}{" "}
             <a
               className="cookie-banner-link"
               href="#!"
@@ -54,7 +56,7 @@ export default function ({}) {
               data-toggle="modal"
               data-target={`#cookie-policy-modal`}
             >
-              Learn more.
+              {bannerTexts.learnMore}
             </a>
           </p>
         </div>
@@ -65,7 +67,7 @@ export default function ({}) {
             className="cookie-banner-button secondary mr-3"
           >
             <i className="fa fa-close" />
-            <span>Decline</span>
+            <span>{bannerTexts.decline}</span>
           </a>
           <a
             href="#!"
@@ -73,7 +75,7 @@ export default function ({}) {
             className="cookie-banner-button"
           >
             <i className="fa fa-check" />
-            <span>Accept</span>
+            <span>{bannerTexts.accept}</span>
           </a>
         </div>
       </div>

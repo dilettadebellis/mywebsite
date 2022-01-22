@@ -35,6 +35,7 @@ export const works = [
     client: "Farmacia Dott. Amleto Bianchi",
     completedOn: "2020-10-30",
     skills: ["Wordpress", "WooCommerce"],
+    url: "https://farmaciabianchiterni.com/",
     mainImages: [
       "assets/img/portfolio/diletta-de-bellis-portfolio-farmacia-bianchi.jpg",
     ],
@@ -45,12 +46,13 @@ export const works = [
   {
     coverImage: "assets/img/portfolio/dilettadebellis_portfolio_le_corone.jpg",
     name: "Le Corone",
-    filters: ["branding", "webdesign",],
+    filters: ["branding", "webdesign"],
     longName: ["Le Corone", "Project"],
     shortDescription: "Online and Offline Communication",
     client: "We3 srl",
     completedOn: "2021-12-30",
     skills: ["Wordpress", "Adobe"],
+    url: null,
     mainImages: [
       "assets/img/portfolio/dilettadebellis_portfolio_le_corone_website_details.jpg",
       "assets/img/portfolio/dilettadebellis_portfolio_le_corone_lookbook_detail.jpg",
@@ -64,30 +66,30 @@ export const works = [
     name: "Pop Lab",
     filters: ["webdesign"],
     longName: ["Website for", "Pop Lab"],
-    shortDescription:
-      "Website Development",
+    shortDescription: "Website Development",
     client: "Diletta De Bellis",
     completedOn: "2019-9-30",
     skills: ["Wordpress"],
-    mainImages: [
-      "assets/img/portfolio/pop-lab-portfolio-detail.jpeg",
-    ],
+    url: null,
+    mainImages: ["assets/img/portfolio/pop-lab-portfolio-detail.jpeg"],
     longDescription: [
       "Website Design:",
       "Implementation of the new website for Pop Lab, a kids party planner agency. A creative website, able to convey the family-oriented vision and the innovative way of doing of the team.",
     ],
   },
   {
-    coverImage: "",
+    coverImage: "assets/img/portfolio/diletta-de-bellis-virgilio.jpg",
     name: "Associazione Virgilio 2090",
-    filters: ["webdesign", "social",],
+    filters: ["webdesign", "social"],
     longName: ["My Work for", "Associazione Virgilio 2090"],
-    shortDescription:
-      "Communication Project",
+    shortDescription: "Communication Project",
     client: "Associazione Virgilio 2090",
     completedOn: "2021",
     skills: ["Wordpress", "Social Media"],
-    mainImages: [],
+    url: null,
+    mainImages: [
+      "assets/img/portfolio/associazione-virgilio-2090-diletta-de-bellis.jpg",
+    ],
     longDescription: [
       "Rotary 2090 District's project",
       "Creation of the new website for Associazione Virgilio 2090, a project of Rotary 2090 District to help young entrempreneurs transform their idea into reality.",
@@ -95,15 +97,16 @@ export const works = [
     ],
   },
   {
-    coverImage: "",
-    name: "My Work 5",
-    filters: ["graphic", "mobiledesign"],
-    longName: ["My Work 5", "long name"],
+    coverImage: "assets/img/portfolio/ama-centro-studi-project.jpg",
+    name: "AMA Centro Studi",
+    filters: ["branding", "social", "webdesign", "ecommerce"],
+    longName: ["Brand Communication for", "AMA Centro Studi"],
     shortDescription:
       "Short description 5: In a professional context it often happens that private clients corder a publication to be made.",
-    client: "Diletta De Bellis",
+    client: "Ama Centro Studi srl",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
+    url: null,
     mainImages: [],
     longDescription: [
       "Long description 5:",
@@ -112,7 +115,7 @@ export const works = [
     ],
   },
   {
-    coverImage: "",
+    coverImage: "assets/img/portfolio/sito-web-rotaract-2090-home.jpg",
     name: "My Work 6",
     filters: ["seo", "graphic", "analytics"],
     longName: ["My Work 6", "long name"],
@@ -121,6 +124,7 @@ export const works = [
     client: "Diletta De Bellis",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
+    url: null,
     mainImages: [],
     longDescription: [
       "Long description 6:",
@@ -138,6 +142,7 @@ export const works = [
     client: "Diletta De Bellis",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
+    url: null,
     mainImages: [],
     longDescription: [
       "Long description 7:",
@@ -155,6 +160,7 @@ export const works = [
     client: "Diletta De Bellis",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
+    url: null,
     mainImages: [],
     longDescription: [
       "Long description 8:",
@@ -172,6 +178,7 @@ export const works = [
     client: "Diletta De Bellis",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
+    url: null,
     mainImages: [],
     longDescription: [
       "Long description 9:",
@@ -189,6 +196,7 @@ export const works = [
     client: "Diletta De Bellis",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
+    url: null,
     mainImages: [],
     longDescription: [
       "Long description 10:",
@@ -206,6 +214,7 @@ export const works = [
     client: "Diletta De Bellis",
     completedOn: "2019-9-30",
     skills: ["HTML5", "PHP", "CSS3"],
+    url: null,
     mainImages: [],
     longDescription: [
       "Long description 11:",

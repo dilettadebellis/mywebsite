@@ -1,5 +1,5 @@
 import React from "react";
-import { defaultCoverImage } from "../../../data/works";
+import { defaultCoverImage } from "../../../data/en_GB/works";
 
 export default function ({ name, coverImage, filters, modalId }) {
   return (

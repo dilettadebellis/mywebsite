@@ -13,29 +13,32 @@ import PortfolioModals from "./components/Portfolio/PortfolioModals";
 import CookieBanner from "./components/CookieBanner";
 import CookiePolicyModal from "./components/CookiePolicyModal";
 import PrivacyPolicyModal from "./components/PrivacyPolicyModal";
+import { GlobalProvider } from "./lib/globalState";
 
 function App() {
   return (
     <CookiesProvider>
-      <div data-spy="scroll" data-target="#scrollspy" data-offset="1">
-        <div id="overlayer" />
-        <span className="loader" />
-        <BlogSingleModal />
-        <PortfolioModals />
-        <Header />
-        <main id="main">
-          <HeroHome />
-          <HeroAbout />
-          <HeroResume />
-          <HeroPortfolio />
-          {/*<HeroBlog />*/}
-          <HeroContact />
-        </main>
-        <NextPrevPage />
-        <CookieBanner />
-        <CookiePolicyModal />
-        <PrivacyPolicyModal />
-      </div>
+      <GlobalProvider>
+        <div data-spy="scroll" data-target="#scrollspy" data-offset="1">
+          <div id="overlayer" />
+          <span className="loader" />
+          <BlogSingleModal />
+          <PortfolioModals />
+          <Header />
+          <main id="main">
+            <HeroHome />
+            <HeroAbout />
+            <HeroResume />
+            <HeroPortfolio />
+            {/*<HeroBlog />*/}
+            <HeroContact />
+          </main>
+          <NextPrevPage />
+          <CookieBanner />
+          <CookiePolicyModal />
+          <PrivacyPolicyModal />
+        </div>
+      </GlobalProvider>
     </CookiesProvider>
   );
 }

@@ -1,5 +1,7 @@
 import React from "react";
-import { defaultMainImage } from "../../data/works";
+import useGlobalState from "../../lib/globalState";
+import PortfolioSlider from "./PortfolioSlider";
+import MarkdownView from "react-showdown";
 
 function PortfolioSingleModal({
   name,
@@ -11,7 +13,10 @@ function PortfolioSingleModal({
   mainImages,
   longDescription,
   modalId,
+  url,
 }) {
+  const { texts } = useGlobalState();
+  const modalTexts = texts.global.heroPortfolio.portfolioModal;
   return (
     <div
       className="portfolio-single modal fade"
@@ -55,7 +60,7 @@ function PortfolioSingleModal({
                       <div className="col-md-4">
                         <div className="text-center">
                           <div>
-                            <h6>Client:</h6>
+                            <h6>{modalTexts.client}:</h6>
                             <p className="mb-0">{client}</p>
                           </div>
                         </div>
@@ -63,7 +68,9 @@ function PortfolioSingleModal({
                       <div className="col-md-4 p-title-border mt-3 mt-md-0">
                         <div className="text-center">
                           <div>
-                            <h6 className="contact_detail-title">Year:</h6>
+                            <h6 className="contact_detail-title">
+                              {modalTexts.year}:
+                            </h6>
                             <p className="mb-0">
                               {new Date(completedOn).getFullYear()}
                             </p>
@@ -73,7 +80,7 @@ function PortfolioSingleModal({
                       <div className="col-md-4 mt-3 mt-md-0">
                         <div className="text-center">
                           <div>
-                            <h6>Services:</h6>
+                            <h6>{modalTexts.services}:</h6>
                             <p className="mb-0">{skills.join(" / ")}</p>
                           </div>
                         </div>
@@ -81,56 +88,29 @@ function PortfolioSingleModal({
                     </div>
                     <div className="mt-5">
                       <div className="portfolio-single-item image-border">
-                        <div
-                          id="portfolio-slider"
-                          className="carousel slide"
-                          data-ride="carousel"
-                        >
-                          {mainImages.length > 1 ? (
-                            <ol className="carousel-indicators">
-                              {mainImages.map((image, index) => (
-                                <li
-                                  key={index}
-                                  data-target="#portfolio-slider"
-                                  data-slide-to={index}
-                                  className={`${index === 0 ? "active" : ""}`}
-                                />
-                              ))}
-                            </ol>
-                          ) : null}
-                          <div className="carousel-inner">
-                            {mainImages.length > 1 ? (
-                              mainImages.map((image, index) => (
-                                <div
-                                  key={index}
-                                  className={`carousel-item ${
-                                    index === 0 ? "active" : ""
-                                  }`}
-                                >
-                                  <img
-                                    src={image}
-                                    className="d-block"
-                                    alt={name}
-                                  />
-                                </div>
-                              ))
-                            ) : mainImages.length === 0 ? (
-                              <img
-                                src={defaultMainImage}
-                                className="d-block"
-                                alt={name}
-                              />
-                            ) : (
-                              <img
-                                src={mainImages[0]}
-                                className="d-block"
-                                alt={name}
-                              />
-                            )}
-                          </div>
-                        </div>
+                        <PortfolioSlider
+                          images={mainImages}
+                          modalId={modalId}
+                          name={name}
+                        />
                       </div>
                     </div>
+                    {url ? (
+                      <div className="row mt-5 additional-info justify-content-center">
+                        <div className="col-12 col-md-6 text-center website">
+                          <i className="fa fa-desktop" />
+                          <h6 className="mb-0">
+                            <a
+                              className="link-style"
+                              href={url}
+                              target="_blank"
+                            >
+                              {modalTexts.url}
+                            </a>
+                          </h6>
+                        </div>
+                      </div>
+                    ) : null}
                     <div className="text-md-left mt-5">
                       {longDescription.map((part, index) => (
                         <p
@@ -139,7 +119,10 @@ function PortfolioSingleModal({
                             index === longDescription.length - 1 ? "mb-0" : ""
                           }`}
                         >
-                          {part}
+                          <MarkdownView
+                            markdown={part}
+                            options={{ emoji: true }}
+                          />
                         </p>
                       ))}
                     </div>

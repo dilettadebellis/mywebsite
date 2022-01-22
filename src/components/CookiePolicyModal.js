@@ -1,7 +1,10 @@
 import React from "react";
-import { cookiePolicy } from "../data/cookie-policy";
+import useGlobalState from "../lib/globalState";
+import MarkdownView from "react-showdown";
 
 const CookiePolicyModal = () => {
+  const { texts } = useGlobalState();
+  const cookiePolicy = texts.cookie.cookiePolicy;
   return (
     <div
       className="portfolio-single modal fade"
@@ -51,7 +54,10 @@ const CookiePolicyModal = () => {
                             index === cookiePolicy.text.length - 1 ? "mb-0" : ""
                           }`}
                         >
-                          {part}
+                          <MarkdownView
+                            markdown={part}
+                            options={{ emoji: true }}
+                          />
                         </p>
                       ))}
                     </div>

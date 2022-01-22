@@ -1,9 +1,22 @@
 import React from "react";
+import useGlobalState, { langMapping } from "../lib/globalState";
 
 function Header({}) {
+  const { lang, setLang, texts } = useGlobalState();
+  const navbarTexts = texts.global.navbar;
+
   const handleMenuLogoClick = (e) => {
     e.preventDefault();
     window.history.replaceState(window.history.state, null, "/");
+  };
+
+  const handleChangeLang = (e) => {
+    e.preventDefault();
+    setLang(
+      lang === langMapping.en_GB.code
+        ? langMapping.it_IT.code
+        : langMapping.en_GB.code
+    );
   };
 
   return (
@@ -21,25 +34,25 @@ function Header({}) {
           <li className="list-group-item">
             <a className="active" href="#hero" onClick={handleMenuLogoClick}>
               <i className="fa fa-home" />
-              <span>home</span>
+              <span>{navbarTexts.home}</span>
             </a>
           </li>
           <li className="list-group-item">
             <a href="#about">
               <i className="fa fa-user" />
-              <span>about</span>
+              <span>{navbarTexts.about}</span>
             </a>
           </li>
           <li className="list-group-item">
             <a href="#resume">
               <i className="fa fa-address-book" />
-              <span>resume</span>
+              <span>{navbarTexts.resume}</span>
             </a>
           </li>
           <li className="list-group-item">
             <a href="#portfolio">
               <i className="fa fa-briefcase" />
-              <span>works</span>
+              <span>{navbarTexts.works}</span>
             </a>
           </li>
           {/*<li className="list-group-item">
@@ -51,7 +64,7 @@ function Header({}) {
           <li className="list-group-item">
             <a href="#contact">
               <i className="fa fa-envelope-open" />
-              <span>contact</span>
+              <span>{navbarTexts.contact}</span>
             </a>
           </li>
         </ul>
@@ -60,6 +73,18 @@ function Header({}) {
             <i className="text-white lni-menu" />
           </span>
         </div>
+       {/*  <div className="menu lang-toggler">
+          <li className="list-group-item text-center">
+            <a href="#!" onClick={(e) => handleChangeLang(e)}>
+              <i className="fa fa-flag" />
+              <span>
+                {lang === langMapping.en_GB.code
+                  ? langMapping.it_IT.name
+                  : langMapping.en_GB.name}
+              </span>
+            </a>
+          </li>
+        </div> */}
       </div>
     </header>
   );

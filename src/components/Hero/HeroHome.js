@@ -1,7 +1,11 @@
 import React from "react";
 import { socials } from "../../data/socials";
+import useGlobalState from "../../lib/globalState";
 
-function HeroHome({ }) {
+function HeroHome({}) {
+  const { texts } = useGlobalState();
+  const homeTexts = texts.global.heroHome;
+
   return (
     <section id="hero" className="hero-01 active">
       <div className="display-table">
@@ -11,17 +15,18 @@ function HeroHome({ }) {
               <div className="col-lg-12">
                 <div className="hero-content">
                   <h1 className="mb-3">
-                    I'm <span className="base-color"> Diletta De Bellis</span>
+                    {homeTexts.im}{" "}
+                    <span className="base-color"> Diletta De Bellis</span>
                   </h1>
                   <h4 className="text-capitalize mb-0">
-                    <span className="base-color">A </span>{" "}
+                    <span className="base-color">{homeTexts.a} </span>{" "}
                     <span
                       className="element"
-                      data-elements="Web Marketing Specialist.,Social Media Strategist.,Digital Communication Consultant."
+                      data-elements={homeTexts.definition}
                     />
                   </h4>
                   <p className="max-width-450 mx-0 my-4">
-                    Hello! I am an enthusiastic and passionate Web&Social Media fanatic, specialized in the areas of branding, web development, content creation, advertising and social media. 
+                    {homeTexts.description}
                   </p>
                   <ul className="list-inline hero-social">
                     {socials.map((social, index) => (
