@@ -77,7 +77,7 @@ export const works = [
       "Implementation of the new website for Pop Lab, a kids party planner agency. A creative website, able to convey the family-oriented vision and the innovative way of doing of the team.",
     ],
   },
-  {
+  /* {
     coverImage: "assets/img/portfolio/diletta-de-bellis-virgilio.jpg",
     name: "Associazione Virgilio 2090",
     filters: ["webdesign", "social"],
@@ -222,5 +222,5 @@ export const works = [
       "These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.",
       "These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.",
     ],
-  },
+  }, */
 ];
