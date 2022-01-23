@@ -77,7 +77,7 @@ export const works = [
       "Implementation of the new website for Pop Lab, a kids party planner agency. A creative website, able to convey the family-oriented vision and the innovative way of doing of the team.",
     ],
   },
-  /* {
+  {
     coverImage: "assets/img/portfolio/diletta-de-bellis-virgilio.jpg",
     name: "Associazione Virgilio 2090",
     filters: ["webdesign", "social"],
@@ -88,7 +88,6 @@ export const works = [
     skills: ["Wordpress", "Social Media"],
     url: null,
     mainImages: [
-
       "assets/img/portfolio/assciazione-virgilio-2090-rotary-diletta-de-bellis-portfolio.jpeg",
       "assets/img/portfolio/associazione-virgilio-2090-diletta-de-bellis.jpg",
     ],
@@ -134,7 +133,7 @@ export const works = [
       "These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.",
     ],
   },
-  {
+  /* {
     coverImage: "",
     name: "My Work 7",
     filters: ["seo", "graphic", "webdesign"],
@@ -221,6 +220,6 @@ export const works = [
       "Long description 11:",
       "These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.",
       "These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. These words are here to provide the reader with a basic impression of how actual text will appear in its final presentation. Only for show.",
-    ],
-  }, */
+    ], 
+  },*/
 ];

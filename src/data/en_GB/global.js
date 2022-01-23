@@ -56,8 +56,8 @@ export const global = {
     titleWhite: "My",
     titlePink: "Resume",
     subTitle:
-      "Thanks to the skills I got through my education and my\n" +
-      "working experience, I help companies and individuals to\n" +
+      "Thanks to the skills I have acquired through my education and my working experience,\n" +
+      "I help companies and individuals to\n" +
       "successfully achieve their goals online.",
     education: "Education",
     experience: "Experience",
