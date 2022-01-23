@@ -104,6 +104,9 @@ export const global = {
       "for these purposes.",
     learnMore: "Scopri di più.",
     decline: "Rifiuta",
+    customize: "Personalizza",
     accept: "Accetta",
+    cookiesTitle: ["Personalizza", "Cookies"],
+    declineAll: "Rifiuta Tutti",
   },
 };

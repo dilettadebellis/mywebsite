@@ -103,6 +103,9 @@ export const global = {
       "for these purposes.",
     learnMore: "Learn more.",
     decline: "Decline",
+    customize: "Customize",
     accept: "Accept",
+    cookiesTitle: ["Customize", "Cookies"],
+    declineAll: "Decline All",
   },
 };

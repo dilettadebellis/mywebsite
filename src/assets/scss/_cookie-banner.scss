@@ -56,6 +56,47 @@
   }
 }
 
+.cookie-item-divider {
+  border-top: 1px solid #dee2e6;
+  width: 70%;
+}
+
+.cookie-item {
+  margin-bottom: 1.5rem;
+
+  .custom-control-input:checked ~ .custom-control-label::before {
+    border-color: $pink-color;
+    background-color: $pink-color;
+  }
+
+  .control-wrapper {
+    display: flex;
+    align-items: center;
+
+    .cookie-item-title {
+      flex: 1;
+    }
+
+    .cookie-item-controller {
+      font-size: 1.5rem;
+      margin-left: 10px;
+    }
+  }
+
+  .cookie-item-content {
+    font-size: 0.9rem;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.25s ease-in-out;
+    height: 0;
+
+    &.active {
+      transform: scaleY(1);
+      height: auto;
+    }
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .cookie-banner-wrapper {
     //background-color: #2c2d30;

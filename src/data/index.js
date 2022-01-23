@@ -16,12 +16,15 @@ import * as worksEnGB from "./en_GB/works";
 import * as worksItIT from "./it_IT/works";
 import * as awardEnGB from "./en_GB/awards";
 import * as awardItIT from "./it_IT/awards";
+import * as cookiesEnGB from "./en_GB/cookies";
+import * as cookiesItIT from "./it_IT/cookies";
 
 export const mappings = {
   en_GB: {
     global: globalEnGB.global,
     skills: { ...skillsEnGB },
     cookie: { ...cookieEnGB },
+    cookies: { ...cookiesEnGB },
     privacy: { ...privacyEnGB },
     education: { ...eduEnGB },
     experiences: { ...expEnGB },
@@ -33,6 +36,7 @@ export const mappings = {
     global: globalItIT.global,
     skills: { ...skillsItIT },
     cookie: { ...cookieItIT },
+    cookies: { ...cookiesItIT },
     privacy: { ...privacyItIT },
     education: { ...eduItIT },
     experiences: { ...expItIT },

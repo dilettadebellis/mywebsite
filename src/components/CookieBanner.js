@@ -63,7 +63,7 @@ export default function ({}) {
           <a
             href="#!"
             onClick={(e) => handleClick(e, false)}
-            className="cookie-banner-button secondary mr-3"
+            className="cookie-banner-button secondary mr-md-3 mr-2"
           >
             <i className="fa fa-close" />
             <span>{bannerTexts.decline}</span>
@@ -71,10 +71,20 @@ export default function ({}) {
           <a
             href="#!"
             onClick={(e) => handleClick(e, true)}
-            className="cookie-banner-button"
+            className="cookie-banner-button mr-md-3 mr-2"
           >
             <i className="fa fa-check" />
             <span>{bannerTexts.accept}</span>
+          </a>
+          <a
+            href="#!"
+            onClick={(e) => e.preventDefault()}
+            data-toggle="modal"
+            data-target={`#cookies-modal`}
+            className="cookie-banner-button secondary"
+          >
+            <i className="fa fa-edit" />
+            <span>{bannerTexts.customize}</span>
           </a>
         </div>
       </div>
