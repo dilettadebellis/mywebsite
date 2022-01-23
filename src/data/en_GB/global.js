@@ -95,6 +95,9 @@ export const global = {
     subject: "Your Subject*",
     message: "Your message...",
     sendMessage: "Send Message",
+    thanks: "Thank you for your message! I'll be in touch as soon as possible!",
+    requiredFields: "Please, fill out all required fields.",
+    generalError: "Something went wrong, please retry later.",
   },
   cookieBanner: {
     textMain:

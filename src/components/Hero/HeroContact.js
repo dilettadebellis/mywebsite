@@ -1,10 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "../Footer";
 import useGlobalState from "../../lib/globalState";
 
 function HeroContact({}) {
   const { texts } = useGlobalState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [statusMessage, setStatusMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const contactTexts = texts.global.heroContact;
+
+  const sendMessage = async (e) => {
+    e.preventDefault();
+    if (name !== "" && email !== "" && subject !== "" && message !== "") {
+      setLoading(true);
+      const options = {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, subject, message }),
+      };
+      try {
+        const fetchResponse = await fetch(`/sendEmail.php`, options);
+        const data = await fetchResponse.json();
+        if (data.status === "Congratulation") {
+          setStatusMessage(contactTexts.thanks);
+        } else {
+          console.log(e);
+          setStatusMessage(contactTexts.generalError);
+        }
+      } catch (e) {
+        console.log(e);
+        setStatusMessage(contactTexts.generalError);
+      }
+      setLoading(false);
+    } else {
+      setStatusMessage(contactTexts.requiredFields);
+    }
+  };
+
+  const handleChange = (e, setter) => {
+    setStatusMessage("");
+    setter(e.target.value);
+  };
+
   return (
     <section id="contact" className="contact">
       <div className="display-table">
@@ -66,7 +109,7 @@ function HeroContact({}) {
             </div>
             <div className="row">
               <div className="col-lg-12 mt-5 contact-form">
-                <form id="contactForm">
+                <form id="contactForm" onSubmit={sendMessage}>
                   <div className="row">
                     <div className="col-lg-6 form-item">
                       <div className="form-group">
@@ -76,7 +119,8 @@ function HeroContact({}) {
                           type="text"
                           className="form-control"
                           placeholder={contactTexts.name}
-                          required
+                          value={name}
+                          onChange={(e) => handleChange(e, setName)}
                         />
                       </div>
                     </div>
@@ -88,7 +132,8 @@ function HeroContact({}) {
                           type="email"
                           className="form-control"
                           placeholder={contactTexts.email}
-                          required
+                          value={email}
+                          onChange={(e) => handleChange(e, setEmail)}
                         />
                       </div>
                     </div>
@@ -100,7 +145,8 @@ function HeroContact({}) {
                           type="text"
                           className="form-control"
                           placeholder={contactTexts.subject}
-                          required
+                          value={subject}
+                          onChange={(e) => handleChange(e, setSubject)}
                         />
                       </div>
                     </div>
@@ -112,40 +158,32 @@ function HeroContact({}) {
                           rows="4"
                           className="form-control"
                           placeholder={contactTexts.message}
+                          value={message}
+                          onChange={(e) => handleChange(e, setMessage)}
                         />
                       </div>
                     </div>
                     <div className="col-sm-12 mt-4 text-left">
                       <div className="button-border">
                         <a
-                          onClick={(e) => e.preventDefault()}
+                          role="button"
+                          type="submit"
+                          onClick={(e) => sendMessage(e)}
                           className="pill-button"
                           id="submit-btn"
-                          /*onClick="sendEmail()"*/
                         >
-                          {contactTexts.sendMessage}
+                          {loading ? (
+                            <>
+                              <span className="spinner-border spinner-border-sm" />{" "}
+                              Loading..
+                            </>
+                          ) : (
+                            contactTexts.sendMessage
+                          )}
                         </a>
                       </div>
-                      <div
-                        id="message"
-                        className="toast"
-                        role="alert"
-                        aria-live="assertive"
-                        aria-atomic="true"
-                        data-delay="4000"
-                      >
-                        <div className="toast-body d-inline-block" />
-                        <button
-                          type="button"
-                          className="pr-3 close"
-                          data-dismiss="toast"
-                          aria-label="Close"
-                        >
-                          <span
-                            aria-hidden="true"
-                            className="lni-close size-xs "
-                          />
-                        </button>
+                      <div className="contact-message d-inline-block base-color ml-3">
+                        {statusMessage}
                       </div>
                     </div>
                   </div>
