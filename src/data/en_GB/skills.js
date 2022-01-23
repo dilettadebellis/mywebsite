@@ -20,6 +20,10 @@ export const workSkills = [
 export const codingSkills = [
   {
     name: "Photoshop",
+    value: 90,
+  },
+  {
+    name: "Illustrator",
     value: 95,
   },
   {
@@ -29,10 +33,6 @@ export const codingSkills = [
   {
     name: "CSS",
     value: 90,
-  },
-  {
-    name: "Javascript",
-    value: 80,
   },
 ];
 
