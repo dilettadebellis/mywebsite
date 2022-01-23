@@ -1,40 +1,27 @@
 import React, { useState } from "react";
-import { useCookies } from "react-cookie";
 import useGlobalState from "../lib/globalState";
 
-export const COOKIE_ACCEPTED = "as-cookies-accepted";
-
-export default function ({}) {
+export default function CookieBanner() {
   const [visible, setVisible] = useState(true);
-  const [cookies, setCookie] = useCookies([COOKIE_ACCEPTED]);
-  const { texts } = useGlobalState();
+  const { texts, saveCookies, functionalCookieEnabled } = useGlobalState();
   const bannerTexts = texts.global.cookieBanner;
-
-  const saveCookie = (isYes) => {
-    if (isYes) {
-      // Save cookie with yes value
-      console.log("Cookies accepted");
-      setCookie(COOKIE_ACCEPTED, true, {
-        path: "/",
-        maxAge: 60 * 60 * 24 * 365,
-      });
-    } else {
-      // Save cookie with no value
-      console.log("Cookies denied");
-      setCookie(COOKIE_ACCEPTED, false, {
-        path: "/",
-        maxAge: 60 * 60,
-      });
-    }
-    setVisible(false);
-  };
+  const cookies = texts.cookies.cookies;
 
   const handleClick = (e, isYes) => {
     e.preventDefault();
-    saveCookie(isYes);
+    const cookieCodes = {};
+    cookies.forEach((cookie) => {
+      if (cookie.editable) {
+        cookieCodes[cookie.code] = isYes;
+      } else {
+        cookieCodes[cookie.code] = true;
+      }
+    });
+    saveCookies(cookieCodes);
+    setVisible(false);
   };
 
-  if (cookies[COOKIE_ACCEPTED]) {
+  if (functionalCookieEnabled()) {
     return null;
   }
 
@@ -45,21 +32,12 @@ export default function ({}) {
   return (
     <div className="cookie-banner-wrapper">
       <div className="row align-items-center">
-        <div className="col-12 col-md-9 ml-lg-auto">
-          <p className="cookie-banner-text mb-0">
-            {bannerTexts.textMain}{" "}
-            <a
-              className="cookie-banner-link"
-              href="#!"
-              onClick={(e) => e.preventDefault()}
-              data-toggle="modal"
-              data-target={`#cookie-policy-modal`}
-            >
-              {bannerTexts.learnMore}
-            </a>
-          </p>
+        <div className="col-12">
+          <p className="cookie-banner-text mb-0">{bannerTexts.textMain}</p>
         </div>
-        <div className="col-12 col-md-2 mt-md-0 mt-3 text-md-left text-right">
+      </div>
+      <div className="row mt-3">
+        <div className="col-12 text-center">
           <a
             href="#!"
             onClick={(e) => handleClick(e, false)}
@@ -78,7 +56,7 @@ export default function ({}) {
           </a>
           <a
             href="#!"
-            onClick={(e) => e.preventDefault()}
+            onClick={(e) => setVisible(false)}
             data-toggle="modal"
             data-target={`#cookies-modal`}
             className="cookie-banner-button secondary"
@@ -87,6 +65,28 @@ export default function ({}) {
             <span>{bannerTexts.customize}</span>
           </a>
         </div>
+      </div>
+      <hr className="cookie-banner-divider" />
+      <div className="text-center">
+        <a
+          className="cookie-link"
+          href="#!"
+          onClick={(e) => e.preventDefault()}
+          data-toggle="modal"
+          data-target={`#privacy-policy-modal`}
+        >
+          Privacy Policy
+        </a>
+        {" - "}
+        <a
+          className="cookie-link"
+          href="#!"
+          onClick={(e) => e.preventDefault()}
+          data-toggle="modal"
+          data-target={`#cookie-policy-modal`}
+        >
+          Cookie Policy
+        </a>
       </div>
     </div>
   );

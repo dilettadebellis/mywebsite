@@ -172,8 +172,8 @@ function HeroResume() {
                 </div>
                 <div id="skills" className="awards-box box-border">
                   {awards.map((award, index) => (
-                    <>
-                      <div key={index} className="awards-item">
+                    <div key={index}>
+                      <div className="awards-item">
                         <i
                           className={`${award.icon} size-md base-color award-icon`}
                         />
@@ -188,7 +188,7 @@ function HeroResume() {
                       {index < awards.length - 1 ? (
                         <hr className="award-divider" />
                       ) : null}
-                    </>
+                    </div>
                   ))}
                 </div>
               </div>

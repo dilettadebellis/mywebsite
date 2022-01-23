@@ -216,7 +216,7 @@
 
   .hero-04, .testimonial .owl-carousel .testimonial-image::before, .skill-box .skillbar,
   .blog-item:before, .blog-image, .testimonial .owl-carousel .testimonial-image,
-  .blog-single .modal-content, .portfolio-single .modal-content {
+  .blog-single .modal-content, .portfolio-single .modal-content, .cookie-modal .modal-content {
     background-color: #2c2d30 !important;
   }
 
@@ -256,14 +256,14 @@
     -o-box-shadow: inset 3px 3px 3px #202125, inset -3px -3px 3px #3e3e3e;
     -ms-box-shadow: inset 3px 3px 3px #202125, inset -3px -3px 3px #3e3e3e;
   }
-  .portfolio-single .close {
+  .portfolio-single .close, .cookie-modal .close {
     color: white;
   }
   .flat-demo .box-hover-border:hover {
     box-shadow: none;
   }
 
-  .flat-demo header, .flat-demo .testimonial-image-border, .flat-demo .blog-image, .flat-demo .blog-single .modal-content, .flat-demo .portfolio-single .modal-content {
+  .flat-demo header, .flat-demo .testimonial-image-border, .flat-demo .blog-image, .flat-demo .blog-single .modal-content, .flat-demo .portfolio-single .modal-content, .flat-demo .cookie-modal .modal-content {
     background-color: #2c2d30 !important;
   }
 
@@ -403,21 +403,21 @@ Media query sample
 
 
 @media (max-width: 1199px) {
-  
+
 }
 
 @media (max-width: 991px) {
-  
+
 }
 
 @media (max-width: 767px) {
-  
+
 }
 
 @media (max-width: 575px) {
-  
+
 }
 
 @media (max-width: 380px) {
- 
+
 }

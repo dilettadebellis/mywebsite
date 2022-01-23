@@ -14,3 +14,8 @@ export const cookies = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt risus risus, convallis accumsan enim porttitor non. Cras at sapien accumsan neque vestibulum maximus. Quisque in elementum quam, vestibulum venenatis tellus. Vivamus ex erat, congue id tellus vel, aliquam elementum nisi. ",
   },
 ];
+
+export const getCodes = (onlyCode = false) => {
+  const extra = onlyCode ? "" : "-cookie-accepted";
+  return cookies.map((cookie) => `${cookie.code}${extra}`);
+};

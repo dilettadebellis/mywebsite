@@ -16,7 +16,6 @@ export default function ({ name, comment, value }) {
           } else {
             iconClass += " fa-star-o";
           }
-          console.log(iconClass);
           return (
             <li key={index} className="list-inline-item">
               <i className={iconClass} />
