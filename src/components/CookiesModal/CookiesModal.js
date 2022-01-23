@@ -1,14 +1,15 @@
 import React from "react";
-import useGlobalState from "../lib/globalState";
-import MarkdownView from "react-showdown";
+import useGlobalState from "../../lib/globalState";
+import CookieItem from "./CookieItem";
 
-const CookiePolicyModal = () => {
+const CookiesModal = () => {
   const { texts } = useGlobalState();
-  const cookiePolicy = texts.cookie.cookiePolicy;
+  const cookies = texts.cookies.cookies;
+  const bannerTexts = texts.global.cookieBanner;
   return (
     <div
       className="portfolio-single modal fade"
-      id="cookie-policy-modal"
+      id="cookies-modal"
       tabIndex="-1"
       role="dialog"
       aria-labelledby={`portfolioModalScrollable-cookie-policy`}
@@ -17,11 +18,8 @@ const CookiePolicyModal = () => {
       <div className="modal-dialog modal-dialog-scrollable" role="document">
         <div className="modal-content text-muted">
           <div className="modal-header">
-            <h5
-              className="modal-title"
-              id={`portfolioModalScrollable-cookie-policy`}
-            >
-              {`${cookiePolicy.title[0]} ${cookiePolicy.title[1]}`}
+            <h5 className="modal-title">
+              {`${bannerTexts.cookiesTitle[0]} ${bannerTexts.cookiesTitle[1]}`}
             </h5>
             <button
               type="button"
@@ -39,31 +37,40 @@ const CookiePolicyModal = () => {
                   <div className="col-12 col-md-10 mx-auto">
                     <div className="text-center">
                       <h2 className="mb-3">
-                        {cookiePolicy.title[0]}{" "}
+                        {bannerTexts.cookiesTitle[0]}{" "}
                         <span className="base-color">
                           {" "}
-                          {cookiePolicy.title[1]}
+                          {bannerTexts.cookiesTitle[1]}
                         </span>
                       </h2>
                     </div>
                     <div className="text-md-left mt-5">
-                      {cookiePolicy.text.map((part, index) => (
-                        <div
-                          key={index}
-                          className={`my-3 ${
-                            index === cookiePolicy.text.length - 1 ? "mb-0" : ""
-                          }`}
-                        >
-                          <MarkdownView
-                            markdown={part}
-                            options={{ emoji: true }}
+                      {cookies.map((cookie, index) => (
+                        <>
+                          <CookieItem
+                            key={index}
+                            code={cookie.code}
+                            title={cookie.title}
+                            editable={cookie.editable}
+                            description={cookie.description}
                           />
-                        </div>
+                          {index < cookies.length - 1 ? (
+                            <hr className="cookie-item-divider" />
+                          ) : null}
+                        </>
                       ))}
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="modal-footer">
+            <div className="button-border mt-3 mb-lg-0 mr-4">
+              <a className="pill-button">{bannerTexts.declineAll}</a>
+            </div>
+            <div className="button-border mt-3 mb-lg-0 to-contact">
+              <a className="pill-button base-color">{bannerTexts.accept}</a>
             </div>
           </div>
         </div>
@@ -72,4 +79,4 @@ const CookiePolicyModal = () => {
   );
 };
 
-export default CookiePolicyModal;
+export default CookiesModal;

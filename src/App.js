@@ -14,6 +14,7 @@ import CookieBanner from "./components/CookieBanner";
 import CookiePolicyModal from "./components/CookiePolicyModal";
 import PrivacyPolicyModal from "./components/PrivacyPolicyModal";
 import { GlobalProvider } from "./lib/globalState";
+import CookiesModal from "./components/CookiesModal/CookiesModal";
 
 function App() {
   return (
@@ -30,11 +31,12 @@ function App() {
             <HeroAbout />
             <HeroResume />
             <HeroPortfolio />
-            {/*<HeroBlog />*/}
+            <HeroBlog />
             <HeroContact />
           </main>
           <NextPrevPage />
           <CookieBanner />
+          <CookiesModal />
           <CookiePolicyModal />
           <PrivacyPolicyModal />
         </div>

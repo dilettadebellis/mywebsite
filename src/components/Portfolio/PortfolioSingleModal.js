@@ -113,7 +113,7 @@ function PortfolioSingleModal({
                     ) : null}
                     <div className="text-md-left mt-5">
                       {longDescription.map((part, index) => (
-                        <p
+                        <div
                           key={index}
                           className={`my-3 ${
                             index === longDescription.length - 1 ? "mb-0" : ""
@@ -123,7 +123,7 @@ function PortfolioSingleModal({
                             markdown={part}
                             options={{ emoji: true }}
                           />
-                        </p>
+                        </div>
                       ))}
                     </div>
                   </div>

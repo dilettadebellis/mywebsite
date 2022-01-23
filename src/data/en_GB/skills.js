@@ -17,6 +17,25 @@ export const workSkills = [
   },
 ];
 
+export const codingSkills = [
+  {
+    name: "Photoshop",
+    value: 95,
+  },
+  {
+    name: "HTML",
+    value: 90,
+  },
+  {
+    name: "CSS",
+    value: 90,
+  },
+  {
+    name: "Javascript",
+    value: 80,
+  },
+];
+
 export const languageSkills = [
   {
     name: "English",

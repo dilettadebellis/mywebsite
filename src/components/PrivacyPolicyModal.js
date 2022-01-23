@@ -48,7 +48,7 @@ const PrivacyPolicyModal = () => {
                     </div>
                     <div className="text-md-left mt-5">
                       {privacyPolicy.text.map((part, index) => (
-                        <p
+                        <div
                           key={index}
                           className={`my-3 ${
                             index === privacyPolicy.text.length - 1
@@ -62,7 +62,7 @@ const PrivacyPolicyModal = () => {
                               options={{ emoji: true }}
                             />
                           }
-                        </p>
+                        </div>
                       ))}
                     </div>
                   </div>

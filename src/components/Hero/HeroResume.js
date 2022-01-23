@@ -2,6 +2,7 @@ import React from "react";
 import LangSkillItem from "../LangSkillItem";
 import Footer from "../Footer";
 import useGlobalState from "../../lib/globalState";
+import { codingSkills } from "../../data/en_GB/skills";
 
 function HeroResume() {
   const { texts } = useGlobalState();
@@ -9,6 +10,8 @@ function HeroResume() {
   const skillsTexts = texts.skills;
   const education = texts.education.education;
   const experiences = texts.experiences.experiences;
+  console.log(texts);
+  const awards = texts.awards.awardsAndAcknowledgement;
 
   return (
     <section id="resume" className="resume">
@@ -61,7 +64,7 @@ function HeroResume() {
                 </h3>
                 <div className="timeline-items box-border">
                   {experiences.map((exp, index) => (
-                    <div className="timeline-item">
+                    <div className="timeline-item" key={index}>
                       <div className="timeline-icon" />
                       <div className="timeline-contents">
                         <div className="time-line-header">
@@ -110,6 +113,35 @@ function HeroResume() {
               <div className="col-lg-6">
                 <div>
                   <h3 className="mb-0 mt-5 mt-lg-0">
+                    {resumeTexts.coding}{" "}
+                    <span className="base-color">
+                      {" "}
+                      {resumeTexts.softwareSkills}
+                    </span>
+                  </h3>
+                </div>
+                <div id="coding-skills" className="skill-box box-border">
+                  {skillsTexts.codingSkills.map((skill, index) => (
+                    <div
+                      key={index}
+                      className="skillbar clearfix"
+                      data-percent={`${skill.value}%`}
+                    >
+                      <div className="skillbar-title">
+                        <span>{skill.name}</span>
+                      </div>
+                      <div className="skillbar-bar fill-skillbar" />
+                      <div className="skill-bar-percent">{skill.value}%</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="row mt-5">
+              <div className="col-lg-6">
+                <div>
+                  <h3 className="mb-0 mt-5 mt-lg-0">
                     {resumeTexts.lang}{" "}
                     <span className="base-color">
                       {" "}
@@ -120,10 +152,43 @@ function HeroResume() {
                 <div className="language-bar box-border">
                   {skillsTexts.languageSkills.map((skill, index) => (
                     <LangSkillItem
+                      key={index}
                       name={skill.name}
                       comment={skill.comment}
                       value={skill.value}
                     />
+                  ))}
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <div>
+                  <h3 className="mb-0">
+                    {resumeTexts.awards}{" "}
+                    <span className="base-color">
+                      {" "}
+                      {resumeTexts.acknowledgement}
+                    </span>
+                  </h3>
+                </div>
+                <div id="skills" className="awards-box box-border">
+                  {awards.map((award, index) => (
+                    <>
+                      <div key={index} className="awards-item">
+                        <i
+                          className={`${award.icon} size-md base-color award-icon`}
+                        />
+                        <div className="award-description">
+                          {award.description}
+                        </div>
+                        <div className="award-extras">
+                          <div className="award-where">{award.location}</div>
+                          <div className="award-date">{award.date}</div>
+                        </div>
+                      </div>
+                      {index < awards.length - 1 ? (
+                        <hr className="award-divider" />
+                      ) : null}
+                    </>
                   ))}
                 </div>
               </div>

@@ -68,3 +68,42 @@
   font-size: 14px;
   font-weight: normal;
 }
+
+/*-------------------------
+      Awards
+-------------------------*/
+.awards-box {
+  padding: 35px 30px;
+  margin-top: 30px;
+}
+
+.awards-box:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.awards-item {
+  display: flex;
+  padding-left: 0;
+
+  .award-icon {
+    margin-right: 10px;
+  }
+
+  .award-description {
+    line-height: 2.25rem;
+    flex: 1;
+  }
+
+  .award-extras {
+    margin-right: auto;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
+
+.award-divider {
+  width: 70%;
+  margin: 1.25rem auto;
+  border-top: 2px solid $pink-color;
+
+}
