@@ -1,8 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function CookieItem({ code, title, editable, description }) {
+export default function CookieItem({
+  code,
+  title,
+  editable,
+  description,
+  addEnabledCookie,
+  removeEnabledCookie,
+}) {
   const [isEnabled, setIsEnabled] = useState(true);
   const [descIsOpen, setDescIsOpen] = useState(false);
+
+  useEffect(() => {
+    addEnabledCookie(code);
+  }, []);
+
+  const handleChange = () => {
+    if (isEnabled) {
+      // it will be false, we remove the cookie
+
+      removeEnabledCookie(code);
+    } else {
+      addEnabledCookie(code);
+    }
+    setIsEnabled(!isEnabled);
+  };
 
   return (
     <div className="cookie-item">
@@ -15,7 +37,7 @@ export default function CookieItem({ code, title, editable, description }) {
               className="custom-control-input"
               id={`${code}-enabled`}
               checked={isEnabled}
-              onChange={() => setIsEnabled(!isEnabled)}
+              onChange={handleChange}
             />
             <label
               className="custom-control-label"

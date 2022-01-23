@@ -121,7 +121,7 @@ function HeroContact({}) {
                           onClick={(e) => e.preventDefault()}
                           className="pill-button"
                           id="submit-btn"
-                          onClick="sendEmail()"
+                          /*onClick="sendEmail()"*/
                         >
                           {contactTexts.sendMessage}
                         </a>

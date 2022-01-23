@@ -94,7 +94,7 @@
 
 .arshia-dark .hero-04, .arshia-dark .testimonial .owl-carousel .testimonial-image::before, .arshia-dark .skill-box .skillbar,
 .arshia-dark .blog-item:before, .arshia-dark .blog-image, .arshia-dark .testimonial .owl-carousel .testimonial-image,
-.arshia-dark .blog-single .modal-content, .arshia-dark .portfolio-single .modal-content {
+.arshia-dark .blog-single .modal-content, .arshia-dark .portfolio-single .modal-content, .arshia-dark .cookie-modal .modal-content {
   background-color: #2c2d30;
 }
 
@@ -137,7 +137,7 @@
   -ms-box-shadow: inset 3px 3px 3px #202125, inset -3px -3px 3px #3e3e3e;
 }
 
-.arshia-dark .portfolio-single .close {
+.arshia-dark .portfolio-single .close, .arshia-dark .cookie-modal .close {
   color: white;
 }
 
