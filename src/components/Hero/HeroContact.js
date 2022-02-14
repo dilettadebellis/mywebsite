@@ -1,16 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../Footer";
 import useGlobalState from "../../lib/globalState";
+import { fetchData } from "../../lib/data";
 
 function HeroContact({}) {
-  const { texts } = useGlobalState();
+  const { lang } = useGlobalState();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [statusMessage, setStatusMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const contactTexts = texts.global.heroContact;
+  const [contactTexts, setContactTexts] = useState(null);
+
+  useEffect(() => {
+    loadContactTexts();
+  }, []);
+
+  const loadContactTexts = async () => {
+    const response = await fetchData("global", lang);
+    if (response.status === 200) {
+      setContactTexts(response.data.global.heroContact);
+    } else {
+      console.log(response);
+    }
+  };
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -47,6 +61,10 @@ function HeroContact({}) {
     setStatusMessage("");
     setter(e.target.value);
   };
+
+  if (!contactTexts) {
+    return null;
+  }
 
   return (
     <section id="contact" className="contact">

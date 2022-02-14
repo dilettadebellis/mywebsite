@@ -1,10 +1,38 @@
-import React from "react";
-import { socials } from "../../data/socials";
+import React, { useEffect, useState } from "react";
 import useGlobalState from "../../lib/globalState";
+import { fetchData } from "../../lib/data";
 
-function HeroHome({}) {
-  const { texts } = useGlobalState();
-  const homeTexts = texts.global.heroHome;
+function HeroHome() {
+  const { lang } = useGlobalState();
+  const [homeTexts, setHomeTexts] = useState(null);
+  const [socials, setSocials] = useState(null);
+
+  useEffect(() => {
+    loadHomeTexts();
+    loadSocials();
+  }, []);
+
+  const loadHomeTexts = async () => {
+    const response = await fetchData("global", lang);
+    if (response.status === 200) {
+      setHomeTexts(response.data.global.heroHome);
+    } else {
+      console.log(response);
+    }
+  };
+
+  const loadSocials = async () => {
+    const response = await fetchData("socials", null);
+    if (response.status === 200) {
+      setSocials(response.data.socials);
+    } else {
+      console.log(response);
+    }
+  };
+
+  if (!homeTexts || !socials) {
+    return null;
+  }
 
   return (
     <section id="hero" className="hero-01 active">

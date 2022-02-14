@@ -1,13 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PortfolioItem from "./PortfolioItem";
 import Footer from "../../Footer";
 import useGlobalState from "../../../lib/globalState";
+import { fetchData } from "../../../lib/data";
 
-export default function () {
-  const { texts } = useGlobalState();
-  const globalTextsPortfolio = texts.global.heroPortfolio;
-  const worksFilters = texts.works.worksFilters;
-  const works = texts.works.works;
+export default function HeroPortfolio() {
+  const { lang } = useGlobalState();
+  const [defaultCoverImage, setDefaultCoverImage] = useState(null);
+  const [worksFilters, setWorksFilters] = useState(null);
+  const [works, setWorks] = useState(null);
+  const [globalTextsPortfolio, setGlobalTextsPortfolio] = useState(null);
+
+  useEffect(() => {
+    loadGlobalTextsPortfolio();
+    loadWorksTexts();
+  }, []);
+
+  const loadGlobalTextsPortfolio = async () => {
+    const response = await fetchData("global", lang);
+    if (response.status === 200) {
+      setGlobalTextsPortfolio(response.data.global.heroPortfolio);
+    } else {
+      console.log(response);
+    }
+  };
+
+  const loadWorksTexts = async () => {
+    const response = await fetchData("works", lang);
+    if (response.status === 200) {
+      const works = response.data;
+      setDefaultCoverImage(works.defaultCoverImage);
+      setWorksFilters(works.worksFilters);
+      setWorks(works.works);
+    } else {
+      console.log(response);
+    }
+  };
+
+  if (!globalTextsPortfolio || !defaultCoverImage || !works || !worksFilters) {
+    return null;
+  }
+
   return (
     <section id="portfolio" className="portfolio">
       <div className="display-table">
@@ -54,6 +87,7 @@ export default function () {
                   coverImage={work.coverImage}
                   filters={work.filters}
                   modalId={`single-portfolio-modal-${index}`}
+                  defaultCoverImage={defaultCoverImage}
                 />
               ))}
             </div>

@@ -1,7 +1,6 @@
 import React from "react";
-import { defaultMainImage } from "../../data/en_GB/works";
 
-const PortfolioSlider = ({ images, modalId, name }) => {
+const PortfolioSlider = ({ images, modalId, name, defaultMainImage }) => {
   return (
     <div
       id={`portfolio-slider-${modalId}`}

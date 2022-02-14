@@ -1,12 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useGlobalState from "../../lib/globalState";
 import CookieItem from "./CookieItem";
+import { fetchData } from "../../lib/data";
 
 const CookiesModal = () => {
-  const { texts, saveCookies } = useGlobalState();
-  const cookies = texts.cookies.cookies;
+  const { lang, saveCookies } = useGlobalState();
   const [enabledCookies, setEnabledCookies] = useState({});
-  const bannerTexts = texts.global.cookieBanner;
+  const [bannerTexts, setBannerTexts] = useState(null);
+  const [cookies, setCookies] = useState(null);
+
+  useEffect(() => {
+    loadCookies();
+    loadBannerTexts();
+  }, []);
+
+  const loadCookies = async () => {
+    const response = await fetchData("cookies", lang);
+    if (response.status === 200) {
+      setCookies(response.data.cookies);
+    } else {
+      console.log(response);
+    }
+  };
+
+  const loadBannerTexts = async () => {
+    const response = await fetchData("global", lang);
+    if (response.status === 200) {
+      setBannerTexts(response.data.global.cookieBanner);
+    } else {
+      console.log(response);
+    }
+  };
 
   const addEnabledCookie = (cookieCode) => {
     setEnabledCookies((prevState) => ({ ...prevState, [cookieCode]: true }));
@@ -33,6 +57,10 @@ const CookiesModal = () => {
   const modalHide = () => {
     window.jQuery("#cookies-modal").modal("hide");
   };
+
+  if (!cookies || !bannerTexts) {
+    return null;
+  }
 
   return (
     <div

@@ -1,7 +1,6 @@
-import React, { createContext, useState, useContext, useEffect } from "react";
-import { mappings } from "../data";
+import React, { createContext, useState, useContext } from "react";
 import { useCookies } from "react-cookie";
-import { getCodes } from "../data/en_GB/cookies";
+import { getCodes } from "./data/cookies";
 
 export const langMapping = {
   en_GB: {
@@ -28,7 +27,6 @@ const GlobalContext = createContext({
 
 export const GlobalProvider = ({ children }) => {
   const [lang, setLang] = useState(initialState.lang);
-  const [texts, setTexts] = useState(mappings[lang]);
   const [cookies, setCookie] = useCookies([getCodes()]);
 
   const saveCookies = (cookieCodes) => {
@@ -59,25 +57,11 @@ export const GlobalProvider = ({ children }) => {
     return cookies["stats-cookie-accepted"];
   };
 
-  useEffect(() => {
-    setTexts(mappings[lang]);
-  }, [lang]);
-
-  const getText = (code, module = null) => {
-    if (module === null) {
-      return mappings[lang].global[code];
-    } else {
-      return mappings[lang][module][code];
-    }
-  };
-
   return (
     <GlobalContext.Provider
       value={{
         lang,
         setLang,
-        texts,
-        getText,
         saveCookies,
         enabledCookies,
         functionalCookieEnabled,

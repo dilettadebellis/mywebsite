@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ({ name, comment, value }) {
+export default function LangSkillItem({ name, comment, value }) {
   return (
     <div className="language-skill row">
       <h4 className="col-6 text-left mb-0">
