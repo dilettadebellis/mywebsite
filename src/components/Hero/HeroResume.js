@@ -1,17 +1,87 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LangSkillItem from "../LangSkillItem";
 import Footer from "../Footer";
 import useGlobalState from "../../lib/globalState";
-import { codingSkills } from "../../data/en_GB/skills";
+import { fetchData } from "../../lib/data";
 
 function HeroResume() {
-  const { texts } = useGlobalState();
-  const resumeTexts = texts.global.heroResume;
-  const skillsTexts = texts.skills;
-  const education = texts.education.education;
-  const experiences = texts.experiences.experiences;
-  console.log(texts);
-  const awards = texts.awards.awardsAndAcknowledgement;
+  const { lang } = useGlobalState();
+  const [resumeTexts, setResumeTexts] = useState(null);
+  const [skillsTexts, setSkillsTexts] = useState(null);
+  const [education, setEducation] = useState(null);
+  const [experiences, setExperiences] = useState(null);
+  const [awards, setAwards] = useState(null);
+
+  useEffect(() => {
+    loadResumeTexts();
+    loadEduction();
+    loadExperiences();
+    loadAwards();
+    if (!skillsTexts) {
+      loadSkillsTexts();
+    } else {
+      window.jQuery(".skillbar").each(function () {
+        window
+          .jQuery(this)
+          .find(".skillbar-bar")
+          .animate(
+            {
+              width: window.jQuery(this).attr("data-percent"),
+            },
+            6000
+          );
+      });
+    }
+  }, [skillsTexts]);
+
+  const loadResumeTexts = async () => {
+    const response = await fetchData("global", lang);
+    if (response.status === 200) {
+      setResumeTexts(response.data.global.heroResume);
+    } else {
+      console.log(response);
+    }
+  };
+
+  const loadSkillsTexts = async () => {
+    const response = await fetchData("skills", lang);
+    if (response.status === 200) {
+      setSkillsTexts(response.data);
+    } else {
+      console.log(response);
+    }
+  };
+
+  const loadEduction = async () => {
+    const response = await fetchData("education", lang);
+    if (response.status === 200) {
+      setEducation(response.data.education);
+    } else {
+      console.log(response);
+    }
+  };
+
+  const loadExperiences = async () => {
+    const response = await fetchData("experiences", lang);
+    if (response.status === 200) {
+      setExperiences(response.data.experiences);
+    } else {
+      console.log(response);
+    }
+  };
+
+  const loadAwards = async () => {
+    const response = await fetchData("awards", lang);
+    if (response.status === 200) {
+      setAwards(response.data.awardsAndAcknowledgement);
+    } else {
+      console.log(response);
+    }
+  };
+
+  if (!resumeTexts || !skillsTexts || !education || !experiences || !awards) {
+    return null;
+  }
 
   return (
     <section id="resume" className="resume">

@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import { mappings } from "../data";
 import { useCookies } from "react-cookie";
-import { getCodes } from "../data/en_GB/cookies";
+import { getCodes } from "./data/cookies";
 
 export const langMapping = {
   en_GB: {

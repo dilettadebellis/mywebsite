@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useGlobalState from "../../../lib/globalState";
+import { fetchData } from "../../../lib/data";
 
-export default function () {
-  const { texts } = useGlobalState();
-  const aboutInfoTexts = texts.global.heroAbout.aboutInfo;
+export default function AboutInfo() {
+  const { lang } = useGlobalState();
+  const [aboutInfoTexts, setAboutInfoTexts] = useState(null);
+
+  useEffect(() => {
+    if (!aboutInfoTexts) {
+      loadAboutInfoTexts();
+    } else {
+      if (window.jQuery) {
+        window.jQuery(".timer").countTo();
+        window.jQuery(".count-number").removeClass("timer");
+      }
+    }
+  }, [aboutInfoTexts]);
+
+  const loadAboutInfoTexts = async () => {
+    const response = await fetchData("global", lang);
+    if (response.status === 200) {
+      setAboutInfoTexts(response.data.global.heroAbout.aboutInfo);
+    } else {
+      console.log(response);
+    }
+  };
+
+  if (!aboutInfoTexts) {
+    return null;
+  }
 
   const now = new Date();
   const startExp = new Date("2013-01-01");

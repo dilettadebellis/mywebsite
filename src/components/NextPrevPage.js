@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ({}) {
+export default function NextPrevPage() {
   return (
     <div className="next-prev-page">
       <button type="button" className="prev-page bg-base-color">

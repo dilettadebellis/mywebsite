@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useGlobalState from "../../lib/globalState";
 import PortfolioSlider from "./PortfolioSlider";
 import MarkdownView from "react-showdown";
+import { fetchData } from "../../lib/data";
 
 function PortfolioSingleModal({
   name,
@@ -15,8 +16,37 @@ function PortfolioSingleModal({
   modalId,
   url,
 }) {
-  const { texts } = useGlobalState();
-  const modalTexts = texts.global.heroPortfolio.portfolioModal;
+  const { lang } = useGlobalState();
+  const [modalTexts, setModalTexts] = useState(null);
+  const [defaultMainImage, setDefaultMainImage] = useState(null);
+
+  useEffect(() => {
+    loadModalTexts();
+    loadDefaultMainImage();
+  }, []);
+
+  const loadModalTexts = async () => {
+    const response = await fetchData("global", lang);
+    if (response.status === 200) {
+      setModalTexts(response.data.global.heroPortfolio.portfolioModal);
+    } else {
+      console.log(response);
+    }
+  };
+
+  const loadDefaultMainImage = async () => {
+    const response = await fetchData("works", lang);
+    if (response.status === 200) {
+      setDefaultMainImage(response.data.defaultMainImage);
+    } else {
+      console.log(response);
+    }
+  };
+
+  if (!modalTexts || !defaultMainImage) {
+    return null;
+  }
+
   return (
     <div
       className="portfolio-single modal fade"
@@ -92,6 +122,7 @@ function PortfolioSingleModal({
                           images={mainImages}
                           modalId={modalId}
                           name={name}
+                          defaultMainImage={defaultMainImage}
                         />
                       </div>
                     </div>

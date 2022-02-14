@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useGlobalState from "../lib/globalState";
 import MarkdownView from "react-showdown";
+import { fetchData } from "../lib/data";
 
 const PrivacyPolicyModal = () => {
-  const { texts } = useGlobalState();
-  const privacyPolicy = texts.privacy.privacyPolicy;
+  const { lang } = useGlobalState();
+  const [privacyPolicy, setPrivacyPolicy] = useState(null);
+
+  useEffect(() => {
+    loadPrivacyPolicy();
+  }, []);
+
+  const loadPrivacyPolicy = async () => {
+    const response = await fetchData("privacy-policy", lang);
+    if (response.status === 200) {
+      setPrivacyPolicy(response.data.privacyPolicy);
+    } else {
+      console.log(response);
+    }
+  };
+
+  if (!privacyPolicy) {
+    return null;
+  }
+
   return (
     <div
       className="portfolio-single modal fade"
