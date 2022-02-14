@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useGlobalState from "../lib/globalState";
 import MarkdownView from "react-showdown";
+import { fetchData } from "../lib/data";
 
 const CookiePolicyModal = () => {
-  const { texts } = useGlobalState();
-  const cookiePolicy = texts.cookie.cookiePolicy;
+  const { lang } = useGlobalState();
+  const [cookiePolicy, setCookiePolicy] = useState(null);
+
+  useEffect(() => {
+    loadCookiePolicy();
+  }, []);
+
+  const loadCookiePolicy = async () => {
+    const response = await fetchData("cookie-policy", lang);
+    if (response.status === 200) {
+      setCookiePolicy(response.data.cookiePolicy);
+    } else {
+      console.log(response);
+    }
+  };
+
+  if (!cookiePolicy) {
+    return null;
+  }
+
   return (
     <div
       className="portfolio-single modal fade"

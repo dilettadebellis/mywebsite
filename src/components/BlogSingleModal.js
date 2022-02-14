@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ({}) {
+export default function BlogSingleModal() {
   return (
     <div
       className="blog-single modal fade"

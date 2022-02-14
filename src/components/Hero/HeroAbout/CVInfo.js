@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { downloadFile, getAge } from "../../../utils";
-import aboutMeImage from "../../../assets/img/diletta-de-bellis-03.jpg";
 import useGlobalState from "../../../lib/globalState";
+import { fetchData } from "../../../lib/data";
 
-export default function () {
-  const { texts } = useGlobalState();
-  const cvTexts = texts.global.heroAbout.cvInfo;
+export default function CVInfo() {
+  const { lang } = useGlobalState();
+  const [cvTexts, setCvTexts] = useState(null);
+
+  useEffect(() => {
+    loadCvTexts();
+  }, []);
+
+  const loadCvTexts = async () => {
+    const response = await fetchData("global", lang);
+    if (response.status === 200) {
+      setCvTexts(response.data.global.heroAbout.cvInfo);
+    } else {
+      console.log(response);
+    }
+  };
+
+  if (!cvTexts) {
+    return null;
+  }
 
   const downloadCV = (e) => {
     e.preventDefault();
@@ -26,7 +43,7 @@ export default function () {
       </div>
       <div className="col-lg-6">
         <div className="image-border">
-          <img src={aboutMeImage} alt="/" />
+          <img src="/assets/img/custom/diletta-de-bellis-03.jpg" alt="/" />
         </div>
       </div>
       <div className="col-lg-6 mt-4 mt-lg-0">

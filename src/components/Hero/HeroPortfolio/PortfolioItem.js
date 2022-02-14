@@ -1,7 +1,12 @@
-import React from "react";
-import { defaultCoverImage } from "../../../data/en_GB/works";
+import React, { useState } from "react";
 
-export default function ({ name, coverImage, filters, modalId }) {
+export default function PortfolioItem({
+  name,
+  coverImage,
+  filters,
+  modalId,
+  defaultCoverImage,
+}) {
   return (
     <div className={`col-lg-4 portfolio-item ${filters.join(" ")}`}>
       <div className="image-border">

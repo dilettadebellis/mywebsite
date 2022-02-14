@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useGlobalState, { langMapping } from "../lib/globalState";
+import { fetchData } from "../lib/data";
 
 function Header({}) {
-  const { lang, setLang, texts } = useGlobalState();
-  const navbarTexts = texts.global.navbar;
+  const { lang, setLang } = useGlobalState();
+  const [navbarTexts, setNavbarTexts] = useState(null);
+
+  useEffect(() => {
+    loadNavbarTexts();
+  }, []);
+
+  const loadNavbarTexts = async () => {
+    const response = await fetchData("global", lang);
+    if (response.status === 200) {
+      setNavbarTexts(response.data.global.navbar);
+    } else {
+      console.log(response);
+    }
+  };
 
   const handleMenuLogoClick = (e) => {
     e.preventDefault();
@@ -18,6 +32,10 @@ function Header({}) {
         : langMapping.en_GB.code
     );
   };
+
+  if (!navbarTexts) {
+    return null;
+  }
 
   return (
     <header>
