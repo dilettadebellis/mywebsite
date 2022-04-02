@@ -1,30 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Footer from "../Footer";
-import useGlobalState from "../../lib/globalState";
-import { fetchData } from "../../lib/data";
+import { useEntitySingleRowData } from "../../lib/hooks/data/entities";
 
 function HeroContact({}) {
-  const { lang } = useGlobalState();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [statusMessage, setStatusMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [contactTexts, setContactTexts] = useState(null);
-
-  useEffect(() => {
-    loadContactTexts();
-  }, []);
-
-  const loadContactTexts = async () => {
-    const response = await fetchData("global", lang);
-    if (response.status === 200) {
-      setContactTexts(response.data.global.heroContact);
-    } else {
-      console.log(response);
-    }
-  };
+  const contactTexts = useEntitySingleRowData("global_heroContact");
 
   const sendMessage = async (e) => {
     e.preventDefault();

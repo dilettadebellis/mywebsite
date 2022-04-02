@@ -1,35 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ServiceItem from "./ServiceItem";
-import useGlobalState from "../../../lib/globalState";
-import { fetchData } from "../../../lib/data";
+import {
+  useEntityAllData,
+  useEntitySingleRowData,
+} from "../../../lib/hooks/data/entities";
 
 export default function Services() {
-  const { lang } = useGlobalState();
-  const [servicesGlobal, setServicesGlobal] = useState(null);
-  const [services, setServices] = useState(null);
-
-  useEffect(() => {
-    loadServicesGlobal();
-    loadServices();
-  }, []);
-
-  const loadServicesGlobal = async () => {
-    const response = await fetchData("global", lang);
-    if (response.status === 200) {
-      setServicesGlobal(response.data.global.heroAbout.services);
-    } else {
-      console.log(response);
-    }
-  };
-
-  const loadServices = async () => {
-    const response = await fetchData("services", lang);
-    if (response.status === 200) {
-      setServices(response.data.services);
-    } else {
-      console.log(response);
-    }
-  };
+  const servicesGlobal = useEntitySingleRowData("global_heroAbout_services");
+  const services = useEntityAllData("services");
 
   if (!servicesGlobal || !services) {
     return null;

@@ -1,85 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import LangSkillItem from "../LangSkillItem";
 import Footer from "../Footer";
-import useGlobalState from "../../lib/globalState";
-import { fetchData } from "../../lib/data";
+import {
+  useEntityAllData,
+  useEntitySingleRowData,
+} from "../../lib/hooks/data/entities";
 
 function HeroResume() {
-  const { lang } = useGlobalState();
-  const [resumeTexts, setResumeTexts] = useState(null);
-  const [skillsTexts, setSkillsTexts] = useState(null);
-  const [education, setEducation] = useState(null);
-  const [experiences, setExperiences] = useState(null);
-  const [awards, setAwards] = useState(null);
+  const resumeTexts = useEntitySingleRowData("global_heroResume");
+  const workSkills = useEntityAllData("workSkills");
+  const codingSkills = useEntityAllData("codingSkills");
+  const languageSkills = useEntityAllData("languageSkills");
+  const education = useEntityAllData("educations");
+  const experiences = useEntityAllData("experiences");
+  const awards = useEntityAllData("awards");
 
-  useEffect(() => {
-    loadResumeTexts();
-    loadEduction();
-    loadExperiences();
-    loadAwards();
-    if (!skillsTexts) {
-      loadSkillsTexts();
-    } else {
-      window.jQuery(".skillbar").each(function () {
-        window
-          .jQuery(this)
-          .find(".skillbar-bar")
-          .animate(
-            {
-              width: window.jQuery(this).attr("data-percent"),
-            },
-            6000
-          );
-      });
-    }
-  }, [skillsTexts]);
-
-  const loadResumeTexts = async () => {
-    const response = await fetchData("global", lang);
-    if (response.status === 200) {
-      setResumeTexts(response.data.global.heroResume);
-    } else {
-      console.log(response);
-    }
-  };
-
-  const loadSkillsTexts = async () => {
-    const response = await fetchData("skills", lang);
-    if (response.status === 200) {
-      setSkillsTexts(response.data);
-    } else {
-      console.log(response);
-    }
-  };
-
-  const loadEduction = async () => {
-    const response = await fetchData("education", lang);
-    if (response.status === 200) {
-      setEducation(response.data.education);
-    } else {
-      console.log(response);
-    }
-  };
-
-  const loadExperiences = async () => {
-    const response = await fetchData("experiences", lang);
-    if (response.status === 200) {
-      setExperiences(response.data.experiences);
-    } else {
-      console.log(response);
-    }
-  };
-
-  const loadAwards = async () => {
-    const response = await fetchData("awards", lang);
-    if (response.status === 200) {
-      setAwards(response.data.awardsAndAcknowledgement);
-    } else {
-      console.log(response);
-    }
-  };
-
-  if (!resumeTexts || !skillsTexts || !education || !experiences || !awards) {
+  if (
+    !resumeTexts ||
+    !codingSkills ||
+    !languageSkills ||
+    !workSkills ||
+    !education ||
+    !experiences ||
+    !awards
+  ) {
     return null;
   }
 
@@ -165,7 +109,7 @@ function HeroResume() {
                   </h3>
                 </div>
                 <div id="skills" className="skill-box box-border">
-                  {skillsTexts.workSkills.map((skill, index) => (
+                  {workSkills.map((skill, index) => (
                     <div
                       key={index}
                       className="skillbar clearfix"
@@ -191,7 +135,7 @@ function HeroResume() {
                   </h3>
                 </div>
                 <div id="coding-skills" className="skill-box box-border">
-                  {skillsTexts.codingSkills.map((skill, index) => (
+                  {codingSkills.map((skill, index) => (
                     <div
                       key={index}
                       className="skillbar clearfix"
@@ -220,7 +164,7 @@ function HeroResume() {
                   </h3>
                 </div>
                 <div className="language-bar box-border">
-                  {skillsTexts.languageSkills.map((skill, index) => (
+                  {languageSkills.map((skill, index) => (
                     <LangSkillItem
                       key={index}
                       name={skill.name}

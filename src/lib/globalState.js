@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import { getCodes } from "./data/cookies";
 
@@ -28,6 +28,8 @@ const GlobalContext = createContext({
 export const GlobalProvider = ({ children }) => {
   const [lang, setLang] = useState(initialState.lang);
   const [cookies, setCookie] = useCookies([getCodes()]);
+  const [themeColor, setThemeColor] = useState("light");
+  const [screenMode, setScreenMode] = useState("desktop");
 
   const saveCookies = (cookieCodes) => {
     Object.keys(cookieCodes).forEach((code) => {
@@ -57,11 +59,48 @@ export const GlobalProvider = ({ children }) => {
     return cookies["stats-cookie-accepted"];
   };
 
+  const screenTypeFromWidth = () => {
+    const width = Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0
+    );
+    if (width < 576) {
+      setScreenMode("mobile");
+    } else {
+      if (width < 768) {
+        setScreenMode("tablet");
+      } else {
+        setScreenMode("desktop");
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      setThemeColor("dark");
+    }
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (event) => {
+        const newColorScheme = event.matches ? "dark" : "light";
+        setThemeColor(newColorScheme);
+      });
+    screenTypeFromWidth();
+    window.addEventListener("resize", screenTypeFromWidth);
+  }, []);
+
   return (
     <GlobalContext.Provider
       value={{
         lang,
         setLang,
+        themeColor,
+        setThemeColor,
+        screenMode,
+        setScreenMode,
         saveCookies,
         enabledCookies,
         functionalCookieEnabled,

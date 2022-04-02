@@ -1,30 +1,10 @@
 import React, { useEffect, useState } from "react";
 import useGlobalState from "../../../lib/globalState";
 import { fetchData } from "../../../lib/data";
+import { useEntitySingleRowData } from "../../../lib/hooks/data/entities";
 
 export default function AboutInfo() {
-  const { lang } = useGlobalState();
-  const [aboutInfoTexts, setAboutInfoTexts] = useState(null);
-
-  useEffect(() => {
-    if (!aboutInfoTexts) {
-      loadAboutInfoTexts();
-    } else {
-      if (window.jQuery) {
-        window.jQuery(".timer").countTo();
-        window.jQuery(".count-number").removeClass("timer");
-      }
-    }
-  }, [aboutInfoTexts]);
-
-  const loadAboutInfoTexts = async () => {
-    const response = await fetchData("global", lang);
-    if (response.status === 200) {
-      setAboutInfoTexts(response.data.global.heroAbout.aboutInfo);
-    } else {
-      console.log(response);
-    }
-  };
+  const aboutInfoTexts = useEntitySingleRowData("global_heroAbout_aboutInfo");
 
   if (!aboutInfoTexts) {
     return null;
@@ -44,7 +24,7 @@ export default function AboutInfo() {
             <span
               className="timer count-number"
               data-from="0"
-              data-to="3460"
+              data-to={aboutInfoTexts.cappuccinosConsumedNumber}
               data-speed="2000"
             >
               0
@@ -61,7 +41,7 @@ export default function AboutInfo() {
             <span
               className="timer count-number"
               data-from="0"
-              data-to="100"
+              data-to={aboutInfoTexts.projectsDoneNumber}
               data-speed="2000"
             >
               0
@@ -95,7 +75,7 @@ export default function AboutInfo() {
             <span
               className="timer count-number"
               data-from="0"
-              data-to="18000"
+              data-to={aboutInfoTexts.hoursWorkedNumber}
               data-speed="2000"
             >
               0

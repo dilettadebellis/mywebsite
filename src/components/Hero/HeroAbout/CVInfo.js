@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { downloadFile, getAge } from "../../../utils";
-import useGlobalState from "../../../lib/globalState";
-import { fetchData } from "../../../lib/data";
+import { useEntitySingleRowData } from "../../../lib/hooks/data/entities";
 
 export default function CVInfo() {
-  const { lang } = useGlobalState();
-  const [cvTexts, setCvTexts] = useState(null);
-
-  useEffect(() => {
-    loadCvTexts();
-  }, []);
-
-  const loadCvTexts = async () => {
-    const response = await fetchData("global", lang);
-    if (response.status === 200) {
-      setCvTexts(response.data.global.heroAbout.cvInfo);
-    } else {
-      console.log(response);
-    }
-  };
+  const globalPhotos = useEntitySingleRowData("global_photos");
+  const cvTexts = useEntitySingleRowData("global_heroAbout_cvInfo");
 
   if (!cvTexts) {
     return null;
@@ -43,7 +29,14 @@ export default function CVInfo() {
       </div>
       <div className="col-lg-6">
         <div className="image-border">
-          <img src="/assets/img/custom/diletta-de-bellis-03.jpg" alt="/" />
+          <img
+            src={
+              globalPhotos
+                ? `${process.env.REACT_APP_IMAGES_BASE_PATH}${globalPhotos.aboutMe}`
+                : ""
+            }
+            alt="about me"
+          />
         </div>
       </div>
       <div className="col-lg-6 mt-4 mt-lg-0">

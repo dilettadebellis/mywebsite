@@ -1,41 +1,39 @@
 import React, { useEffect, useState } from "react";
+import {
+  useEntityAllData,
+  useEntitySingleRowData,
+} from "../../lib/hooks/data/entities";
 import useGlobalState from "../../lib/globalState";
-import { fetchData } from "../../lib/data";
+import { capitalize } from "../../utils";
 
 function HeroHome() {
-  const { lang } = useGlobalState();
-  const [homeTexts, setHomeTexts] = useState(null);
-  const [socials, setSocials] = useState(null);
+  const { themeColor, screenMode } = useGlobalState();
+  const homeTexts = useEntitySingleRowData("global_heroHome");
+  const globalPhotos = useEntitySingleRowData("global_photos");
+  const socials = useEntityAllData("socials");
+  const [currentHeroImage, setCurrentHeroImage] = useState(null);
 
   useEffect(() => {
-    loadHomeTexts();
-    loadSocials();
-  }, []);
-
-  const loadHomeTexts = async () => {
-    const response = await fetchData("global", lang);
-    if (response.status === 200) {
-      setHomeTexts(response.data.global.heroHome);
-    } else {
-      console.log(response);
+    if (globalPhotos) {
+      const color = themeColor === "dark" ? "Black" : "White";
+      setCurrentHeroImage(
+        globalPhotos[`heroHome${capitalize(screenMode)}${color}`]
+      );
     }
-  };
-
-  const loadSocials = async () => {
-    const response = await fetchData("socials", null);
-    if (response.status === 200) {
-      setSocials(response.data.socials);
-    } else {
-      console.log(response);
-    }
-  };
+  }, [themeColor, screenMode, globalPhotos]);
 
   if (!homeTexts || !socials) {
     return null;
   }
 
   return (
-    <section id="hero" className="hero-01 active">
+    <section
+      id="hero"
+      className="hero-01 active"
+      style={{
+        background: ` url("${process.env.REACT_APP_IMAGES_BASE_PATH}${currentHeroImage}")`,
+      }}
+    >
       <div className="display-table">
         <div className="display-content">
           <div className="container">

@@ -70,7 +70,7 @@ export default function HeroPortfolio() {
                   <li key={index} className="button-border list-inline-item">
                     <a
                       href="#"
-                      data-filter={filter.code}
+                      data-filter={`.${filter.code}`}
                       className={`pill-button ${index === 0 ? "active" : ""}`}
                     >
                       {filter.name}
