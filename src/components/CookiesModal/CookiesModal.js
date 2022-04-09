@@ -1,36 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import useGlobalState from "../../lib/globalState";
 import CookieItem from "./CookieItem";
-import { fetchData } from "../../lib/data";
+import {
+  useEntityAllData,
+  useEntitySingleRowData,
+} from "../../lib/hooks/data/entities";
 
 const CookiesModal = () => {
-  const { lang, saveCookies } = useGlobalState();
+  const { saveCookies } = useGlobalState();
   const [enabledCookies, setEnabledCookies] = useState({});
-  const [bannerTexts, setBannerTexts] = useState(null);
-  const [cookies, setCookies] = useState(null);
-
-  useEffect(() => {
-    loadCookies();
-    loadBannerTexts();
-  }, []);
-
-  const loadCookies = async () => {
-    const response = await fetchData("cookies", lang);
-    if (response.status === 200) {
-      setCookies(response.data.cookies);
-    } else {
-      console.log(response);
-    }
-  };
-
-  const loadBannerTexts = async () => {
-    const response = await fetchData("global", lang);
-    if (response.status === 200) {
-      setBannerTexts(response.data.global.cookieBanner);
-    } else {
-      console.log(response);
-    }
-  };
+  const bannerTexts = useEntitySingleRowData("global_cookieBanner");
+  const cookies = useEntityAllData("cookies");
 
   const addEnabledCookie = (cookieCode) => {
     setEnabledCookies((prevState) => ({ ...prevState, [cookieCode]: true }));
@@ -95,10 +75,10 @@ const CookiesModal = () => {
                   <div className="col-12 col-md-10 mx-auto">
                     <div className="text-center">
                       <h2 className="mb-3">
-                        {bannerTexts.cookiesTitle[0]}{" "}
+                        {bannerTexts.cookiesTitle.split("*|*")[0]}{" "}
                         <span className="base-color">
                           {" "}
-                          {bannerTexts.cookiesTitle[1]}
+                          {bannerTexts.cookiesTitle.split("*|*")[1]}
                         </span>
                       </h2>
                     </div>

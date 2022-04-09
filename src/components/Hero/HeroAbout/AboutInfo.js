@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import useGlobalState from "../../../lib/globalState";
-import { fetchData } from "../../../lib/data";
+import React from "react";
 import { useEntitySingleRowData } from "../../../lib/hooks/data/entities";
 
 export default function AboutInfo() {

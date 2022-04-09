@@ -1,23 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import useGlobalState, { langMapping } from "../lib/globalState";
-import { fetchData } from "../lib/data";
+import { useEntitySingleRowData } from "../lib/hooks/data/entities";
 
-function Header({}) {
+function Header() {
   const { lang, setLang } = useGlobalState();
-  const [navbarTexts, setNavbarTexts] = useState(null);
-
-  useEffect(() => {
-    loadNavbarTexts();
-  }, []);
-
-  const loadNavbarTexts = async () => {
-    const response = await fetchData("global", lang);
-    if (response.status === 200) {
-      setNavbarTexts(response.data.global.navbar);
-    } else {
-      console.log(response);
-    }
-  };
+  const navbarTexts = useEntitySingleRowData("global_navbar");
 
   const handleMenuLogoClick = (e) => {
     e.preventDefault();

@@ -1,35 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import useGlobalState from "../lib/globalState";
-import { fetchData } from "../lib/data";
+import {
+  useEntityAllData,
+  useEntitySingleRowData,
+} from "../lib/hooks/data/entities";
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(true);
-  const { lang, saveCookies, functionalCookieEnabled } = useGlobalState();
-  const [bannerTexts, setBannerTexts] = useState(null);
-  const [cookies, setCookies] = useState(null);
-
-  useEffect(() => {
-    loadCookies();
-    loadBannerTexts();
-  }, []);
-
-  const loadCookies = async () => {
-    const response = await fetchData("cookies", lang);
-    if (response.status === 200) {
-      setCookies(response.data.cookies);
-    } else {
-      console.log(response);
-    }
-  };
-
-  const loadBannerTexts = async () => {
-    const response = await fetchData("global", lang);
-    if (response.status === 200) {
-      setBannerTexts(response.data.global.cookieBanner);
-    } else {
-      console.log(response);
-    }
-  };
+  const { saveCookies, functionalCookieEnabled } = useGlobalState();
+  const bannerTexts = useEntitySingleRowData("global_cookieBanner");
+  const cookies = useEntityAllData("cookies");
 
   const handleClick = (e, isYes) => {
     e.preventDefault();

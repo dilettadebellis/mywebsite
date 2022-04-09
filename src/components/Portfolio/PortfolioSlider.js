@@ -32,7 +32,11 @@ const PortfolioSlider = ({ images, modalId, name, defaultMainImage }) => {
         ) : images.length === 0 ? (
           <img src={defaultMainImage} className="d-block" alt={name} />
         ) : (
-          <img src={images[0]} className="d-block" alt={name} />
+          <img
+            src={`${process.env.REACT_APP_IMAGES_BASE_PATH}${images[0]}`}
+            className="d-block"
+            alt={name}
+          />
         )}
       </div>
     </div>

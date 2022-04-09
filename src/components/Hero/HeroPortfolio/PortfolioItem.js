@@ -8,11 +8,17 @@ export default function PortfolioItem({
   defaultCoverImage,
 }) {
   return (
-    <div className={`col-lg-4 portfolio-item ${filters.join(" ")}`}>
+    <div
+      className={`col-lg-4 portfolio-item ${filters.split("*|*").join(" ")}`}
+    >
       <div className="image-border">
         <div className="portfolio-item-content">
           <img
-            src={coverImage.length > 0 ? coverImage : defaultCoverImage}
+            src={
+              coverImage.length > 0
+                ? `${process.env.REACT_APP_IMAGES_BASE_PATH}${coverImage}`
+                : defaultCoverImage
+            }
             alt={name}
             className="img-fluid"
           />

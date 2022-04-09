@@ -1,24 +1,9 @@
-import React, { useEffect, useState } from "react";
-import useGlobalState from "../lib/globalState";
+import React from "react";
 import MarkdownView from "react-showdown";
-import { fetchData } from "../lib/data";
+import { useEntitySingleRowData } from "../lib/hooks/data/entities";
 
 const PrivacyPolicyModal = () => {
-  const { lang } = useGlobalState();
-  const [privacyPolicy, setPrivacyPolicy] = useState(null);
-
-  useEffect(() => {
-    loadPrivacyPolicy();
-  }, []);
-
-  const loadPrivacyPolicy = async () => {
-    const response = await fetchData("privacy-policy", lang);
-    if (response.status === 200) {
-      setPrivacyPolicy(response.data.privacyPolicy);
-    } else {
-      console.log(response);
-    }
-  };
+  const privacyPolicy = useEntitySingleRowData("privacyPolicy");
 
   if (!privacyPolicy) {
     return null;
@@ -40,7 +25,9 @@ const PrivacyPolicyModal = () => {
               className="modal-title"
               id={`portfolioModalScrollable-privacy-policy`}
             >
-              {`${privacyPolicy.title[0]} ${privacyPolicy.title[1]}`}
+              {`${privacyPolicy.title.split("*|*")[0]} ${
+                privacyPolicy.title.split("*|*")[1]
+              }`}
             </h5>
             <button
               type="button"
@@ -58,31 +45,18 @@ const PrivacyPolicyModal = () => {
                   <div className="col-12 col-md-10 mx-auto">
                     <div className="text-center">
                       <h2 className="mb-3">
-                        {privacyPolicy.title[0]}{" "}
+                        {privacyPolicy.title.split("*|*")[0]}{" "}
                         <span className="base-color">
                           {" "}
-                          {privacyPolicy.title[1]}
+                          {privacyPolicy.title.split("*|*")[1]}
                         </span>
                       </h2>
                     </div>
                     <div className="text-md-left mt-5">
-                      {privacyPolicy.text.map((part, index) => (
-                        <div
-                          key={index}
-                          className={`my-3 ${
-                            index === privacyPolicy.text.length - 1
-                              ? "mb-0"
-                              : ""
-                          }`}
-                        >
-                          {
-                            <MarkdownView
-                              markdown={part}
-                              options={{ emoji: true }}
-                            />
-                          }
-                        </div>
-                      ))}
+                      <MarkdownView
+                        markdown={privacyPolicy.text}
+                        options={{ emoji: true }}
+                      />
                     </div>
                   </div>
                 </div>

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
-import useGlobalState from "../../lib/globalState";
+import React from "react";
 import PortfolioSlider from "./PortfolioSlider";
 import MarkdownView from "react-showdown";
-import { fetchData } from "../../lib/data";
+import { useEntitySingleRowData } from "../../lib/hooks/data/entities";
+
+const defaultMainImage = "https://placehold.co/600x450";
 
 function PortfolioSingleModal({
   name,
@@ -16,32 +17,7 @@ function PortfolioSingleModal({
   modalId,
   url,
 }) {
-  const { lang } = useGlobalState();
-  const [modalTexts, setModalTexts] = useState(null);
-  const [defaultMainImage, setDefaultMainImage] = useState(null);
-
-  useEffect(() => {
-    loadModalTexts();
-    loadDefaultMainImage();
-  }, []);
-
-  const loadModalTexts = async () => {
-    const response = await fetchData("global", lang);
-    if (response.status === 200) {
-      setModalTexts(response.data.global.heroPortfolio.portfolioModal);
-    } else {
-      console.log(response);
-    }
-  };
-
-  const loadDefaultMainImage = async () => {
-    const response = await fetchData("works", lang);
-    if (response.status === 200) {
-      setDefaultMainImage(response.data.defaultMainImage);
-    } else {
-      console.log(response);
-    }
-  };
+  const modalTexts = useEntitySingleRowData("global_portfolioModal");
 
   if (!modalTexts || !defaultMainImage) {
     return null;
@@ -111,7 +87,9 @@ function PortfolioSingleModal({
                         <div className="text-center">
                           <div>
                             <h6>{modalTexts.services}:</h6>
-                            <p className="mb-0">{skills.join(" / ")}</p>
+                            <p className="mb-0">
+                              {skills.replaceAll("*|*", " / ")}
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -143,19 +121,10 @@ function PortfolioSingleModal({
                       </div>
                     ) : null}
                     <div className="text-md-left mt-5">
-                      {longDescription.map((part, index) => (
-                        <div
-                          key={index}
-                          className={`my-3 ${
-                            index === longDescription.length - 1 ? "mb-0" : ""
-                          }`}
-                        >
-                          <MarkdownView
-                            markdown={part}
-                            options={{ emoji: true }}
-                          />
-                        </div>
-                      ))}
+                      <MarkdownView
+                        markdown={longDescription}
+                        options={{ emoji: true }}
+                      />
                     </div>
                   </div>
                 </div>

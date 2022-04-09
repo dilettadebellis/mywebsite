@@ -1,43 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PortfolioItem from "./PortfolioItem";
 import Footer from "../../Footer";
-import useGlobalState from "../../../lib/globalState";
-import { fetchData } from "../../../lib/data";
+import {
+  useEntityAllData,
+  useEntitySingleRowData,
+} from "../../../lib/hooks/data/entities";
+
+const defaultCoverImage = "https://placehold.co/600x450";
 
 export default function HeroPortfolio() {
-  const { lang } = useGlobalState();
-  const [defaultCoverImage, setDefaultCoverImage] = useState(null);
-  const [worksFilters, setWorksFilters] = useState(null);
-  const [works, setWorks] = useState(null);
-  const [globalTextsPortfolio, setGlobalTextsPortfolio] = useState(null);
+  const worksFilters = useEntityAllData("worksFilters");
+  const works = useEntityAllData("works");
+  const globalTextsPortfolio = useEntitySingleRowData("global_heroPortfolio");
 
-  useEffect(() => {
-    loadGlobalTextsPortfolio();
-    loadWorksTexts();
-  }, []);
-
-  const loadGlobalTextsPortfolio = async () => {
-    const response = await fetchData("global", lang);
-    if (response.status === 200) {
-      setGlobalTextsPortfolio(response.data.global.heroPortfolio);
-    } else {
-      console.log(response);
-    }
-  };
-
-  const loadWorksTexts = async () => {
-    const response = await fetchData("works", lang);
-    if (response.status === 200) {
-      const works = response.data;
-      setDefaultCoverImage(works.defaultCoverImage);
-      setWorksFilters(works.worksFilters);
-      setWorks(works.works);
-    } else {
-      console.log(response);
-    }
-  };
-
-  if (!globalTextsPortfolio || !defaultCoverImage || !works || !worksFilters) {
+  if (!globalTextsPortfolio || !works || !worksFilters) {
     return null;
   }
 
@@ -70,7 +46,9 @@ export default function HeroPortfolio() {
                   <li key={index} className="button-border list-inline-item">
                     <a
                       href="#"
-                      data-filter={`.${filter.code}`}
+                      data-filter={
+                        filter.code !== "*" ? `.${filter.code}` : "*"
+                      }
                       className={`pill-button ${index === 0 ? "active" : ""}`}
                     >
                       {filter.name}

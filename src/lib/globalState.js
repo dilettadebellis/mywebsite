@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import { useCookies } from "react-cookie";
-import { getCodes } from "./data/cookies";
+import apiClient from "./api-client";
 
 export const langMapping = {
   en_GB: {
@@ -27,27 +27,17 @@ const GlobalContext = createContext({
 
 export const GlobalProvider = ({ children }) => {
   const [lang, setLang] = useState(initialState.lang);
-  const [cookies, setCookie] = useCookies([getCodes()]);
+  const [cookies, setCookie] = useCookies([]);
   const [themeColor, setThemeColor] = useState("light");
   const [screenMode, setScreenMode] = useState("desktop");
 
   const saveCookies = (cookieCodes) => {
+    console.log(cookieCodes);
     Object.keys(cookieCodes).forEach((code) => {
       setCookie(`${code}-cookie-accepted`, cookieCodes[code], {
         path: "/",
         maxAge: MAX_AGE,
       });
-    });
-  };
-
-  const enabledCookies = () => {
-    return getCodes().map((code) => {
-      const onlyCode = code.replace("-cooke-accepted", "");
-      if (cookies[code]) {
-        return { [onlyCode]: true };
-      } else {
-        return { [onlyCode]: false };
-      }
     });
   };
 
@@ -75,7 +65,16 @@ export const GlobalProvider = ({ children }) => {
     }
   };
 
+  const loadCookies = async () => {
+    const responseData = (
+      await apiClient.entities.getAll("cookies", { locale: lang })
+    ).data["cookies"];
+    const extra = "-cookie-accepted";
+    setCookie(responseData.map((cookie) => `${cookie.code}${extra}`));
+  };
+
   useEffect(() => {
+    loadCookies();
     if (
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -102,7 +101,6 @@ export const GlobalProvider = ({ children }) => {
         screenMode,
         setScreenMode,
         saveCookies,
-        enabledCookies,
         functionalCookieEnabled,
         statsCookieEnabled,
       }}

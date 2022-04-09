@@ -1,24 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PortfolioSingleModal from "./PortfolioSingleModal";
-import useGlobalState from "../../lib/globalState";
-import { fetchData } from "../../lib/data";
+import { useEntityAllData } from "../../lib/hooks/data/entities";
 
 export default function PortfolioModals() {
-  const { lang } = useGlobalState();
-  const [works, setWorks] = useState(null);
-
-  useEffect(() => {
-    loadWorks();
-  }, []);
-
-  const loadWorks = async () => {
-    const response = await fetchData("works", lang);
-    if (response.status === 200) {
-      setWorks(response.data.works);
-    } else {
-      console.log(response);
-    }
-  };
+  const works = useEntityAllData("works");
 
   if (!works) {
     return null;
@@ -28,6 +13,7 @@ export default function PortfolioModals() {
     <PortfolioSingleModal
       key={index}
       {...work}
+      longName={work.longName.split("*|*")}
       modalId={`single-portfolio-modal-${index}`}
     />
   ));

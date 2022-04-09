@@ -37,7 +37,7 @@ export function useEntityAllData(entityName, setLoading = undefined) {
 
 export function useEntitySingleRowData(entityName, setLoading = undefined) {
   const { lang } = useGlobalState();
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   const loadEntityData = async () => {
     try {

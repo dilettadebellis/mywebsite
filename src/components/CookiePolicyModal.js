@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import useGlobalState from "../lib/globalState";
 import MarkdownView from "react-showdown";
-import { fetchData } from "../lib/data";
+import { useEntitySingleRowData } from "../lib/hooks/data/entities";
 
 const CookiePolicyModal = () => {
-  const { lang } = useGlobalState();
-  const [cookiePolicy, setCookiePolicy] = useState(null);
-
-  useEffect(() => {
-    loadCookiePolicy();
-  }, []);
-
-  const loadCookiePolicy = async () => {
-    const response = await fetchData("cookie-policy", lang);
-    if (response.status === 200) {
-      setCookiePolicy(response.data.cookiePolicy);
-    } else {
-      console.log(response);
-    }
-  };
+  const cookiePolicy = useEntitySingleRowData("cookiePolicy");
 
   if (!cookiePolicy) {
     return null;
@@ -40,7 +26,9 @@ const CookiePolicyModal = () => {
               className="modal-title"
               id={`portfolioModalScrollable-cookie-policy`}
             >
-              {`${cookiePolicy.title[0]} ${cookiePolicy.title[1]}`}
+              {`${cookiePolicy.title.split("*|*")[0]} ${
+                cookiePolicy.title.split("*|*")[1]
+              }`}
             </h5>
             <button
               type="button"
@@ -58,27 +46,18 @@ const CookiePolicyModal = () => {
                   <div className="col-12 col-md-10 mx-auto">
                     <div className="text-center">
                       <h2 className="mb-3">
-                        {cookiePolicy.title[0]}{" "}
+                        {cookiePolicy.title.split("*|*")[0]}{" "}
                         <span className="base-color">
                           {" "}
-                          {cookiePolicy.title[1]}
+                          {cookiePolicy.title.split("*|*")[1]}
                         </span>
                       </h2>
                     </div>
                     <div className="text-md-left mt-5">
-                      {cookiePolicy.text.map((part, index) => (
-                        <div
-                          key={index}
-                          className={`my-3 ${
-                            index === cookiePolicy.text.length - 1 ? "mb-0" : ""
-                          }`}
-                        >
-                          <MarkdownView
-                            markdown={part}
-                            options={{ emoji: true }}
-                          />
-                        </div>
-                      ))}
+                      <MarkdownView
+                        markdown={cookiePolicy.text}
+                        options={{ emoji: true }}
+                      />
                     </div>
                   </div>
                 </div>
