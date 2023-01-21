@@ -67,12 +67,12 @@ function Header({}) {
               <span>{navbarTexts.resume}</span>
             </a>
           </li>
-          <li className="list-group-item">
-            <a href="#portfolio">
-              <i className="fa fa-briefcase" />
-              <span>{navbarTexts.works}</span>
-            </a>
-          </li>
+          {/*<li className="list-group-item">*/}
+          {/*  <a href="#portfolio">*/}
+          {/*    <i className="fa fa-briefcase" />*/}
+          {/*    <span>{navbarTexts.works}</span>*/}
+          {/*  </a>*/}
+          {/*</li>*/}
           {/* <li className="list-group-item">
             <a href="#blog">
               <i className="fa fa-file-text" />

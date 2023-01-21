@@ -85,7 +85,7 @@ function HeroContact({}) {
               </div>
             </div>
             <div className="row contact-info">
-              <div className="col-lg-4 mt-5">
+              <div className="ml-auto col-lg-4 mt-5">
                 <div className="text-center">
                   <div className="base-color">
                     <i className="lni-phone-handset size-md" />
@@ -98,20 +98,20 @@ function HeroContact({}) {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-4 mt-5">
-                <div className="text-center">
-                  <div className="base-color">
-                    <i className="lni-skype size-md" />
-                  </div>
-                  <div className="mt-3">
-                    <h5 className="text-dark mb-0 contact_detail-title">
-                      {contactTexts.addMeOnSkype}
-                    </h5>
-                    <small className="text-muted">dileta.de.bellis</small>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 mt-5">
+              {/*<div className="col-lg-4 mt-5">*/}
+              {/*  <div className="text-center">*/}
+              {/*    <div className="base-color">*/}
+              {/*      <i className="lni-skype size-md" />*/}
+              {/*    </div>*/}
+              {/*    <div className="mt-3">*/}
+              {/*      <h5 className="text-dark mb-0 contact_detail-title">*/}
+              {/*        {contactTexts.addMeOnSkype}*/}
+              {/*      </h5>*/}
+              {/*      <small className="text-muted">dileta.de.bellis</small>*/}
+              {/*    </div>*/}
+              {/*  </div>*/}
+              {/*</div>*/}
+              <div className="col-lg-4 mt-5 mr-auto">
                 <div className="text-center">
                   <div className="base-color">
                     <i className="lni-pointer size-md" />

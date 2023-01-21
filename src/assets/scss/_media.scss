@@ -101,6 +101,12 @@
     font-size: 12px;
     padding: 3px 0;
   }
+
+  .hero-01 {
+    background: url("../img/background-mobile-light.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 @media (max-width: 380px) {
@@ -127,6 +133,14 @@
     background: url("../img/diletta-de-bellis-02-dark.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  @media (max-width: 575px) {
+    .hero-01 {
+      background: url("../img/background-mobile-dark.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
   }
 
   .hero-02:before{
@@ -393,6 +407,8 @@
       box-shadow: none;
     }
   }
+
+
 
 }
 

@@ -60,17 +60,17 @@ export default function CVInfo() {
                     {cvTexts.birthday}: <span> {cvTexts.birthdayDay}</span>
                   </p>
                 </li>
-                <li>
+                {/*<li>
                   <p>
                     {cvTexts.website}:{" "}
                     <a href="www.webfondente.com">
                       <span> {cvTexts.websiteValue}</span>
                     </a>
                   </p>
-                </li>
+                </li>*/}
                 <li>
                   <p>
-                    {cvTexts.phone}: <span> {cvTexts.phoneValue}</span>
+                    {cvTexts.age}: <span> {getAge("1992-11-18")}</span>
                   </p>
                 </li>
                 <li>
@@ -82,11 +82,11 @@ export default function CVInfo() {
             </div>
             <div className="col-6 personal-info">
               <ul className="list-unstyled pt-4">
-                <li>
-                  <p>
-                    {cvTexts.age}: <span> {getAge("1992-11-18")}</span>
-                  </p>
-                </li>
+                {/*<li>*/}
+                {/*  <p>*/}
+                {/*    {cvTexts.age}: <span> {getAge("1992-11-18")}</span>*/}
+                {/*  </p>*/}
+                {/*</li>*/}
                 <li>
                   <p>
                     {cvTexts.degree}: <span> {cvTexts.degreeValue}</span>
